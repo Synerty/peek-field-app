@@ -34,3 +34,8 @@ testem.log
 .DS_Store
 Thumbs.db
 .idea
+
+#Ignore the automatically generated files
+.lastHash
+src/PappRoutes.ts
+
