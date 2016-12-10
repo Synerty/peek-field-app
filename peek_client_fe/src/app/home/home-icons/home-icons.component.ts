@@ -1,10 +1,16 @@
 import {Component, OnInit} from "@angular/core";
-import {VortexService, ComponentLifecycleEventEmitter} from "@synerty/vortexjs";
+import {VortexService, ComponentLifecycleEventEmitter, Tuple} from "@synerty/vortexjs";
 
 
-interface AppDetailsObject {
-    title: string;
+
+class PappAppTileTuple extends Tuple {
+    constructor() {
+        super('peek_client.PappAppTileTuple');
+    }
+
     name: string;
+    title: string;
+    resourcePath: string;
 }
 
 @Component({
@@ -18,14 +24,14 @@ export class HomeIconsComponent extends ComponentLifecycleEventEmitter implement
         key: 'home.apps'
     };
 
-    appDetails: AppDetailsObject[] = [];
+    appDetails: PappAppTileTuple[] = [];
 
     constructor(vortexService: VortexService) {
         super();
 
         vortexService.createTupleLoader(this, () => {
             return this.homeIconListFilt;
-        }).observable.subscribe(tuples => this.appDetails = <AppDetailsObject[]>tuples);
+        }).observable.subscribe(tuples => this.appDetails = <PappAppTileTuple[]>tuples);
 
     }
 
