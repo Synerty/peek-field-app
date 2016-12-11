@@ -4,7 +4,7 @@ from distutils.core import setup
 
 from setuptools import find_packages
 
-package_name = "peek_server_fe"
+package_name = "peek_client_fe"
 package_version = '0.0.0'
 
 egg_info = "%s.egg-info" % package_name
@@ -12,7 +12,7 @@ if os.path.isdir(egg_info):
     shutil.rmtree(egg_info)
 
 
-def package_files(excludeDirs=('__pycache__',),
+def package_files(excludeDirs=('__pycache__','node_modules'),
                   excludeFiles=('.pyc', '.js', '.js.map')):
     paths = []
     for (path, directories, filenames) in os.walk(package_name):
@@ -26,7 +26,6 @@ def package_files(excludeDirs=('__pycache__',),
             paths.append(os.path.join(path[len(package_name) + 1:], filename))
 
     return paths
-
 
 setup(
     name=package_name,
