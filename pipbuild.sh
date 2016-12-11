@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-PACKAGE="peek_client"
+PACKAGE="peek_client_fe"
 
 set -o nounset
 set -o errexit
