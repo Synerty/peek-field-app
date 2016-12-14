@@ -3,9 +3,9 @@ import {VortexService, ComponentLifecycleEventEmitter, Tuple} from "@synerty/vor
 
 
 
-class PappAppTileTuple extends Tuple {
+class PluginAppTileTuple extends Tuple {
     constructor() {
-        super('peek_client.PappAppTileTuple');
+        super('peek_client.PluginAppTileTuple');
     }
 
     name: string;
@@ -20,18 +20,18 @@ class PappAppTileTuple extends Tuple {
 })
 export class HomeIconsComponent extends ComponentLifecycleEventEmitter implements OnInit {
     private readonly homeIconListFilt = {
-        papp: 'peek_client',
+        plugin: 'peek_client',
         key: 'home.apps'
     };
 
-    appDetails: PappAppTileTuple[] = [];
+    appDetails: PluginAppTileTuple[] = [];
 
     constructor(vortexService: VortexService) {
         super();
 
         vortexService.createTupleLoader(this, () => {
             return this.homeIconListFilt;
-        }).observable.subscribe(tuples => this.appDetails = <PappAppTileTuple[]>tuples);
+        }).observable.subscribe(tuples => this.appDetails = <PluginAppTileTuple[]>tuples);
 
     }
 

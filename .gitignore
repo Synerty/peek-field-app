@@ -50,6 +50,6 @@ Thumbs.db
 
 #Ignore the automatically generated files
 .lastHash
-PappRoutes.ts
-peek_client_fe/src/papp_*
+PluginRoutes.ts
+peek_client_fe/src/plugin_*
 

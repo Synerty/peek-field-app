@@ -1,7 +1,7 @@
 import {NgModule} from "@angular/core";
 import {Routes, RouterModule} from "@angular/router";
 import {HomeComponent} from "./home/home.component";
-import {pappRoutes} from "../PappRoutes";
+import {pluginRoutes} from "../PluginRoutes";
 
 const staticRoutes: Routes = [
     {
@@ -17,7 +17,7 @@ const staticRoutes: Routes = [
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot([ ...pappRoutes, ...staticRoutes])],
+    imports: [RouterModule.forRoot([ ...pluginRoutes, ...staticRoutes])],
     exports: [RouterModule],
     providers: []
 })
