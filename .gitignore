@@ -1,5 +1,10 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
+#Ignore the automatically generated files
+.lastHash
+PluginRoutes.ts
+peek_client_fe/src/peek_plugin_*
+
 # Ignore python compiled files
 *.pyc
 __pycache__
@@ -47,9 +52,4 @@ testem.log
 .DS_Store
 Thumbs.db
 .idea
-
-#Ignore the automatically generated files
-.lastHash
-PluginRoutes.ts
-peek_client_fe/src/plugin_*
 
