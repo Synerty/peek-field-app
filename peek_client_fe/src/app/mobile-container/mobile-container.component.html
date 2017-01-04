@@ -1,0 +1,50 @@
+<ng2-balloon-msg></ng2-balloon-msg>
+<div class="container-fluid">
+    <div class="row">
+        <ul class="btn ">
+            <li role="presentation" class="dropdown">
+                <button href="#" class="btn pull-left dropdown-toggle"
+                        data-toggle="dropdown" role="button"
+                        aria-haspopup="true"
+                        aria-expanded="false">Menu
+                </button>
+                <ul class="dropdown-menu">
+                    <li *ngFor="let app of appDetails">
+                        <a [href]="app.resourcePath">{{app.title}}</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <span class="text-center">{{title}}</span>
+        <span>
+            <button class="btn pull-right">Tasks</button>
+        </span>
+
+    </div>
+</div>
+
+<!--<div class="container-fluid">-->
+<!--<div class="row">-->
+<!--&lt;!&ndash; Single button &ndash;&gt;-->
+<!--<div class="btn-group" dropdown [(isOpen)]="status.isopen">-->
+<!--<button id="single-button" type="button" class="btn btn-primary"-->
+<!--dropdownToggle [disabled]="disabled">-->
+<!--Go To <span class="caret"></span>-->
+<!--</button>-->
+<!--<ul dropdownMenu role="menu" aria-labelledby="single-button">-->
+<!--<li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>-->
+<!--<li role="menuitem"><a class="dropdown-item" href="#">Another action</a>-->
+<!--</li>-->
+<!--<li role="menuitem"><a class="dropdown-item" href="#">Something else-->
+<!--here</a></li>-->
+<!--<li class="divider dropdown-divider"></li>-->
+<!--<li role="menuitem"><a class="dropdown-item" href="#">Separated link</a>-->
+<!--</li>-->
+<!--</ul>-->
+<!--<h2 class="">{{title}}</h2>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+
+<router-outlet></router-outlet>

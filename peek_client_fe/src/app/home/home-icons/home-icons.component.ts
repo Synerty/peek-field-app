@@ -2,8 +2,7 @@ import {Component, OnInit} from "@angular/core";
 import {VortexService, ComponentLifecycleEventEmitter, Tuple} from "@synerty/vortexjs";
 
 
-
-class PluginAppTileTuple extends Tuple {
+export class PluginAppTileTuple extends Tuple {
     constructor() {
         super('peek_client.PluginAppTileTuple');
     }
@@ -13,16 +12,18 @@ class PluginAppTileTuple extends Tuple {
     resourcePath: string;
 }
 
+export const homeIconListFilt = {
+    plugin: 'peek_client',
+    key: 'home.apps'
+};
+
 @Component({
     selector: 'app-home-icons',
     templateUrl: './home-icons.component.html',
     styleUrls: ['./home-icons.component.css']
 })
 export class HomeIconsComponent extends ComponentLifecycleEventEmitter implements OnInit {
-    private readonly homeIconListFilt = {
-        plugin: 'peek_client',
-        key: 'home.apps'
-    };
+
 
     appDetails: PluginAppTileTuple[] = [];
 
@@ -30,7 +31,7 @@ export class HomeIconsComponent extends ComponentLifecycleEventEmitter implement
         super();
 
         vortexService.createTupleLoader(this, () => {
-            return this.homeIconListFilt;
+            return homeIconListFilt;
         }).observable.subscribe(tuples => this.appDetails = <PluginAppTileTuple[]>tuples);
 
     }

@@ -2,9 +2,7 @@
     <a *ngFor="let app of appDetails"
        [href]="app.resourcePath">
         <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 home-icon">
-            Title={{app.title}}<br/>
-            Name={{app.name}}<br/>
-            Name={{app.resourcePath}}
+            <p class="align-center">{{app.title}}</p>
         </div>
     </a>
 </div>
