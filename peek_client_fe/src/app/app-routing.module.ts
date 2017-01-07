@@ -7,11 +7,13 @@ const staticRoutes: Routes = [
     {
         path: '',
         component: HomeComponent,
+        data : {title:"App Home Route"},
         children: []
     },
     {
         path: '**',
-        component: HomeComponent
+        component: HomeComponent,
+        data : {title:"App catch all route"}
 
     }
 ];

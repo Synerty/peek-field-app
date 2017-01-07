@@ -1,4 +1,5 @@
 import {Component, OnInit} from "@angular/core";
+import {ActivatedRoute} from "@angular/router";
 import {VortexService, ComponentLifecycleEventEmitter} from "@synerty/vortexjs";
 import {
     PluginAppTileTuple,
@@ -16,8 +17,15 @@ export class MobileContainerComponent extends ComponentLifecycleEventEmitter imp
 
     appDetails: PluginAppTileTuple[] = [];
 
-    constructor(vortexService: VortexService) {
+    constructor(vortexService: VortexService, private route: ActivatedRoute) {
         super();
+
+        let routeSubscription = route.data
+            .subscribe(data => {
+                // this.title = data["title"];
+            });
+
+        this.onDestroyEvent.subscribe(() => routeSubscription.unsubscribe());
 
         vortexService.createTupleLoader(this, () => {
             return homeIconListFilt;
@@ -29,3 +37,4 @@ export class MobileContainerComponent extends ComponentLifecycleEventEmitter imp
     }
 
 }
+
