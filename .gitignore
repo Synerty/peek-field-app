@@ -9,6 +9,19 @@ peek_client_fe/src/peek_plugin_*
 *.pyc
 __pycache__
 
+# Nativescript stuff
+npm-debug.log
+.DS_Store
+
+app/**/*.js
+app/**/*.js.map
+hooks/
+lib/
+node_modules/
+platforms
+tmp/
+typings/
+
 # Ignore pycharm project settings
 .idea
 
