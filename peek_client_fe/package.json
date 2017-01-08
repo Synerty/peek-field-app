@@ -20,6 +20,7 @@
   "dependencies": {
     "@angular/common": "2.2.1",
     "@angular/compiler": "2.2.1",
+    "@angular/compiler-cli": "2.2.1",
     "@angular/core": "2.2.1",
     "@angular/forms": "2.2.1",
     "@angular/http": "2.2.1",
@@ -27,18 +28,18 @@
     "@angular/platform-browser-dynamic": "2.2.1",
     "@angular/router": "3.2.1",
     "@synerty/vortexjs": "^0.2.11",
+    "@types/node": "^6.0.58",
     "core-js": "^2.4.1",
     "jquery": "^3.1.1",
-    "rxjs": "5.0.0-beta.12",
-    "ts-helpers": "^1.1.1",
-    "zone.js": "^0.6.23",
     "nativescript-angular": "1.2.0",
     "nativescript-theme-core": "^0.2.1",
     "reflect-metadata": "~0.1.8",
-    "tns-core-modules": "2.4.4"
+    "rxjs": "5.0.0-beta.12",
+    "tns-core-modules": "2.4.4",
+    "ts-helpers": "^1.1.1",
+    "zone.js": "^0.6.23"
   },
   "devDependencies": {
-    "@angular/compiler-cli": "2.2.1",
     "angular-cli": "1.0.0-beta.21",
     "codelyzer": "~1.0.0-beta.3",
     "karma": "1.2.0",

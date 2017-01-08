@@ -14,12 +14,10 @@ import {AppRoutingModule} from "./app-routing.module";
 import {AppRootComponent} from "./app-root.component";
 import {HomeModule} from "./home/home.module";
 import {MobileContainerComponent} from "./mobile-container/mobile-container.component";
-import {DesktopContainerComponent} from "./desktop-container/desktop-container.component";
 
 @NgModule({
     declarations: [
         MobileContainerComponent,
-        DesktopContainerComponent,
         AppRootComponent
     ],
     imports: [

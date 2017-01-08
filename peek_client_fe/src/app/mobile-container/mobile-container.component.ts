@@ -5,6 +5,7 @@ import {
     PluginAppTileTuple,
     homeIconListFilt
 } from "../home/home-icons/home-icons.component";
+import {commonVal} from "../testval";
 
 @Component({
     selector: 'app-mobile-container',
@@ -13,7 +14,8 @@ import {
 })
 export class MobileContainerComponent extends ComponentLifecycleEventEmitter implements OnInit {
 
-    title: string = "Test Title";
+    // title: string = "Test Title";
+    title: string = commonVal;
 
     appDetails: PluginAppTileTuple[] = [];
 

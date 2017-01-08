@@ -3,7 +3,7 @@
 #Ignore the automatically generated files
 .lastHash
 PluginRoutes.ts
-peek_client_fe/src/peek_plugin_*
+peek_client_fe/src/app/peek_plugin_*
 
 # Ignore python compiled files
 *.pyc
@@ -13,8 +13,8 @@ __pycache__
 npm-debug.log
 .DS_Store
 
-src/**/*.js
-src/**/*.js.map
+peek_client_fe/src/**/*.js
+peek_client_fe/src/**/*.js.map
 hooks
 lib/
 node_modules/

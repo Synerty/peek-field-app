@@ -6,26 +6,23 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "sourceMap": true,
-    "noEmitHelpers": true,
     "noEmitOnError": true,
     "moduleResolution": "node",
     "baseUrl": "",
-    "module": "commonjs",
+    "lib": [
+      "es6",
+      "dom"
+    ],
+    "mapRoot": "./",
+    "module": "es6",
     "target": "es5",
+    "outDir": "../dist/out-tsc",
     "typeRoots": [
-      "./node_modules/@types"
-    ],
-    "types": [
-    ],
-    "rootDirs" :[
-      "app",
-      "src"
+      "../node_modules/@types"
     ]
   },
   "exclude": [
-    "node_modules/@types/node",
-    "node_modules",
-    "platforms",
-    "**/*.aot.ts"
+    "../references.d.ts",
+    "app/main.ns.ts"
   ]
 }
