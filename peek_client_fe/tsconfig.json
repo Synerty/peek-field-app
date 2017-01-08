@@ -16,16 +16,13 @@
       "./node_modules/@types"
     ],
     "types": [
-    ],
-    "rootDirs" :[
-      "app",
-      "src"
     ]
   },
   "exclude": [
     "node_modules/@types/node",
     "node_modules",
     "platforms",
+    "**/main.web.ts",
     "**/*.aot.ts"
   ]
 }
