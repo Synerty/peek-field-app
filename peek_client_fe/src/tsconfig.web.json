@@ -22,6 +22,7 @@
     ]
   },
   "exclude": [
+    "**/nativescript-angular/**",
     "../references.d.ts",
     "app/main.aot.ns.ts",
     "app/main.ns.ts",
