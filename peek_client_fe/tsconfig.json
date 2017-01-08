@@ -22,6 +22,8 @@
     "node_modules/@types/node",
     "node_modules",
     "platforms",
+    "e2e",
+    "**/*spec.ts",
     "**/main.web.ts",
     "**/main.aot.ns.ts"
   ]
