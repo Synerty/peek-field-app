@@ -1,6 +1,7 @@
 import {MainMenuComponent} from "./main-menu/main-menu.component";
 import {MainHomeComponent} from "./main-home/main-home.component";
 import {UnknownRouteComponent} from "./unknown-route.component";
+import {pluginRoutes} from "./plugin-routes";
 export const routes = [
     {
         path: "",
@@ -12,11 +13,7 @@ export const routes = [
         component: MainMenuComponent,
         data: {title: "Menu"}
     },
-    {
-        path: 'test',
-        loadChildren: "peek_plugin_pof_field_switching/plugin-pof-field-switching.module#default",
-        data: {title: "Switching"}
-    },
+    ...pluginRoutes,
     {
         path: "**",
         component: UnknownRouteComponent,

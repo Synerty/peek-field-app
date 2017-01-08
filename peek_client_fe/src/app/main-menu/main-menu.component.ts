@@ -6,10 +6,13 @@ let links = [{
     path: "/"
 }, {
     name: "Switching",
-    path: "/test"
+    path: "/peek_plugin_pof_field_switching"
+}, {
+    name: "Noop",
+    path: "/peek_plugin_noop"
 }, {
     name: "Switching Test",
-    path: "/test/swtest"
+    path: "/peek_plugin_pof_field_switching/swtest"
 }];
 
 @Component({
@@ -22,7 +25,7 @@ export class MainMenuComponent {
     menuItems = links;
     tappedLabel = "test";
 
-    constructor(private routerExtensions:RouterExtensions) {
+    constructor(private routerExtensions: RouterExtensions) {
 
     }
 
