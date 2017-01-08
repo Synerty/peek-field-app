@@ -1,5 +1,6 @@
 import {Component, OnDestroy} from "@angular/core";
 import {ActivatedRoute} from "@angular/router";
+import {commonVal} from "../testval";
 
 
 @Component({
@@ -10,7 +11,8 @@ export class MainTitleComponent implements OnDestroy {
 
     private routeSubscription: any;
 
-    title: string = "Peek";
+    // title: string = "Peek";
+    title: string = commonVal;
 
     constructor( route: ActivatedRoute) {
         // this.routeSubscription = this.route
