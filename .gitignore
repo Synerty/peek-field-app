@@ -2,7 +2,7 @@
 
 #Ignore the automatically generated files
 .lastHash
-PluginRoutes.ts
+plugin-routes.ts
 peek_client_fe/src/app/peek_plugin_*
 
 # Ignore python compiled files
