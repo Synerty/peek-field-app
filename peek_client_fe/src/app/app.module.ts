@@ -1,38 +1,37 @@
-// Angular
-import {BrowserModule} from "@angular/platform-browser";
-import {NgModule} from "@angular/core";
-import {FormsModule} from "@angular/forms";
-import {HttpModule} from "@angular/http";
-// Valor software
-// import {AlertModule} from "ng2-bootstrap/ng2-bootstrap";
-// import {DropdownModule} from "ng2-bootstrap/ng2-bootstrap";
-// @synerty
-import {Ng2BalloonMsgService, Ng2BalloonMsgModule} from "@synerty/ng2-balloon-msg";
+import {NgModule, NO_ERRORS_SCHEMA, NgModuleFactoryLoader} from "@angular/core";
+import {NativeScriptModule} from "nativescript-angular/platform";
+import {AppComponent} from "./app.component";
+import {NativeScriptRouterModule} from "nativescript-angular";
+import {MainMenuComponent} from "./main-menu/main-menu.component";
+import {PeekModuleFactoryLoader} from "./peek-module-factory-loader";
+import {UnknownRouteComponent} from "./unknown-route.component";
 import {VortexService} from "@synerty/vortexjs";
-// This app
-import {AppRoutingModule} from "./app-routing.module";
-import {AppRootComponent} from "./app-root.component";
-import {HomeModule} from "./home/home.module";
-import {MobileContainerComponent} from "./mobile-container/mobile-container.component";
+import {Ng2BalloonMsgService} from "@synerty/ng2-balloon-msg";
+import {routes} from "./app.routes";
+import {MainTitleComponent} from "./main-title/main-title.component";
+import {MainHomeComponent} from "./main-home/main-home.component";
+
+
+VortexService.setVortexUrl("http://10.211.55.14:8000/vortex");
 
 @NgModule({
-    declarations: [
-        MobileContainerComponent,
-        AppRootComponent
-    ],
+    declarations: [AppComponent,
+        MainTitleComponent,
+        MainHomeComponent,
+        MainMenuComponent,
+        UnknownRouteComponent],
+    bootstrap: [AppComponent],
     imports: [
-        BrowserModule,
-        FormsModule,
-        HttpModule,
-        AppRoutingModule,
-        HomeModule,
-        Ng2BalloonMsgModule,
-        // AlertModule.forRoot(),
-        // DropdownModule.forRoot()
-
-    ],
-    providers: [VortexService, Ng2BalloonMsgService],
-    bootstrap: [AppRootComponent]
+        NativeScriptModule,
+        NativeScriptRouterModule,
+        NativeScriptRouterModule.forRoot(routes)],
+    schemas: [NO_ERRORS_SCHEMA],
+    providers: [VortexService, Ng2BalloonMsgService, {
+        provide: NgModuleFactoryLoader,
+        useClass: PeekModuleFactoryLoader
+    }]
 })
 export class AppModule {
+
 }
+

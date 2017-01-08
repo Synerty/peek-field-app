@@ -1,0 +1,13 @@
+<Label text="Menu" class="h1"></Label>
+<Label [text]="tappedLabel" class="h1"></Label>
+
+<GridLayout rows="*">
+    <ListView [items]="menuItems" (itemTap)="onItemTap($event)">
+        <Template let-item="item" let-i="index">
+            <Label [text]="item.name + ' -> ' + item.path"
+                    class="btn btn-default">
+            </Label>
+        </Template>
+    </ListView>
+</GridLayout>
+
