@@ -1,5 +1,5 @@
-import {Component} from "@angular/core";
-import {RouterExtensions} from "nativescript-angular";
+import {PeekComponent} from "@synerty/peek-web-ns";
+import {Router} from "@angular/router";
 
 let links = [{
     name: "Home",
@@ -15,9 +15,10 @@ let links = [{
     path: "/peek_plugin_pof_field_switching/swtest"
 }];
 
-@Component({
+@PeekComponent({
     selector: "peek-main-menu",
-    templateUrl: "main-menu/main-menu.component.ns.html",
+    templateUrl: "main-menu.component.web.html",
+    moduleFilename: module.filename
 })
 export class MainMenuComponent {
 
@@ -25,14 +26,12 @@ export class MainMenuComponent {
     menuItems = links;
     tappedLabel = "test";
 
-    constructor(private routerExtensions: RouterExtensions) {
+    constructor(private router: Router) {
 
     }
 
-    onItemTap(event) {
-        this.tappedLabel = this.menuItems[event.index].name;
-        this.routerExtensions.navigate([this.menuItems[event.index].path]);
+    itemSelected(item) {
+        this.tappedLabel = item.name;
+        this.router.navigate([item.path]);
     }
-
 }
-

@@ -7,15 +7,17 @@ import {
 } from "../home/home-icons/home-icons.component";
 import {commonVal} from "../testval";
 
-@Component({
-    selector: 'app-mobile-container',
-    templateUrl: './mobile-container.component.html',
-    styleUrls: ['./mobile-container.component.css']
-})
+// @Component({
+//     selector: 'app-mobile-container',
+//     templateUrl: './mobile-container.component.html',
+//     styleUrls: ['./mobile-container.component.css']
+// })
 export class MobileContainerComponent extends ComponentLifecycleEventEmitter implements OnInit {
 
     // title: string = "Test Title";
     title: string = commonVal;
+
+path:string = module.filename;
 
     appDetails: PluginAppTileTuple[] = [];
 

@@ -1,11 +1,9 @@
 import {PeekComponent} from "@synerty/peek-web-ns";
 
 @PeekComponent({
-    selector: "peek-main-app",
-    templateUrl: "app.component.web.html",
+    templateUrl: 'unknown-route.component.web.html',
     moduleFilename: module.filename
 })
-export class AppComponent {
+export class UnknownRouteComponent {
 
 }
-

@@ -1,10 +1,11 @@
-import {Component} from "@angular/core";
+import {PeekComponent} from "@synerty/peek-web-ns";
 
-@Component({
+@PeekComponent({
     selector: "peek-main-home",
-    templateUrl: 'main-home/main-home.component.ns.html'
+    templateUrl: 'main-home.component.web.html',
+    moduleFilename : module.filename
 })
 export class MainHomeComponent {
-
+    testMsg: string = "Unified home Update2";
 
 }

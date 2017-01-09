@@ -26,7 +26,6 @@
     "../references.d.ts",
     "app/main.aot.ns.ts",
     "app/main.ns.ts",
-    "app/peek-module-loader-factory.ts",
-    "app/app.module.ts"
+    "app/app.ns.module.ts"
   ]
 }

@@ -1,0 +1,10 @@
+<Label text="Menu" class="h1"></Label>
+<h1>Menu</h1>
+{{tappedLabel}}
+
+<ul>
+    <li *ngFor="let item of menuItems"
+        (click)="itemSelected(item)">
+        {{item.name + ' -> ' + item.path}}
+    </li>
+</ul>

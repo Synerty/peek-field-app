@@ -1,24 +1,23 @@
-// Angular
-import {BrowserModule} from "@angular/platform-browser";
-import {NgModule} from "@angular/core";
-import {FormsModule} from "@angular/forms";
-import {HttpModule} from "@angular/http";
-import {RouterModule} from "@angular/router";
+import {NgModule, NO_ERRORS_SCHEMA, NgModuleFactoryLoader} from "@angular/core";
+import {NativeScriptModule} from "nativescript-angular/platform";
+import {NativeScriptRouterModule} from "nativescript-angular";
 
 // @synerty
 import {Ng2BalloonMsgService, Ng2BalloonMsgModule} from "@synerty/ng2-balloon-msg";
 import {PeekRouterModule} from "@synerty/peek-web-ns";
+import {PeekModuleFactoryLoader} from "./module-loader.ns.factory";
 import {VortexService} from "@synerty/vortexjs";
 
 // Routes
 import {staticRoutes} from "./app.routes";
 
-// This app
+// Components
 import {AppComponent} from "./app.component";
 import {MainHomeComponent} from "./main-home/main-home.component";
 import {MainMenuComponent} from "./main-menu/main-menu.component";
 import {MainTitleComponent} from "./main-title/main-title.component";
 import {UnknownRouteComponent} from "./unknown-route/unknown-route.component";
+
 
 @NgModule({
     declarations: [AppComponent,
@@ -28,15 +27,18 @@ import {UnknownRouteComponent} from "./unknown-route/unknown-route.component";
         UnknownRouteComponent],
     bootstrap: [AppComponent],
     imports: [
-        RouterModule,
+        NativeScriptModule,
+        NativeScriptRouterModule,
         PeekRouterModule.forRoot(staticRoutes),
-        BrowserModule,
-        FormsModule,
-        HttpModule,
-        Ng2BalloonMsgModule
+        // PeekRouterModule.forRoot(staticRoutes),
+        // Ng2BalloonMsgModule
     ],
-    providers: [VortexService, Ng2BalloonMsgService]
+    schemas: [NO_ERRORS_SCHEMA],
+    providers: [VortexService, Ng2BalloonMsgService,
+        {provide: NgModuleFactoryLoader, useClass: PeekModuleFactoryLoader}
+    ]
 })
-export class AppWebModule {
+export class AppNsModule {
+
 }
 

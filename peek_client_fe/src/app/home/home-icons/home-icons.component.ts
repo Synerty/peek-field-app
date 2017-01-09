@@ -17,11 +17,11 @@ export const homeIconListFilt = {
     key: 'home.apps'
 };
 
-@Component({
-    selector: 'app-home-icons',
-    templateUrl: './home-icons.component.html',
-    styleUrls: ['./home-icons.component.css']
-})
+// @Component({
+//     selector: 'app-home-icons',
+//     templateUrl: './home-icons.component.html',
+//     styleUrls: ['./home-icons.component.css']
+// })
 export class HomeIconsComponent extends ComponentLifecycleEventEmitter implements OnInit {
 
 

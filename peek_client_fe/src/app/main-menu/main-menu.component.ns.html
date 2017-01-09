@@ -2,7 +2,8 @@
 <Label [text]="tappedLabel" class="h1"></Label>
 
 <GridLayout rows="*">
-    <ListView [items]="menuItems" (itemTap)="onItemTap($event)">
+    <ListView [items]="menuItems"
+              (itemTap)="itemSelected(this.menuItems[$event.index])">
         <Template let-item="item" let-i="index">
             <Label [text]="item.name + ' -> ' + item.path"
                     class="btn btn-default">
