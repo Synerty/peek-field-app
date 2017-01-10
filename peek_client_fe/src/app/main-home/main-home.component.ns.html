@@ -1,2 +1,9 @@
-<Label text='HOME Route'></Label>
-<Label [text]='testMsg' textWrap="true"></Label>
+<Label class="h1" text="Home"></Label>
+<WrapLayout>
+    <Button *ngFor="let app of appDetails"
+            [text]="app.title"
+            [nsRouterLink]="[app.resourcePath]"
+            class="home-icon">
+
+    </Button>
+</WrapLayout>

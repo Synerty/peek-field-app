@@ -14,7 +14,6 @@ import {staticRoutes} from "./app.routes";
 // Components
 import {AppComponent} from "./app.component";
 import {MainHomeComponent} from "./main-home/main-home.component";
-import {MainMenuComponent} from "./main-menu/main-menu.component";
 import {MainTitleComponent} from "./main-title/main-title.component";
 import {UnknownRouteComponent} from "./unknown-route/unknown-route.component";
 
@@ -23,7 +22,6 @@ import {UnknownRouteComponent} from "./unknown-route/unknown-route.component";
     declarations: [AppComponent,
         MainTitleComponent,
         MainHomeComponent,
-        MainMenuComponent,
         UnknownRouteComponent],
     bootstrap: [AppComponent],
     imports: [

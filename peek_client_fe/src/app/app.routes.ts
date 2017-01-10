@@ -8,11 +8,6 @@ export const staticRoutes = [
         component: MainHomeComponent,
         data: {title: "Home"}
     },
-    {
-        path: 'menu',
-        component: MainMenuComponent,
-        data: {title: "Menu"}
-    },
     ...pluginRoutes,
     {
         path: "**",

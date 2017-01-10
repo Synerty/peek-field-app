@@ -1,27 +1,29 @@
 <div class="container-fluid">
-    <div class="row">
+    <div class="row menu-bar">
         <!--<ul class="btn ">-->
-            <!--<li role="presentation" class="dropdown">-->
-                <!--<button href="#" class="btn pull-left dropdown-toggle"-->
-                        <!--data-toggle="dropdown" role="button"-->
-                        <!--aria-haspopup="true"-->
-                        <!--aria-expanded="false">MenuDD-->
-                <!--</button>-->
-                <!--<ul class="dropdown-menu">-->
-                    <!--<li *ngFor="let app of appDetails">-->
-                        <!--<a [href]="app.resourcePath">{{app.title}}</a>-->
-                    <!--</li>-->
-                <!--</ul>-->
-            <!--</li>-->
+        <!--<li role="presentation" class="dropdown">-->
+        <!--<button href="#" class="btn pull-left dropdown-toggle"-->
+        <!--data-toggle="dropdown" role="button"-->
+        <!--aria-haspopup="true"-->
+        <!--aria-expanded="false">MenuDD-->
+        <!--</button>-->
+        <!--<ul class="dropdown-menu">-->
+        <!--<li *ngFor="let app of appDetails">-->
+        <!--<a [href]="app.resourcePath">{{app.title}}</a>-->
+        <!--</li>-->
         <!--</ul>-->
-        <span class="text-center">{{title}}</span>
-        <span>
-            <button class="btn pull-right menu-button"
-             [routerLink]="['/menu']">Menu</button>
+        <!--</li>-->
+        <!--</ul>-->
+        <span class="col-xs-2 col-md-2">
+            <button class="btn menu-button "
+                    [routerLink]="['/']">Home</button>
         </span>
-        <span>
+        <div class="col-xs-8 col-md-8 text-center menu-title">
+            <h2 class="menu-title">{{title}}</h2>
+        </div>
+        <span class="col-xs-2 col-md-2">
             <button class="btn pull-right tasks-button"
-            [routerLink]="['/tasks']">Tasks</button>
+                    [routerLink]="['/tasks']">Tasks</button>
         </span>
 
     </div>

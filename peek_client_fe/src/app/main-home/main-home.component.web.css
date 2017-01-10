@@ -1,0 +1,9 @@
+.home-icon {
+    width: 160pt;
+    height: 160pt;
+    background-color: cornflowerblue;
+    border-radius: 20pt;
+    margin : 10pt;
+    color: black;
+    font-size: 18pt;
+}

@@ -6,6 +6,7 @@ import {PeekComponent} from "@synerty/peek-web-ns";
 @PeekComponent({
     selector: "peek-main-title",
     templateUrl: "main-title.component.web.html",
+    styleUrls:["main-title.component.web.css"],
     moduleFilename: module.filename
 })
 export class MainTitleComponent implements OnDestroy {
