@@ -3,11 +3,19 @@ import {platformNativeScriptDynamic} from "nativescript-angular/platform";
 import {PeekCoreConfigService} from "@synerty/peek-web-ns";
 PeekCoreConfigService.PLATFORM_TARGET = PeekCoreConfigService.PLATFORMS.MOBILE_NATIVE;
 
+// import {setCssFileName} from "application";
+// setCssFileName("styles.ns.css");
+
+import "nativescript-websockets";
+
 // Set the URL for the vortex
 import {VortexService} from "@synerty/vortexjs";
-VortexService.setVortexUrl("http://10.211.55.14:8000/vortex");
+// let host = location.host.split(':')[0];
+let host = '10.2.56.17';
+VortexService.setVortexUrl(`ws://${host}:8001/vortexws`);
+// VortexService.setVortexUrl(`http://${host}:8000/vortex`);
 
-// Import some stuff that we'
+// Import some stuff that we need
 import "@synerty/vortexjs";
 import "nativescript-angular";
 

@@ -1,4 +1,4 @@
-import {NgModule, NO_ERRORS_SCHEMA, NgModuleFactoryLoader} from "@angular/core";
+import {NgModule, OnInit, NO_ERRORS_SCHEMA, NgModuleFactoryLoader} from "@angular/core";
 import {NativeScriptModule} from "nativescript-angular/platform";
 import {NativeScriptRouterModule} from "nativescript-angular";
 
@@ -6,7 +6,7 @@ import {NativeScriptRouterModule} from "nativescript-angular";
 import {Ng2BalloonMsgService, Ng2BalloonMsgModule} from "@synerty/ng2-balloon-msg";
 import {PeekRouterModule} from "@synerty/peek-web-ns";
 import {PeekModuleFactoryLoader} from "./module-loader.ns.factory";
-import {VortexService} from "@synerty/vortexjs";
+import {VortexService, VortexStatusService} from "@synerty/vortexjs";
 
 // Routes
 import {staticRoutes} from "./app.routes";
@@ -28,15 +28,13 @@ import {UnknownRouteComponent} from "./unknown-route/unknown-route.component";
         NativeScriptModule,
         NativeScriptRouterModule,
         PeekRouterModule.forRoot(staticRoutes),
-        // PeekRouterModule.forRoot(staticRoutes),
         // Ng2BalloonMsgModule
     ],
     schemas: [NO_ERRORS_SCHEMA],
-    providers: [VortexService, Ng2BalloonMsgService,
+    providers: [VortexStatusService, VortexService, Ng2BalloonMsgService,
         {provide: NgModuleFactoryLoader, useClass: PeekModuleFactoryLoader}
     ]
 })
-export class AppNsModule {
+export class AppNsModule   {
 
 }
-

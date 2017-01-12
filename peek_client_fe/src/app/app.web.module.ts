@@ -1,18 +1,15 @@
 // Angular
 import {BrowserModule} from "@angular/platform-browser";
-import {NgModule} from "@angular/core";
+import {NgModule, OnInit} from "@angular/core";
 import {FormsModule} from "@angular/forms";
 import {HttpModule} from "@angular/http";
 import {RouterModule} from "@angular/router";
-
 // @synerty
 import {Ng2BalloonMsgService, Ng2BalloonMsgModule} from "@synerty/ng2-balloon-msg";
 import {PeekRouterModule} from "@synerty/peek-web-ns";
-import {VortexService} from "@synerty/vortexjs";
-
+import {VortexService, VortexStatusService} from "@synerty/vortexjs";
 // Routes
 import {staticRoutes} from "./app.routes";
-
 // This app
 import {AppComponent} from "./app.component";
 import {MainHomeComponent} from "./main-home/main-home.component";
@@ -33,8 +30,8 @@ import {UnknownRouteComponent} from "./unknown-route/unknown-route.component";
         HttpModule,
         Ng2BalloonMsgModule
     ],
-    providers: [VortexService, Ng2BalloonMsgService]
+    providers: [VortexStatusService, VortexService, Ng2BalloonMsgService]
 })
-export class AppWebModule {
-}
+export class AppWebModule  {
 
+}

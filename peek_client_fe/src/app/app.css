@@ -1,0 +1,6 @@
+/* THIS IS THE MAIN NATIVESCRIPT CSS APP */
+@import 'nativescript-theme-core/css/core.light.css';
+ 
+.chat-area {
+    background-color: #F0F0F0;
+}
