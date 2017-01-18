@@ -7,7 +7,13 @@ import {RouterModule} from "@angular/router";
 // @synerty
 import {Ng2BalloonMsgService, Ng2BalloonMsgModule} from "@synerty/ng2-balloon-msg";
 import {PeekRouterModule} from "@synerty/peek-web-ns";
-import {VortexService, VortexStatusService} from "@synerty/vortexjs";
+import {
+    VortexService,
+    VortexStatusService,
+    WebSqlFactoryService
+} from "@synerty/vortexjs";
+
+import {WebSqlBrowserFactoryService} from "@synerty/vortexjs/index-browser";
 // Routes
 import {staticRoutes} from "./app.routes";
 // This app
@@ -30,8 +36,10 @@ import {UnknownRouteComponent} from "./unknown-route/unknown-route.component";
         HttpModule,
         Ng2BalloonMsgModule
     ],
-    providers: [VortexStatusService, VortexService, Ng2BalloonMsgService]
+    providers: [VortexStatusService, VortexService, Ng2BalloonMsgService,
+        {provide: WebSqlFactoryService, useClass: WebSqlBrowserFactoryService}
+        ]
 })
-export class AppWebModule  {
+export class AppWebModule {
 
 }

@@ -7,6 +7,8 @@ PeekCoreConfigService.PLATFORM_TARGET = PeekCoreConfigService.PLATFORMS.MOBILE_N
 // setCssFileName("styles.ns.css");
 
 import "nativescript-websockets";
+import "nativescript-localstorage";
+import 'rxjs/add/operator/filter';
 
 // Set the URL for the vortex
 import {VortexService} from "@synerty/vortexjs";
