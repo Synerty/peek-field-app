@@ -30,6 +30,7 @@ import "nativescript-angular";
 // }
 
 
+
 // This should be last
 import {AppNsModule} from "./app.ns.module";
-platformNativeScriptDynamic().bootstrapModule(AppNsModule);
+platformNativeScriptDynamic({cssFile:"styles.ns.css"}).bootstrapModule(AppNsModule);

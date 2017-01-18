@@ -1,5 +1,5 @@
 <div class="container-fluid">
-    <div class="row"><h1>Home</h1></div>
+    <div *ngIf="!appDetails.length" class="row"><h1>No Plugins Installed</h1></div>
     <div class="row">
         <a *ngFor="let app of appDetails"
            [routerLink]="[app.resourcePath]">

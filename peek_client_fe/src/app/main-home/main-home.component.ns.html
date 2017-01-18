@@ -1,4 +1,4 @@
-<Label class="h1" text="Home"></Label>
+<Label *ngIf="!appDetails.length" class="h1" text="No Plugins Installed"></Label>
 <WrapLayout>
     <Button *ngFor="let app of appDetails"
             [text]="app.title"

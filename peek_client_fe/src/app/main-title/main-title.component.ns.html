@@ -1,4 +1,4 @@
-<ActionBar [title]="title">
+<ActionBar [title]="title" [class.bg-danger]="!vortexIsOnline">
 
     <ActionItem [nsRouterLink]="['/']" text="Home"
                 ios.position="left"></ActionItem>

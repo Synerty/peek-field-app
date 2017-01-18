@@ -1,30 +1,39 @@
-import {Component, OnDestroy} from "@angular/core";
+import {OnInit, OnDestroy} from "@angular/core";
 import {ActivatedRoute} from "@angular/router";
-import {commonVal} from "../testval";
 import {PeekComponent} from "@synerty/peek-web-ns";
+import {TitleService} from "@synerty/peek-client-fe-util";
+import {VortexStatusService} from "@synerty/vortexjs";
 
 @PeekComponent({
     selector: "peek-main-title",
     templateUrl: "main-title.component.web.html",
-    styleUrls:["main-title.component.web.css"],
+    styleUrls: ["main-title.component.web.css"],
     moduleFilename: module.filename
 })
-export class MainTitleComponent implements OnDestroy {
+export class MainTitleComponent implements OnInit, OnDestroy {
 
-    private routeSubscription: any;
+    private subscriptions: any[] = [];
 
-    // title: string = "Peek";
-    title: string = commonVal;
+    title: string = "Peek";
+    vortexIsOnline:boolean= false;
 
-    constructor(route: ActivatedRoute) {
+    constructor(vortexStatusService:VortexStatusService, titleService: TitleService) {
+        this.subscriptions.push(
+            titleService.title.subscribe(title => this.title = title));
+
+        this.subscriptions.push(
+            vortexStatusService.isOnline.subscribe(v => this.vortexIsOnline = v));
+    }
+
+    ngOnInit() {
         // this.routeSubscription = this.route
         //     .data
-        //     .subscribe(data => this.title = data["title"]);
-
+        //     .subscribe(v => this.title = "xx" + JSON.stringify(v));
     }
 
     ngOnDestroy() {
-        // this.routeSubscription.unsubscribe();
+        while (this.subscriptions.length > 0)
+            this.subscriptions.pop().unsubscribe();
     }
 }
 

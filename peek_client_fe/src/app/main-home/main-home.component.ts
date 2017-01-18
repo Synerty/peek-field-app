@@ -1,6 +1,12 @@
 import {PeekComponent} from "@synerty/peek-web-ns";
 import {OnInit} from "@angular/core";
-import {VortexService, ComponentLifecycleEventEmitter, Tuple} from "@synerty/vortexjs";
+import {
+    ComponentLifecycleEventEmitter,
+    Tuple,
+    TupleDataOfflineObserverService,
+    TupleSelector
+} from "@synerty/vortexjs";
+import {TitleService} from "@synerty/peek-client-fe-util";
 
 
 export class PluginAppTileTuple extends Tuple {
@@ -18,43 +24,26 @@ export const homeIconListFilt = {
     key: 'home.apps'
 };
 
-let links = [{
-    name: "Home",
-    title: "Home",
-    resourcePath: "/"
-}, {
-    name: "Switching",
-    title: "Switching",
-    resourcePath: "/peek_plugin_pof_field_switching"
-}, {
-    name: "Noop",
-    title: "Noop",
-    resourcePath: "/peek_plugin_noop"
-}, {
-    name: "Switching Test",
-    title: "Switching Test",
-    resourcePath: "/peek_plugin_pof_field_switching/swtest"
-}];
 
 @PeekComponent({
     selector: "peek-main-home",
     templateUrl: 'main-home.component.web.html',
-    styleUrls : ['main-home.component.web.css'],
+    styleUrls: ['main-home.component.web.css'],
     moduleFilename: module.filename
 })
 export class MainHomeComponent extends ComponentLifecycleEventEmitter implements OnInit {
 
-    testMsg: string = "Unified home Update3";
-
     // appDetails: PluginAppTileTuple[] = [];
-    appDetails = links;
+    appDetails = [];
 
-    constructor(vortexService: VortexService) {
+    constructor(tupleDataObserver: TupleDataOfflineObserverService, titleService: TitleService) {
         super();
+        titleService.setTitle("Peek Home");
 
-        vortexService.createTupleLoader(this, () => {
-            return homeIconListFilt;
-        }).observable.subscribe(tuples => this.appDetails = <PluginAppTileTuple[]>tuples);
+        let tupleSelector = new TupleSelector('peek-client.PluginAppTileTuple', {});
+        let sup = tupleDataObserver.subscribeToTupleSelector(tupleSelector)
+            .subscribe(tuples => this.appDetails = <PluginAppTileTuple[]>tuples);
+        this.onDestroyEvent.subscribe(() => sup.unsubscribe());
 
     }
 
