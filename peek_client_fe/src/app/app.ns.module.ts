@@ -1,9 +1,10 @@
 import {NgModule, NO_ERRORS_SCHEMA, NgModuleFactoryLoader} from "@angular/core";
+import {CommonModule} from "@angular/common";
 import {NativeScriptModule} from "nativescript-angular/platform";
+import {NativeScriptFormsModule} from "nativescript-angular/forms";
 import {NativeScriptRouterModule} from "nativescript-angular";
-import {FormsModule} from "@angular/forms";
 // @synerty
-import {PeekRouterModule} from "@synerty/peek-web-ns";
+import {PeekModuleFactory} from "@synerty/peek-web-ns";
 import {PeekModuleFactoryLoader} from "./module-loader.ns.factory";
 import {
     WebSqlFactoryService,
@@ -31,10 +32,12 @@ import {UnknownRouteComponent} from "./unknown-route/unknown-route.component";
         MainHomeComponent,
         UnknownRouteComponent],
     bootstrap: [AppComponent],
-    imports: [FormsModule,
+    imports: [
+        CommonModule,
         NativeScriptModule,
+        NativeScriptFormsModule,
         NativeScriptRouterModule,
-        PeekRouterModule.forRoot(staticRoutes)
+        PeekModuleFactory.RouterModule.forRoot(staticRoutes)
     ],
     schemas: [NO_ERRORS_SCHEMA],
     providers: [
