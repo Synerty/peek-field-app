@@ -6,7 +6,7 @@ import {HttpModule} from "@angular/http";
 import {RouterModule} from "@angular/router";
 // @synerty
 import {Ng2BalloonMsgModule} from "@synerty/ng2-balloon-msg";
-import {PeekRouterModule} from "@synerty/peek-web-ns";
+import {PeekModuleFactory} from "@synerty/peek-web-ns";
 import {WebSqlFactoryService} from "@synerty/vortexjs";
 import {WebSqlBrowserFactoryService} from "@synerty/vortexjs/index-browser";
 import {
@@ -33,7 +33,7 @@ import {UnknownRouteComponent} from "./unknown-route/unknown-route.component";
     bootstrap: [AppComponent],
     imports: [
         RouterModule,
-        PeekRouterModule.forRoot(staticRoutes),
+        PeekModuleFactory.RouterModule.forRoot(staticRoutes),
         BrowserModule,
         FormsModule,
         HttpModule,

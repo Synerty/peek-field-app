@@ -1,0 +1,2 @@
+export let NativeScriptModule = [false];
+
