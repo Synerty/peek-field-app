@@ -6,7 +6,7 @@ import {HttpModule} from "@angular/http";
 import {RouterModule} from "@angular/router";
 // @synerty
 import {Ng2BalloonMsgModule} from "@synerty/ng2-balloon-msg";
-import {PeekModuleFactory} from "@synerty/peek-web-ns";
+import {PeekModuleFactory, DeviceInfoService, DeviceInfoWebService} from "@synerty/peek-web-ns";
 import {WebSqlFactoryService} from "@synerty/vortexjs";
 import {WebSqlBrowserFactoryService} from "@synerty/vortexjs/index-browser";
 import {
@@ -55,7 +55,12 @@ import {UnknownRouteComponent} from "./unknown-route/unknown-route.component";
         // These have NAME dependencies
         TupleDataObserverService,
         TupleOfflineStorageService,
-        TupleDataOfflineObserverService
+        TupleDataOfflineObserverService,
+        // Device Info
+        {
+            provide: DeviceInfoService,
+            useClass: DeviceInfoWebService
+        },
     ]
 })
 export class AppWebModule {
