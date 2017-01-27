@@ -4,7 +4,8 @@ import {NativeScriptModule} from "nativescript-angular/platform";
 import {NativeScriptFormsModule} from "nativescript-angular/forms";
 import {NativeScriptRouterModule} from "nativescript-angular";
 // @synerty
-import {PeekModuleFactory} from "@synerty/peek-web-ns";
+import {PeekModuleFactory, DeviceInfoService} from "@synerty/peek-web-ns";
+import {DeviceInfoNsService} from "@synerty/peek-web-ns/index.nativescript";
 import {PeekModuleFactoryLoader} from "./module-loader.ns.factory";
 import {
     WebSqlFactoryService,
@@ -57,7 +58,12 @@ import {UnknownRouteComponent} from "./unknown-route/unknown-route.component";
         // These have NAME dependencies
         TupleDataObserverService,
         TupleOfflineStorageService,
-        TupleDataOfflineObserverService
+        TupleDataOfflineObserverService,
+        // Device Info
+        {
+            provide: DeviceInfoService,
+            useClass: DeviceInfoNsService
+        },
     ]
 })
 export class AppNsModule {
