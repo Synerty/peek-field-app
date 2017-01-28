@@ -1,9 +1,21 @@
+
 .home-icon {
-    width: 140pt;
-    height: 140pt;
-    background-color: cornflowerblue;
-    border-radius: 20pt;
-    margin : 10pt;
+    border-radius: 8pt;
     color: black;
-    font-size: 20pt;
+    font-size: 14pt;
+    width: 160pt;
+    height: 160pt;
+    margin: 10pt;
+    background-color: cornflowerblue;
+}
+
+.home-icon img {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    display: block;
+    width: auto;
+    height: 120px;
+    border-radius: 8pt;
 }
