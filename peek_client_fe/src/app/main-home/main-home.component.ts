@@ -17,6 +17,7 @@ export class PluginAppTileTuple extends Tuple {
     name: string;
     title: string;
     resourcePath: string;
+    pluginIconPath:string;
 }
 
 export const homeIconListFilt = {
