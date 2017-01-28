@@ -3,7 +3,7 @@ import {VortexService, VortexStatusService} from "@synerty/vortexjs";
 import {TitleService} from "@synerty/peek-client-fe-util";
 
 
-export let peekRootProviders = [TitleService, Ng2BalloonMsgService,
+export let peekRootServices = [TitleService, Ng2BalloonMsgService,
     // Vortex Services
     VortexStatusService, VortexService
 ];

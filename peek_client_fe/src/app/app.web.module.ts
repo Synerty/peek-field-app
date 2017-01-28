@@ -6,24 +6,33 @@ import {HttpModule} from "@angular/http";
 import {RouterModule} from "@angular/router";
 // @synerty
 import {Ng2BalloonMsgModule} from "@synerty/ng2-balloon-msg";
-import {PeekModuleFactory, DeviceInfoService, DeviceInfoWebService} from "@synerty/peek-web-ns";
-import {WebSqlFactoryService} from "@synerty/vortexjs";
-import {WebSqlBrowserFactoryService} from "@synerty/vortexjs/index-browser";
 import {
-    TupleDataObserverService,
+    DeviceInfoService,
+    DeviceInfoWebService,
+    PeekModuleFactory
+} from "@synerty/peek-web-ns";
+import {
     TupleDataObservableNameService,
-    TupleOfflineStorageService,
+    TupleDataObserverService,
+    TupleDataOfflineObserverService,
     TupleOfflineStorageNameService,
-    TupleDataOfflineObserverService
+    TupleOfflineStorageService,
+    WebSqlFactoryService
 } from "@synerty/vortexjs";
+import {WebSqlBrowserFactoryService} from "@synerty/vortexjs/index-browser";
 // Routes
 import {staticRoutes} from "./app.routes";
-import {peekRootProviders} from "./app.providers";
+import {peekRootServices} from "./app.services";
 // This app
 import {AppComponent} from "./app.component";
 import {MainHomeComponent} from "./main-home/main-home.component";
 import {MainTitleComponent} from "./main-title/main-title.component";
 import {UnknownRouteComponent} from "./unknown-route/unknown-route.component";
+import {pluginRootModules} from "./plugin-root-modules";
+import {pluginRootServices} from "./plugin-root-services";
+
+
+
 
 @NgModule({
     declarations: [AppComponent,
@@ -37,11 +46,13 @@ import {UnknownRouteComponent} from "./unknown-route/unknown-route.component";
         BrowserModule,
         FormsModule,
         HttpModule,
-        Ng2BalloonMsgModule
+        Ng2BalloonMsgModule,
+        ...pluginRootModules
     ],
     providers: [
         {provide: WebSqlFactoryService, useClass: WebSqlBrowserFactoryService},
-        ...peekRootProviders,
+        ...peekRootServices,
+        ...pluginRootServices,
 
         // Use the TupleDataObserver services, with offline storage
         {

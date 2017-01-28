@@ -10,3 +10,8 @@
     # Wipe the data and start emulator
     # emulator -avd <Name> -wipe-data
     emulator -avd Peek_Test -wipe-data
+
+    # RM platform
+    rm -rf playform/android
+
+
