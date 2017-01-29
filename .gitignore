@@ -3,6 +3,8 @@
 #Ignore the automatically generated files
 .lastHash
 plugin-routes.ts
+plugin-root-services.ts
+plugin-root-modules.ts
 peek_client_fe/src/app/peek_plugin_*
 
 # Ignore python compiled files

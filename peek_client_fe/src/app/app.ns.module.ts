@@ -19,12 +19,14 @@ import {WebSqlNativeScriptFactoryService} from "@synerty/vortexjs/index-nativesc
 // Routes
 import {staticRoutes} from "./app.routes";
 // Providers
-import {peekRootProviders} from "./app.providers";
+import {peekRootServices} from "./app.services";
 // Components
 import {AppComponent} from "./app.component";
 import {MainHomeComponent} from "./main-home/main-home.component";
 import {MainTitleComponent} from "./main-title/main-title.component";
 import {UnknownRouteComponent} from "./unknown-route/unknown-route.component";
+import {pluginRootModules} from "./plugin-root-modules";
+import {pluginRootServices} from "./plugin-root-services";
 
 
 @NgModule({
@@ -38,13 +40,15 @@ import {UnknownRouteComponent} from "./unknown-route/unknown-route.component";
         NativeScriptModule,
         NativeScriptFormsModule,
         NativeScriptRouterModule,
-        PeekModuleFactory.RouterModule.forRoot(staticRoutes)
+        PeekModuleFactory.RouterModule.forRoot(staticRoutes),
+        ...pluginRootModules
     ],
     schemas: [NO_ERRORS_SCHEMA],
     providers: [
         {provide: NgModuleFactoryLoader, useClass: PeekModuleFactoryLoader},
         {provide: WebSqlFactoryService, useClass: WebSqlNativeScriptFactoryService},
-        ...peekRootProviders,
+        ...peekRootServices,
+        ...pluginRootServices,
 
         // Use the TupleDataObserver services, with offline storage
         {
