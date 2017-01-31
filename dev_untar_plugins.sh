@@ -1,5 +1,8 @@
 #!/bin/bash
 
+set -o nounset
+set -o errexit
+
 IN="${1:?You must pass the full path of the tar archive as a parameter to this script}"
 
 if ! [ -d "peek_client_fe/src" ];then
