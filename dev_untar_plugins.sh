@@ -11,6 +11,7 @@ if ! [ -d "peek_client_fe/src" ];then
 fi
 
 ARGS=""
+ARGS="$ARGS peek_client_fe/node_modules/@synerty"
 ARGS="$ARGS peek_client_fe/node_modules/peek_plugin_*"
 ARGS="$ARGS peek_client_fe/src/app/peek_plugin_*"
 ARGS="$ARGS peek_client_fe/src/app/plugin-ro*.ts"
