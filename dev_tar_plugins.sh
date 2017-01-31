@@ -13,7 +13,7 @@ ARGS="$ARGS peek_client_fe/node_modules/peek_plugin_*"
 ARGS="$ARGS peek_client_fe/src/app/peek_plugin_*"
 ARGS="$ARGS peek_client_fe/src/app/plugin-ro*.ts"
 
-OUT="dist/peek_client_fe_plugins.tar.bz2"
+OUT="dist/`date +%y%m%d_%H%M`_peek_client_fe_plugins.tar.bz2"
 
 # Delete the file if it exists
 [ -f ${OUT} ] && rm ${OUT} || true
