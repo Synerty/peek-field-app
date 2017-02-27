@@ -3,7 +3,13 @@
     <ActionItem [nsRouterLink]="['/']" text="Home"
                 ios.position="left"></ActionItem>
 
-    <ActionItem [nsRouterLink]="['/tasks']"
-                text="Tasks"
+    <ActionItem *ngFor="let link of leftLinks"
+                [nsRouterLink]="[link.resourcePath]"
+                [text]="link.text"
+                ios.position="left"></ActionItem>
+
+    <ActionItem *ngFor="let link of rightLinks"
+                [nsRouterLink]="[link.resourcePath]"
+                [text]="link.text"
                 ios.position="right"></ActionItem>
 </ActionBar>

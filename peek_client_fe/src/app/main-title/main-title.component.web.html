@@ -15,15 +15,19 @@
         <!--</li>-->
         <!--</ul>-->
         <span class="col-xs-2 col-md-2">
-            <button class="btn menu-button "
+            <button class="btn left-button "
                     [routerLink]="['/']">Home</button>
+            <button class="btn left-button"
+                    *ngFor="let link of leftLinks"
+                    [routerLink]="[link.resourcePath]">{{link.text}}</button>
         </span>
         <div class="col-xs-8 col-md-8 text-center menu-title">
             <h2 class="menu-title">{{title}}</h2>
         </div>
         <span class="col-xs-2 col-md-2">
-            <button class="btn pull-right tasks-button"
-                    [routerLink]="['/tasks']">Tasks</button>
+            <button class="btn pull-right right-button"
+                    *ngFor="let link of rightLinks"
+                    [routerLink]="[link.resourcePath]">{{link.text}}</button>
         </span>
 
     </div>

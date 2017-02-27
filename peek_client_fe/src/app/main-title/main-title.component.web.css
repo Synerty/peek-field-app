@@ -4,10 +4,12 @@ h2.menu-title {
     /*margin-left : 8pt;*/
 }
 
-.menu-button {
+.left-button {
     margin-top : 6pt;
+    margin-right : 6pt;
 }
 
-.tasks-button {
+.right-button {
     margin-top : 6pt;
+    margin-left : 6pt;
 }

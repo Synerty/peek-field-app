@@ -7,23 +7,8 @@ import {
     TupleSelector
 } from "@synerty/vortexjs";
 import {TitleService} from "@synerty/peek-client-fe-util";
+import {homeLinks} from "../plugin-home-links";
 
-
-export class PluginAppTileTuple extends Tuple {
-    constructor() {
-        super('peek_client.PluginAppTileTuple');
-    }
-
-    name: string;
-    title: string;
-    resourcePath: string;
-    pluginIconPath:string;
-}
-
-export const homeIconListFilt = {
-    plugin: 'peek_client',
-    key: 'home.apps'
-};
 
 
 @PeekComponent({
@@ -34,17 +19,11 @@ export const homeIconListFilt = {
 })
 export class MainHomeComponent extends ComponentLifecycleEventEmitter implements OnInit {
 
-    // appDetails: PluginAppTileTuple[] = [];
-    appDetails = [];
+    appDetails = homeLinks;
 
     constructor(tupleDataObserver: TupleDataOfflineObserverService, titleService: TitleService) {
         super();
         titleService.setTitle("Peek Home");
-
-        let tupleSelector = new TupleSelector('peek-client.PluginAppTileTuple', {});
-        let sup = tupleDataObserver.subscribeToTupleSelector(tupleSelector)
-            .subscribe(tuples => this.appDetails = <PluginAppTileTuple[]>tuples);
-        this.onDestroyEvent.subscribe(() => sup.unsubscribe());
 
     }
 

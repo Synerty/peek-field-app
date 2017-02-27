@@ -3,6 +3,7 @@ import {ActivatedRoute} from "@angular/router";
 import {PeekComponent} from "@synerty/peek-web-ns";
 import {TitleService} from "@synerty/peek-client-fe-util";
 import {VortexStatusService} from "@synerty/vortexjs";
+import {titleBarLinks} from "../plugin-title-bar-links";
 
 @PeekComponent({
     selector: "peek-main-title",
@@ -14,6 +15,9 @@ export class MainTitleComponent implements OnInit, OnDestroy {
 
     private subscriptions: any[] = [];
 
+    private leftLinks = [];
+    private rightLinks = [];
+
     title: string = "Peek";
     vortexIsOnline:boolean= false;
 
@@ -23,6 +27,13 @@ export class MainTitleComponent implements OnInit, OnDestroy {
 
         this.subscriptions.push(
             vortexStatusService.isOnline.subscribe(v => this.vortexIsOnline = v));
+
+        for (let link of titleBarLinks) {
+            if (link.left)
+                this.leftLinks.push(link);
+            else
+                this.rightLinks.push(link);
+        }
     }
 
     ngOnInit() {
