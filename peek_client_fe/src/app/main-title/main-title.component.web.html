@@ -19,7 +19,7 @@
                     [routerLink]="['/']">Home</button>
             <button class="btn left-button"
                     *ngFor="let link of leftLinks"
-                    [routerLink]="[link.resourcePath]">{{link.text}}</button>
+                    [routerLink]="[link.resourcePath]">{{linkTitle(link)}}</button>
         </span>
         <div class="col-xs-8 col-md-8 text-center menu-title">
             <h2 class="menu-title">{{title}}</h2>
@@ -27,7 +27,7 @@
         <span class="col-xs-2 col-md-2">
             <button class="btn pull-right right-button"
                     *ngFor="let link of rightLinks"
-                    [routerLink]="[link.resourcePath]">{{link.text}}</button>
+                    [routerLink]="[link.resourcePath]">{{linkTitle(link)}}</button>
         </span>
 
     </div>

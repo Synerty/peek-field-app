@@ -5,11 +5,11 @@
 
     <ActionItem *ngFor="let link of leftLinks"
                 [nsRouterLink]="[link.resourcePath]"
-                [text]="link.text"
+                [text]="linkTitle(link)"
                 ios.position="left"></ActionItem>
 
     <ActionItem *ngFor="let link of rightLinks"
                 [nsRouterLink]="[link.resourcePath]"
-                [text]="link.text"
+                [text]="linkTitle(link)"
                 ios.position="right"></ActionItem>
 </ActionBar>
