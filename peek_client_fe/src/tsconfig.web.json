@@ -16,7 +16,7 @@
     "mapRoot": "./",
     "module": "es6",
     "target": "es5",
-    "outDir": "../dist/out-tsc",
+    "outDir": "../out-tsc/app",
     "typeRoots": [
       "../node_modules/@types"
     ]
