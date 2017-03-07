@@ -3,11 +3,15 @@ import {VortexService, VortexStatusService} from "@synerty/vortexjs";
 import {TitleService} from "@synerty/peek-client-fe-util";
 import {titleBarLinks} from "./plugin-title-bar-links";
 
+export function titleServiceFactory() {
+    return new TitleService(titleBarLinks);
+}
+
 
 export let peekRootServices = [
     {
         provide: TitleService,
-        useValue: new TitleService(titleBarLinks)
+        useFactory: titleServiceFactory
     },
     Ng2BalloonMsgService,
 

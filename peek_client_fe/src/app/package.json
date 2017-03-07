@@ -1,7 +1,7 @@
 {
   "private": false,
   "nativescript": {
-    "id": "org.nativescript.helloworldng",
+    "id": "com.synerty.peek",
     "tns-android": {
       "version": "2.4.1"
     }

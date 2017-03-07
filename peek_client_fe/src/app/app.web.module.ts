@@ -31,7 +31,13 @@ import {UnknownRouteComponent} from "./unknown-route/unknown-route.component";
 import {pluginRootModules} from "./plugin-root-modules";
 import {pluginRootServices} from "./plugin-root-services";
 
+export function tupleDataObservableNameServiceFactory() {
+    return new TupleDataObservableNameService("peek_client", {"plugin": "peek_client"});
+}
 
+export function tupleOfflineStorageNameServiceFactory() {
+    return new TupleOfflineStorageNameService("peek_client");
+}
 
 
 @NgModule({
@@ -57,11 +63,10 @@ import {pluginRootServices} from "./plugin-root-services";
         // Use the TupleDataObserver services, with offline storage
         {
             provide: TupleDataObservableNameService,
-            useValue: new TupleDataObservableNameService(
-                "peek_client", {"plugin": "peek_client"})
+            useFactory: tupleDataObservableNameServiceFactory
         }, {
             provide: TupleOfflineStorageNameService,
-            useValue: new TupleOfflineStorageNameService("peek_client")
+            useFactory: tupleOfflineStorageNameServiceFactory
         },
         // These have NAME dependencies
         TupleDataObserverService,
