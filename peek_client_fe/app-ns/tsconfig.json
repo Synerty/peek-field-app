@@ -26,6 +26,6 @@
         "**/*spec.ts",
         "**/main.web.ts",
         "**/app.web.module.ts",
-        "**/main.aot.ns.ts"
+        "**/main.aot.ts"
     ]
 }

@@ -1,0 +1,12 @@
+// This file is auto generated, the git version is blank and .gitignored
+"use strict";
+exports.titleBarLinks = [
+    {
+        "badgeCount": null,
+        "left": false,
+        "plugin": "peek_plugin_active_task",
+        "resourcePath": "/peek_plugin_active_task",
+        "text": "Tasks"
+    }
+];
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicGx1Z2luLXRpdGxlLWJhci1saW5rcy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbInBsdWdpbi10aXRsZS1iYXItbGlua3MudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsd0VBQXdFOztBQUkzRCxRQUFBLGFBQWEsR0FBbUI7SUFDekM7UUFDSSxZQUFZLEVBQUUsSUFBSTtRQUNsQixNQUFNLEVBQUUsS0FBSztRQUNiLFFBQVEsRUFBRSx5QkFBeUI7UUFDbkMsY0FBYyxFQUFFLDBCQUEwQjtRQUMxQyxNQUFNLEVBQUUsT0FBTztLQUNsQjtDQUNKLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBUaGlzIGZpbGUgaXMgYXV0byBnZW5lcmF0ZWQsIHRoZSBnaXQgdmVyc2lvbiBpcyBibGFuayBhbmQgLmdpdGlnbm9yZWRcblxuaW1wb3J0IHtUaXRsZUJhckxpbmt9IGZyb20gJ0BzeW5lcnR5L3BlZWstY2xpZW50LWZlLXV0aWwnO1xuXG5leHBvcnQgY29uc3QgdGl0bGVCYXJMaW5rcyA6VGl0bGVCYXJMaW5rW10gPSBbXG4gICAge1xuICAgICAgICBcImJhZGdlQ291bnRcIjogbnVsbCwgXG4gICAgICAgIFwibGVmdFwiOiBmYWxzZSwgXG4gICAgICAgIFwicGx1Z2luXCI6IFwicGVla19wbHVnaW5fYWN0aXZlX3Rhc2tcIiwgXG4gICAgICAgIFwicmVzb3VyY2VQYXRoXCI6IFwiL3BlZWtfcGx1Z2luX2FjdGl2ZV90YXNrXCIsIFxuICAgICAgICBcInRleHRcIjogXCJUYXNrc1wiXG4gICAgfVxuXTtcbiJdfQ==

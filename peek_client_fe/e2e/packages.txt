@@ -1,8 +1,0 @@
-
-  "devDependencies": {
-    "@types/jasmine": "2.5.38",
-    "@types/node": "^6.0.42",
-    "jasmine-core": "2.5.2",
-    "jasmine-spec-reporter": "2.5.0",
-    "protractor": "4.0.9",
-  }

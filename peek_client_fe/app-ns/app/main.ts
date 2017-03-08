@@ -1,10 +1,9 @@
 // this import should be first in order to load some required settings (like globals and reflect-metadata)
 import {platformNativeScriptDynamic} from "nativescript-angular/platform";
+
 import {PeekCoreConfigService} from "@synerty/peek-web-ns";
 PeekCoreConfigService.PLATFORM_TARGET = PeekCoreConfigService.PLATFORMS.MOBILE_NATIVE;
 
-// import {setCssFileName} from "application";
-// setCssFileName("styles.ns.css");
 
 import "nativescript-websockets";
 import "nativescript-localstorage";
@@ -19,7 +18,7 @@ VortexService.setVortexUrl(`ws://${host}:8001/vortexws`);
 
 // Import some stuff that we need
 import "@synerty/vortexjs";
-import "nativescript-angular";
+// import "nativescript-angular";
 
 // // Potentially enable angular prod mode
 // import {enableProdMode} from "@angular/core";
@@ -32,5 +31,5 @@ import "nativescript-angular";
 
 
 // This should be last
-import {AppNsModule} from "./app.ns.module";
-platformNativeScriptDynamic({cssFile:"styles.ns.css"}).bootstrapModule(AppNsModule);
+import {AppNsModule} from "./app/app.ns.module";
+platformNativeScriptDynamic({cssFile:"app/styles.ns.css"}).bootstrapModule(AppNsModule);

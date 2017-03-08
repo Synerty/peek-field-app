@@ -1,0 +1,21 @@
+"use strict";
+// This file is auto generated, the git version is blank and .gitignored
+exports.pluginRoutes = [
+    {
+        path: 'peek_plugin_active_task',
+        loadChildren: "./peek_plugin_active_task/plugin-active-task.module#PluginActiveTaskClientModule"
+    },
+    {
+        path: 'peek_plugin_noop',
+        loadChildren: "./peek_plugin_noop/plugin-noop.module#PluginNoopClientModule"
+    },
+    {
+        path: 'peek_plugin_pof_field_switching',
+        loadChildren: "./peek_plugin_pof_field_switching/plugin-pof-field-switching.module#PluginPofFieldSwitchingClientModule"
+    },
+    {
+        path: 'peek_plugin_user',
+        loadChildren: "./peek_plugin_user/plugin-user.module#PluginUserModule"
+    }
+];
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicGx1Z2luLXJvdXRlcy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbInBsdWdpbi1yb3V0ZXMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBLHdFQUF3RTtBQUMzRCxRQUFBLFlBQVksR0FBRztJQUN4QjtRQUNJLElBQUksRUFBRSx5QkFBeUI7UUFDL0IsWUFBWSxFQUFFLGtGQUFrRjtLQUNuRztJQUNEO1FBQ0ksSUFBSSxFQUFFLGtCQUFrQjtRQUN4QixZQUFZLEVBQUUsOERBQThEO0tBQy9FO0lBQ0Q7UUFDSSxJQUFJLEVBQUUsaUNBQWlDO1FBQ3ZDLFlBQVksRUFBRSx5R0FBeUc7S0FDMUg7SUFDRDtRQUNJLElBQUksRUFBRSxrQkFBa0I7UUFDeEIsWUFBWSxFQUFFLHdEQUF3RDtLQUN6RTtDQUNKLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBUaGlzIGZpbGUgaXMgYXV0byBnZW5lcmF0ZWQsIHRoZSBnaXQgdmVyc2lvbiBpcyBibGFuayBhbmQgLmdpdGlnbm9yZWRcbmV4cG9ydCBjb25zdCBwbHVnaW5Sb3V0ZXMgPSBbXG4gICAge1xuICAgICAgICBwYXRoOiAncGVla19wbHVnaW5fYWN0aXZlX3Rhc2snLFxuICAgICAgICBsb2FkQ2hpbGRyZW46IFwiLi9wZWVrX3BsdWdpbl9hY3RpdmVfdGFzay9wbHVnaW4tYWN0aXZlLXRhc2subW9kdWxlI1BsdWdpbkFjdGl2ZVRhc2tDbGllbnRNb2R1bGVcIlxuICAgIH0sXG4gICAge1xuICAgICAgICBwYXRoOiAncGVla19wbHVnaW5fbm9vcCcsXG4gICAgICAgIGxvYWRDaGlsZHJlbjogXCIuL3BlZWtfcGx1Z2luX25vb3AvcGx1Z2luLW5vb3AubW9kdWxlI1BsdWdpbk5vb3BDbGllbnRNb2R1bGVcIlxuICAgIH0sXG4gICAge1xuICAgICAgICBwYXRoOiAncGVla19wbHVnaW5fcG9mX2ZpZWxkX3N3aXRjaGluZycsXG4gICAgICAgIGxvYWRDaGlsZHJlbjogXCIuL3BlZWtfcGx1Z2luX3BvZl9maWVsZF9zd2l0Y2hpbmcvcGx1Z2luLXBvZi1maWVsZC1zd2l0Y2hpbmcubW9kdWxlI1BsdWdpblBvZkZpZWxkU3dpdGNoaW5nQ2xpZW50TW9kdWxlXCJcbiAgICB9LFxuICAgIHtcbiAgICAgICAgcGF0aDogJ3BlZWtfcGx1Z2luX3VzZXInLFxuICAgICAgICBsb2FkQ2hpbGRyZW46IFwiLi9wZWVrX3BsdWdpbl91c2VyL3BsdWdpbi11c2VyLm1vZHVsZSNQbHVnaW5Vc2VyTW9kdWxlXCJcbiAgICB9XG5dO1xuIl19
