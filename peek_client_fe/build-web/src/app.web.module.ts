@@ -21,13 +21,13 @@ import {
 } from "@synerty/vortexjs";
 import {WebSqlBrowserFactoryService} from "@synerty/vortexjs/index-browser";
 // Routes
-import {staticRoutes} from "./app.routes";
-import {peekRootServices} from "./app.services";
+import {staticRoutes} from "./app/app.routes";
+import {peekRootServices} from "./app/app.services";
 // This app
-import {AppComponent} from "./app.component";
-import {MainHomeComponent} from "./main-home/main-home.component";
-import {MainTitleComponent} from "./main-title/main-title.component";
-import {UnknownRouteComponent} from "./unknown-route/unknown-route.component";
+import {AppComponent} from "./app/app.component";
+import {MainHomeComponent} from "./app/main-home/main-home.component";
+import {MainTitleComponent} from "./app/main-title/main-title.component";
+import {UnknownRouteComponent} from "./app/unknown-route/unknown-route.component";
 import {pluginRootModules} from "./plugin-root-modules";
 import {pluginRootServices} from "./plugin-root-services";
 

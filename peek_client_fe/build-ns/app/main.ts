@@ -31,5 +31,5 @@ import "@synerty/vortexjs";
 
 
 // This should be last
-import {AppNsModule} from "./app/app.ns.module";
+import {AppNsModule} from "./app.ns.module";
 platformNativeScriptDynamic({cssFile:"app/styles.ns.css"}).bootstrapModule(AppNsModule);

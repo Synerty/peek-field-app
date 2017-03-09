@@ -7,7 +7,7 @@ import {
     TupleSelector
 } from "@synerty/vortexjs";
 import {TitleService} from "@synerty/peek-client-fe-util";
-import {homeLinks} from "../plugin-home-links";
+import {homeLinks} from "../../plugin-home-links";
 
 
 

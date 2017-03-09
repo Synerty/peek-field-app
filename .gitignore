@@ -8,7 +8,9 @@
 **/plugin-home-links.ts
 **/plugin-title-bar-links.ts
 **/peek_plugin_*
-**/app-ns/app/app
+**/build-ns/app/app/
+**/build-web/app/app/
+
 
 # Ignore python compiled files
 *.pyc
@@ -18,8 +20,8 @@ __pycache__
 npm-debug.log
 .DS_Store
 
-peek_client_fe/src/**/*.js
-peek_client_fe/src/**/*.js.map
+peek_client_fe/**/*.js
+peek_client_fe/**/*.js.map
 hooks
 lib/
 node_modules/

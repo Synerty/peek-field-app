@@ -1,6 +1,6 @@
 import {MainHomeComponent} from "./main-home/main-home.component";
 import {UnknownRouteComponent} from "./unknown-route/unknown-route.component";
-import {pluginRoutes} from "./plugin-routes";
+import {pluginRoutes} from "../plugin-routes";
 export const staticRoutes = [
     {
         path: "",

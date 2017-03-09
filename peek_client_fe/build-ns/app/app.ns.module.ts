@@ -17,14 +17,14 @@ import {
 } from "@synerty/vortexjs";
 import {WebSqlNativeScriptFactoryService} from "@synerty/vortexjs/index-nativescript";
 // Routes
-import {staticRoutes} from "./app.routes";
+import {staticRoutes} from "./app/app.routes";
 // Providers
-import {peekRootServices} from "./app.services";
+import {peekRootServices} from "./app/app.services";
 // Components
-import {AppComponent} from "./app.component";
-import {MainHomeComponent} from "./main-home/main-home.component";
-import {MainTitleComponent} from "./main-title/main-title.component";
-import {UnknownRouteComponent} from "./unknown-route/unknown-route.component";
+import {AppComponent} from "./app/app.component";
+import {MainHomeComponent} from "./app/main-home/main-home.component";
+import {MainTitleComponent} from "./app/main-title/main-title.component";
+import {UnknownRouteComponent} from "./app/unknown-route/unknown-route.component";
 import {pluginRootModules} from "./plugin-root-modules";
 import {pluginRootServices} from "./plugin-root-services";
 
