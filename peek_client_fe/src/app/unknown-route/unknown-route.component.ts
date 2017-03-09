@@ -1,8 +1,8 @@
-import {PeekComponent} from "@synerty/peek-web-ns";
+import {Component} from "@angular/core";
 
-@PeekComponent({
+@Component({
     templateUrl: 'unknown-route.component.web.html',
-    moduleFilename: module.filename
+    moduleId: module.id
 })
 export class UnknownRouteComponent {
 

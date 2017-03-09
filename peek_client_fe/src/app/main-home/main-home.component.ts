@@ -1,4 +1,4 @@
-import {PeekComponent} from "@synerty/peek-web-ns";
+import {Component} from "@angular/core";
 import {OnInit} from "@angular/core";
 import {
     ComponentLifecycleEventEmitter,
@@ -11,11 +11,11 @@ import {homeLinks} from "../../plugin-home-links";
 
 
 
-@PeekComponent({
+@Component({
     selector: "peek-main-home",
     templateUrl: 'main-home.component.web.html',
     styleUrls: ['main-home.component.web.css'],
-    moduleFilename: module.filename
+    moduleId: module.id
 })
 export class MainHomeComponent extends ComponentLifecycleEventEmitter implements OnInit {
 

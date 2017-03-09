@@ -1,11 +1,11 @@
-import {PeekComponent} from "@synerty/peek-web-ns";
+import {Component} from "@angular/core";
 import {VortexService, VortexStatusService} from "@synerty/vortexjs";
 import {OnInit} from "@angular/core";
 
-@PeekComponent({
+@Component({
     selector: "peek-main-app",
     templateUrl: "app.component.web.html",
-    moduleFilename: module.filename
+    moduleId: module.id
 })
 export class AppComponent implements OnInit {
 

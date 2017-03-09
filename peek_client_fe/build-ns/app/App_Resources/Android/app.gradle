@@ -8,7 +8,7 @@
 android {  
   defaultConfig {  
     generatedDensities = []
-    applicationId = "org.nativescript.peekclientns" 
+    applicationId = "com.synerty.peek"
     
     //override supported platforms
     // ndk {

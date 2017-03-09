@@ -1,14 +1,14 @@
 import {OnInit, OnDestroy} from "@angular/core";
 import {ActivatedRoute} from "@angular/router";
-import {PeekComponent} from "@synerty/peek-web-ns";
+import {Component} from "@angular/core";
 import {TitleService, TitleBarLink} from "@synerty/peek-client-fe-util";
 import {VortexStatusService} from "@synerty/vortexjs";
 
-@PeekComponent({
+@Component({
     selector: "peek-main-title",
     templateUrl: "main-title.component.web.html",
     styleUrls: ["main-title.component.web.css"],
-    moduleFilename: module.filename
+    moduleId: module.id
 })
 export class MainTitleComponent implements OnInit, OnDestroy {
 
