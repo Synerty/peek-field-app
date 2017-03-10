@@ -1,19 +1,22 @@
-import {NgModule, NO_ERRORS_SCHEMA, NgModuleFactoryLoader} from "@angular/core";
+import {
+    NgModule, NgModuleFactoryLoader, NO_ERRORS_SCHEMA,
+    OnDestroy
+} from "@angular/core";
 import {CommonModule} from "@angular/common";
 import {NativeScriptModule} from "nativescript-angular/platform";
 import {NativeScriptFormsModule} from "nativescript-angular/forms";
 import {NativeScriptRouterModule} from "nativescript-angular";
 // @synerty
-import {PeekModuleFactory, DeviceInfoService} from "@synerty/peek-web-ns";
+import {DeviceInfoService, PeekModuleFactory} from "@synerty/peek-web-ns";
 import {DeviceInfoNsService} from "@synerty/peek-web-ns/index.nativescript";
 import {PeekModuleFactoryLoader} from "./module-loader.ns.factory";
 import {
-    WebSqlFactoryService,
-    TupleDataObserverService,
     TupleDataObservableNameService,
-    TupleOfflineStorageService,
+    TupleDataObserverService,
+    TupleDataOfflineObserverService,
     TupleOfflineStorageNameService,
-    TupleDataOfflineObserverService
+    TupleOfflineStorageService,
+    WebSqlFactoryService
 } from "@synerty/vortexjs";
 import {WebSqlNativeScriptFactoryService} from "@synerty/vortexjs/index-nativescript";
 // Routes

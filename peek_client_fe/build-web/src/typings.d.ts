@@ -1,4 +1,6 @@
 /* SystemJS module definition */
-declare var module: {
+declare let module: {
   id: string;
 };
+
+declare let require: any;
