@@ -1,14 +1,14 @@
-import {
-    NgModule, NgModuleFactoryLoader, NO_ERRORS_SCHEMA,
-    OnDestroy
-} from "@angular/core";
+import {NgModule, NgModuleFactoryLoader, NO_ERRORS_SCHEMA} from "@angular/core";
 import {CommonModule} from "@angular/common";
 import {NativeScriptModule} from "nativescript-angular/platform";
 import {NativeScriptFormsModule} from "nativescript-angular/forms";
 import {NativeScriptRouterModule} from "nativescript-angular";
 // @synerty
-import {DeviceInfoService, PeekModuleFactory} from "@synerty/peek-web-ns";
-import {DeviceInfoNsService} from "@synerty/peek-web-ns/index.nativescript";
+import {
+    DeviceInfoNsService,
+    DeviceInfoService,
+    PeekModuleFactory
+} from "@synerty/peek-web-ns/index.nativescript";
 import {PeekModuleFactoryLoader} from "./module-loader.ns.factory";
 import {
     TupleDataObservableNameService,
