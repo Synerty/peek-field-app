@@ -40,6 +40,7 @@ export function tupleOfflineStorageNameServiceFactory() {
 }
 
 
+
 @NgModule({
     declarations: [AppComponent,
         MainTitleComponent,
@@ -50,7 +51,7 @@ export function tupleOfflineStorageNameServiceFactory() {
         RouterModule,
         PeekModuleFactory.RouterModule.forRoot(staticRoutes),
         BrowserModule,
-        FormsModule,
+        ...PeekModuleFactory.FormsModules,
         HttpModule,
         Ng2BalloonMsgModule,
         ...pluginRootModules

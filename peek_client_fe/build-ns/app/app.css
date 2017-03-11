@@ -15,3 +15,8 @@ refer to http://docs.nativescript.org/ui/theme.
 .peek-field-data-text {
     color: black;
 }
+
+/* Font Awesome style */
+.fa {
+  font-family: FontAwesome, fontawesome-webfont;
+}

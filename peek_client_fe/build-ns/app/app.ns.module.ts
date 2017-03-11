@@ -31,6 +31,10 @@ import {UnknownRouteComponent} from "./app/unknown-route/unknown-route.component
 import {pluginRootModules} from "./plugin-root-modules";
 import {pluginRootServices} from "./plugin-root-services";
 
+// Add FontAwesome
+import {TNSFontIconModule, TNSFontIconService} from "nativescript-ngx-fonticon";
+// turn debug on
+TNSFontIconService.debug = false;
 
 @NgModule({
     declarations: [AppComponent,
@@ -44,7 +48,10 @@ import {pluginRootServices} from "./plugin-root-services";
         NativeScriptFormsModule,
         NativeScriptRouterModule,
         PeekModuleFactory.RouterModule.forRoot(staticRoutes),
-        ...pluginRootModules
+        ...pluginRootModules,
+        TNSFontIconModule.forRoot({
+            'fa': './assets/font-awesome.min.css'
+        })
     ],
     schemas: [NO_ERRORS_SCHEMA],
     providers: [

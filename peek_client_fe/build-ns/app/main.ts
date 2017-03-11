@@ -8,6 +8,7 @@ PeekCoreConfigService.PLATFORM_TARGET = PeekCoreConfigService.PLATFORMS.MOBILE_N
 import "nativescript-websockets";
 import "nativescript-localstorage";
 import 'rxjs/add/operator/filter';
+import 'moment';
 
 // Set the URL for the vortex
 import {VortexService} from "@synerty/vortexjs";
