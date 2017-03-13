@@ -30,6 +30,8 @@
   },
   "description": "NativeScript Application",
   "devDependencies": {
+    "@angular/cli": "1.0.0-rc.1",
+    "@angular/compiler-cli": "^2.4.9",
     "babel-traverse": "6.23.1",
     "babel-types": "6.23.0",
     "babylon": "6.16.1",
