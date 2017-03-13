@@ -6,7 +6,7 @@ from setuptools import setup
 pip_package_name = "peek-client-fe"
 py_package_name = "peek_client_fe"
 
-package_version = '0.0.32'
+package_version = '0.1.0'
 
 egg_info = "%s.egg-info" % pip_package_name
 if os.path.isdir(egg_info):
