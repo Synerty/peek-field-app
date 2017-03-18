@@ -4,7 +4,7 @@ import shutil
 from setuptools import setup
 
 pip_package_name = "peek-mobile"
-py_package_name = "peek_client_fe"
+py_package_name = "peek_mobile"
 
 package_version = '0.2.0'
 
