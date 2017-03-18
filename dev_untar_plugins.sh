@@ -6,7 +6,7 @@ set -o errexit
 IN="${1:?You must pass the full path of the tar archive as a parameter to this script}"
 
 if ! [ -d "peek_client_fe/src" ];then
-    echo "You must run this script in the peek-client-fe root project dir" >&2
+    echo "You must run this script in the peek-mobile root project dir" >&2
     exit 1
 fi
 

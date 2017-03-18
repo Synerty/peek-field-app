@@ -4,7 +4,7 @@ set -o nounset
 set -o errexit
 
 if ! [ -d "peek_client_fe/src" ];then
-    echo "You must run this script in the peek-client-fe root project dir" >&2
+    echo "You must run this script in the peek-mobile root project dir" >&2
     exit 1
 fi
 
