@@ -6,7 +6,7 @@ import {
     TupleDataOfflineObserverService,
     TupleSelector
 } from "@synerty/vortexjs";
-import {TitleService} from "@synerty/peek-client-fe-util";
+import {TitleService} from "@synerty/peek-mobile-util";
 import {homeLinks} from "../../plugin-home-links";
 
 

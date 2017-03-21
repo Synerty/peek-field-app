@@ -1,7 +1,7 @@
 import {OnInit, OnDestroy} from "@angular/core";
 import {ActivatedRoute} from "@angular/router";
 import {Component} from "@angular/core";
-import {TitleService, TitleBarLink} from "@synerty/peek-client-fe-util";
+import {TitleService, TitleBarLink} from "@synerty/peek-mobile-util";
 import {VortexStatusService} from "@synerty/vortexjs";
 
 @Component({
