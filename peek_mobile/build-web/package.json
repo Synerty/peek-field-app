@@ -23,7 +23,7 @@
     "@synerty/ng2-balloon-msg": "^0.1.3",
     "@synerty/peek-mobile-util": "^0.1.2",
     "@synerty/peek-web-ns": "^0.2.7",
-    "@synerty/vortexjs": "^0.7.0",
+    "@synerty/vortexjs": "^0.7.1",
     "angular2-font-awesome": "^1.1.0",
     "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
