@@ -8,7 +8,7 @@ from setuptools import setup, find_packages
 pip_package_name = "peek-mobile"
 py_package_name = "peek_mobile"
 
-package_version = '0.2.13'
+package_version = '0.3.0'
 
 egg_info = "%s.egg-info" % pip_package_name
 if os.path.isdir(egg_info):
