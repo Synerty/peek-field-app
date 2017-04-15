@@ -10,7 +10,7 @@ import {
     DeviceInfoService,
     DeviceInfoWebService,
     PeekModuleFactory
-} from "@synerty/peek-web-ns/index.web";
+} from "@synerty/peek-mobile-util/index.web";
 import {
     TupleDataObservableNameService,
     TupleDataObserverService,

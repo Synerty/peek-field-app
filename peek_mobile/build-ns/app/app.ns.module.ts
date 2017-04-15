@@ -1,15 +1,15 @@
 import {NgModule, NgModuleFactoryLoader, NO_ERRORS_SCHEMA} from "@angular/core";
 import {CommonModule} from "@angular/common";
-import {NativeScriptModule} from "nativescript-angular/platform";
+import {NativeScriptModule} from "nativescript-angular/nativescript.module";
 import {NativeScriptFormsModule} from "nativescript-angular/forms";
-import {NativeScriptRouterModule} from "nativescript-angular";
+import { NativeScriptRouterModule, NSModuleFactoryLoader } from "nativescript-angular/router";
 // @synerty
 import {Ng2BalloonMsgNsModule} from "@synerty/ng2-balloon-msg/index.nativescript";
 import {
     DeviceInfoNsService,
     DeviceInfoService,
     PeekModuleFactory
-} from "@synerty/peek-web-ns/index.nativescript";
+} from "@synerty/peek-mobile-util/index.nativescript";
 import {PeekModuleFactoryLoader} from "./module-loader.ns.factory";
 import {
     TupleDataObservableNameService,
@@ -37,6 +37,7 @@ import {TNSFontIconModule, TNSFontIconService} from "nativescript-ngx-fonticon";
 // turn debug on
 TNSFontIconService.debug = false;
 
+import {PluginUserModule} from "./peek_plugin_user/plugin-user.module";
 @NgModule({
     declarations: [AppComponent,
         MainTitleComponent,
@@ -54,10 +55,11 @@ TNSFontIconService.debug = false;
         TNSFontIconModule.forRoot({
             'fa': './assets/font-awesome.min.css'
         })
+        , PluginUserModule
     ],
     schemas: [NO_ERRORS_SCHEMA],
     providers: [
-        {provide: NgModuleFactoryLoader, useClass: PeekModuleFactoryLoader},
+        {provide: NgModuleFactoryLoader, useClass: NSModuleFactoryLoader},
         {provide: WebSqlFactoryService, useClass: WebSqlNativeScriptFactoryService},
         ...peekRootServices,
         ...pluginRootServices,
