@@ -5,7 +5,7 @@ import {FormsModule} from "@angular/forms";
 import {HttpModule} from "@angular/http";
 import {RouterModule} from "@angular/router";
 // @synerty
-import {Ng2BalloonMsgModule} from "@synerty/ng2-balloon-msg";
+import {Ng2BalloonMsgModule} from "@synerty/ng2-balloon-msg/index.web";
 import {
     DeviceInfoService,
     DeviceInfoWebService,

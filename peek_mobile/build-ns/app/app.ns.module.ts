@@ -4,6 +4,7 @@ import {NativeScriptModule} from "nativescript-angular/platform";
 import {NativeScriptFormsModule} from "nativescript-angular/forms";
 import {NativeScriptRouterModule} from "nativescript-angular";
 // @synerty
+import {Ng2BalloonMsgNsModule} from "@synerty/ng2-balloon-msg/index.nativescript";
 import {
     DeviceInfoNsService,
     DeviceInfoService,
@@ -48,6 +49,7 @@ TNSFontIconService.debug = false;
         NativeScriptFormsModule,
         NativeScriptRouterModule,
         PeekModuleFactory.RouterModule.forRoot(staticRoutes),
+        Ng2BalloonMsgNsModule,
         ...pluginRootModules,
         TNSFontIconModule.forRoot({
             'fa': './assets/font-awesome.min.css'
