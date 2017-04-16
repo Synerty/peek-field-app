@@ -37,7 +37,6 @@ import {TNSFontIconModule, TNSFontIconService} from "nativescript-ngx-fonticon";
 // turn debug on
 TNSFontIconService.debug = false;
 
-import {PluginUserModule} from "./peek_plugin_user/plugin-user.module";
 @NgModule({
     declarations: [AppComponent,
         MainTitleComponent,
@@ -55,7 +54,6 @@ import {PluginUserModule} from "./peek_plugin_user/plugin-user.module";
         TNSFontIconModule.forRoot({
             'fa': './assets/font-awesome.min.css'
         })
-        , PluginUserModule
     ],
     schemas: [NO_ERRORS_SCHEMA],
     providers: [
