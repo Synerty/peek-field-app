@@ -20,3 +20,26 @@ refer to http://docs.nativescript.org/ui/theme.
 .fa {
   font-family: FontAwesome, fontawesome-webfont;
 }
+
+
+
+
+.bg-info {
+    color: black;
+    background-color: #d9edf7;
+}
+
+.bg-success {
+    color: black;
+    background-color: #dff0d8;
+}
+
+.bg-warning {
+    color: black;
+    background-color: #fcf8e3;
+}
+
+.bg-danger {
+    color: black;
+    background-color: #f2dede;
+}

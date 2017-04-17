@@ -15,7 +15,7 @@
     "@peek/peek_plugin_noop": "file:/home/peek/project/peek-plugin-noop/peek_plugin_noop/plugin-module",
     "@peek/peek_plugin_pof_field_switching": "file:/home/peek/project/peek-plugin-pof-field-switching/peek_plugin_pof_field_switching/plugin-module",
     "@peek/peek_plugin_user": "file:/home/peek/project/peek-plugin-user/peek_plugin_user/plugin-module",
-    "@synerty/ng2-balloon-msg": "^0.2.4",
+    "@synerty/ng2-balloon-msg": "^0.2.5",
     "@synerty/peek-mobile-util": "^0.3.3",
     "@synerty/vortexjs": "^0.7.4",
     "font-awesome": "^4.7.0",
@@ -46,7 +46,7 @@
     "nativescript-dev-typescript": "~0.3.5",
     "typescript": "~2.1.6"
   },
-  "license": "SEE LICENSE IN <your-license-filename>",
+  "license": "MIT",
   "nativescript": {
     "id": "com.synerty.peek",
     "tns-android": {
@@ -55,5 +55,8 @@
   },
   "readme": "NativeScript Application",
   "repository": "<fill-your-repository-here>",
+  "scripts": {
+    "start": "tns run android --watch"
+  },
   "version": "0.0.0"
 }
