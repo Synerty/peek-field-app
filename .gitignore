@@ -11,6 +11,16 @@
 **/build-ns/app/app/
 **/build-web/src/app/
 
+# Ignore the CSS files that we have SCSS files for
+# NativeScript
+app.ios.css
+app.android.css
+app.css
+_app-common.css
+
+# HTML
+**/build-web/src/styles.css
+
 
 # Ignore python compiled files
 *.pyc
