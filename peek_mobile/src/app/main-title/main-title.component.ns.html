@@ -1,32 +1,30 @@
-<!--<ActionBar [title]="title" [class.bg-danger]="!vortexIsOnline">-->
-
-<!--<ActionItem [nsRouterLink]="['/']" text="Home"-->
-<!--ios.position="left"></ActionItem>-->
-
-<!--<ActionItem *ngFor="let link of leftLinks"-->
-<!--[nsRouterLink]="[link.resourcePath]"-->
-<!--[text]="linkTitle(link)"-->
-<!--ios.position="left"></ActionItem>-->
-
-<!--<ActionItem *ngFor="let link of rightLinks"-->
-<!--[nsRouterLink]="[link.resourcePath]"-->
-<!--[text]="linkTitle(link)"-->
-<!--ios.position="right"></ActionItem>-->
-<!--</ActionBar>-->
-
 <GridLayout rows="auto" columns="auto, *, auto"
             [class.bg-danger]="!vortexIsOnline">
+
   <Button class="btn" col="0" row="0"
-          text="Home" [nsRouterLink]="['/']"></Button>
+          text="Home" [nsRouterLink]="['/']">
 
-  <Button class="btn" *ngFor="let link of leftLinks" col="0" row="0"
+  </Button>
+
+  <Button class="btn"
+          *ngFor="let link of leftLinks"
+          col="0" row="0"
           [text]="linkTitle(link)"
-          [nsRouterLink]="[link.resourcePath]"></Button>
+          [nsRouterLink]="[link.resourcePath]">
 
-  <Label class="main-title title-center h2" col="1" row="0"
-         [text]="title"></Label>
+  </Button>
 
-  <Button class="btn" *ngFor="let link of rightLinks" col="2" row="0"
+  <Label class="text-center text-uppercase h2"
+         col="1" row="0"
+         [text]="title">
+
+  </Label>
+
+  <Button class="btn"
+          *ngFor="let link of rightLinks"
+          col="2" row="0"
           [text]="linkTitle(link)"
-          [nsRouterLink]="[link.resourcePath]"></Button>
+          [nsRouterLink]="[link.resourcePath]">
+
+  </Button>
 </GridLayout>
