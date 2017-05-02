@@ -1,9 +1,10 @@
 <GridLayout class="peek-title-bar"
-            rows="auto" columns="auto, *, auto"
-            [class.bg-danger]="!vortexIsOnline">
+            [class.bg-danger]="!vortexIsOnline"
+            rows="auto" columns="auto, *, auto">
 
   <Button class="btn" col="0" row="0"
-          text="Home" [nsRouterLink]="['/']">
+          text="Home"
+          [nsRouterLink]="['/']">
 
   </Button>
 
@@ -16,8 +17,6 @@
   </Button>
 
   <Label class="title"
-         horizontalAlignment="left"
-         verticalAlignment="center"
          col="1" row="0"
          [text]="title">
 
