@@ -1,24 +1,29 @@
 <Label class="h1 text-center"
-       *ngIf="appDetails.length"
+       *ngIf="!appDetails.length"
        text="No Plugins Installed">
 
 </Label>
-
-<ScrollView>
+<FlexboxLayout class="home-page"
+               width="100%"
+               height="100%"
+               marginLeft='5%'
+               marginRight='5%'>
   <WrapLayout>
-    <GridLayout class="home-icon"
-                *ngFor="let app of appDetails"
+    <GridLayout *ngFor="let app of appDetails"
                 rows="*,auto" columns="*"
+                width="50%" height="160"
+                marginTop='5%'
                 [nsRouterLink]="[app.resourcePath]">
       <Image row="0" col="0"
              src="~{{app.pluginIconPath}}">
 
       </Image>
-      <Label class="text-center h3"
+      <Label class="title"
+             horizontalAlignment="center"
              row="1" col="0"
              [text]="app.title">
 
       </Label>
     </GridLayout>
   </WrapLayout>
-</ScrollView>
+</FlexboxLayout>
