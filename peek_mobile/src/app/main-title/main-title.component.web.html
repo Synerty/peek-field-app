@@ -1,18 +1,12 @@
-<div class="peek-main-title">
+<div class="peek-title-bar">
   <div class="container-fluid">
-    <div class="menu-bar" [class.bg-danger]="!vortexIsOnline">
-      <div class="menu-bar-left">
-        <button class="btn left-button" [routerLink]="['/']">Home</button>
-      </div>
-      <div class="menu-title">
-        <h2 class="h2">{{title}}</h2>
-      </div>
-      <div class="menu-bar-right">
-        <button class="btn right-button"
-                *ngFor="let link of rightLinks"
-                [routerLink]="[link.resourcePath]">{{linkTitle(link)}}
-        </button>
-      </div>
+    <div class="row" [class.bg-danger]="!vortexIsOnline">
+      <button class="btn pull-left" [routerLink]="['/']">Home</button>
+      <div class="title">{{title}}</div>
+      <button class="btn pull-right"
+              *ngFor="let link of rightLinks"
+              [routerLink]="[link.resourcePath]">{{linkTitle(link)}}
+      </button>
     </div>
   </div>
 </div>
