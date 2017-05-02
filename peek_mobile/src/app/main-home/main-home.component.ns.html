@@ -1,20 +1,21 @@
-<Label class="h1 text-center"
-       *ngIf="appDetails.length"
+<Label class="h1"
+       *ngIf="!appDetails.length"
        text="No Plugins Installed">
 
 </Label>
 
-<ScrollView>
+<ScrollView class="peek-home-screen">
   <WrapLayout>
-    <GridLayout class="home-icon"
+    <GridLayout class="icon"
                 *ngFor="let app of appDetails"
                 rows="*,auto" columns="*"
                 [nsRouterLink]="[app.resourcePath]">
-      <Image row="0" col="0"
+      <Image class="image"
+             row="0" col="0"
              src="~{{app.pluginIconPath}}">
 
       </Image>
-      <Label class="text-center h3"
+      <Label class="title"
              row="1" col="0"
              [text]="app.title">
 
