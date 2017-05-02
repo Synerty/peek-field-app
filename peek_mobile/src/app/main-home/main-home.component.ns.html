@@ -5,14 +5,13 @@
 </Label>
 <FlexboxLayout class="home-page"
                width="100%"
-               height="100%"
-               marginLeft='5%'
-               marginRight='5%'>
+               height="100%">
   <WrapLayout>
-    <GridLayout *ngFor="let app of appDetails"
-                rows="*,auto" columns="*"
-                width="50%" height="160"
+    <GridLayout width="50%"
+                height="160"
                 marginTop='5%'
+                *ngFor="let app of appDetails"
+                rows="*,auto" columns="*"
                 [nsRouterLink]="[app.resourcePath]">
       <Image row="0" col="0"
              src="~{{app.pluginIconPath}}">
