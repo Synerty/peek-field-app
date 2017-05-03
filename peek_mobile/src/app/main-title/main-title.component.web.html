@@ -1,12 +1,31 @@
 <div class="peek-title-bar">
   <div class="container-fluid">
-    <div class="row" [class.bg-danger]="!vortexIsOnline">
-      <button class="btn pull-left" [routerLink]="['/']">Home</button>
-      <div class="title">{{title}}</div>
-      <button class="btn pull-right"
-              *ngFor="let link of rightLinks"
-              [routerLink]="[link.resourcePath]">{{linkTitle(link)}}
-      </button>
+    <div class="row"
+         [class.bg-danger]="!vortexIsOnline">
+      <div class="btn-group pull-left"
+           role="group">
+        <button class="btn"
+                [routerLink]="['/']">
+          Home
+
+        </button>
+        <div class="btn-group pull-right"
+             role="group">
+          <div class="title">
+            {{title}}
+
+          </div>
+          <div class="btn-group pull-right"
+               role="group">
+            <button class="btn"
+                    *ngFor="let link of rightLinks"
+                    [routerLink]="[link.resourcePath]">
+              {{linkTitle(link)}}
+
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

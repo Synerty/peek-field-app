@@ -1,11 +1,10 @@
-<Label class="h1"
-       *ngIf="!appDetails.length"
-       text="No Plugins Installed">
-
-</Label>
-
 <ScrollView class="peek-home-screen">
   <WrapLayout>
+    <Label class="message"
+           *ngIf="!appDetails.length"
+           text="No Plugins Installed">
+
+    </Label>
     <GridLayout class="icon"
                 *ngFor="let app of appDetails"
                 rows="*,auto" columns="*"
