@@ -17,6 +17,7 @@ import {homeLinks} from "../../plugin-home-links";
 export class MainHomeComponent extends ComponentLifecycleEventEmitter implements OnInit {
 
   appDetails = homeLinks;
+  myParseInt = parseInt;
 
   constructor(tupleDataObserver: TupleDataOfflineObserverService, titleService: TitleService) {
     super();
@@ -30,8 +31,9 @@ export class MainHomeComponent extends ComponentLifecycleEventEmitter implements
   appButtonGridRows(): string {
     let val = "";
     for (let i = 0; i < parseInt(String(this.appDetails.length), 2); i++) {
-      val += " auto";
+      val += ",auto";
     }
     return val;
   }
+
 }

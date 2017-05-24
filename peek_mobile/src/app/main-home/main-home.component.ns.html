@@ -11,7 +11,7 @@
                 *ngFor="let i=index; let app of appDetails"
                 rows="*,auto"
                 columns="*"
-                [row]="parseInt(i / 2)"
+                [row]= "myParseInt"
                 [col]="i % 2"
                 [nsRouterLink]="[app.resourcePath]">
       <Image class="home-screen-image"
