@@ -29,7 +29,7 @@ export class MainHomeComponent extends ComponentLifecycleEventEmitter implements
 
   appButtonGridRows(): string {
     let val = "";
-    for (let i = 0; i < parseInt(this.appDetails.length / 2); i++) {
+    for (let i = 0; i < parseInt(String(this.appDetails.length), 2); i++) {
       val += " auto";
     }
     return val;
