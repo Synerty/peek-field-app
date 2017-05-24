@@ -1,14 +1,10 @@
-import {Component} from "@angular/core";
-import {OnInit} from "@angular/core";
+import {Component, OnInit} from "@angular/core";
 import {
     ComponentLifecycleEventEmitter,
-    Tuple,
-    TupleDataOfflineObserverService,
-    TupleSelector
+    TupleDataOfflineObserverService
 } from "@synerty/vortexjs";
 import {TitleService} from "@synerty/peek-mobile-util";
 import {homeLinks} from "../../plugin-home-links";
-
 
 
 @Component({
@@ -27,6 +23,14 @@ export class MainHomeComponent extends ComponentLifecycleEventEmitter implements
     }
 
     ngOnInit() {
+    }
+
+    appButtonGridRows(): string {
+        let val = "";
+        for (let i = 0; i < parseInt(this.appDetails.length / 2); i++) {
+            val += " auto";
+        }
+        return val;
     }
 
 }
