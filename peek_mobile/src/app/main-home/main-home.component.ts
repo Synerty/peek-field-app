@@ -34,7 +34,7 @@ export class MainHomeComponent extends ComponentLifecycleEventEmitter implements
     }
 
     appButtonGridRowIndex(index): number {
-        return Math.floor(index);
+        return Math.floor(index / 2);
     }
 
 }
