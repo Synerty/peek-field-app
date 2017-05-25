@@ -1,30 +1,30 @@
 <GridLayout class="peek-title-bar"
             [class.bg-danger]="!vortexIsOnline"
-            rows="auto" columns="auto, *, auto">
+            rows="auto"
+            columns="auto, *, auto">
 
-  <Button class="btn" col="0" row="0"
+  <Button class="title-bar-btn"
           text="Home"
           [nsRouterLink]="['/']">
 
   </Button>
 
-  <Button class="btn"
+  <Button class="title-bar-btn"
           *ngFor="let link of leftLinks"
-          col="0" row="0"
           [text]="linkTitle(link)"
           [nsRouterLink]="[link.resourcePath]">
 
   </Button>
 
-  <Label class="title"
-         col="1" row="0"
+  <Label class="title-bar-title"
+         col="1"
          [text]="title">
 
   </Label>
 
-  <Button class="btn"
+  <Button class="title-bar-btn"
           *ngFor="let link of rightLinks"
-          col="2" row="0"
+          col="2"
           [text]="linkTitle(link)"
           [nsRouterLink]="[link.resourcePath]">
 
