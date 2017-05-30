@@ -13,7 +13,7 @@ import 'moment';
 // Set the URL for the vortex
 import {VortexService} from "@synerty/vortexjs";
 // let host = location.host.split(':')[0];
-let host = '10.2.56.17';
+let host = '10.211.55.14';
 VortexService.setVortexUrl(`ws://${host}:8001/vortexws`);
 // VortexService.setVortexUrl(`http://${host}:8000/vortex`);
 
