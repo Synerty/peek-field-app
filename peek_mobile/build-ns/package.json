@@ -12,7 +12,7 @@
     "@synerty/ng2-balloon-msg": "^0.2.6",
     "@synerty/peek-mobile-theme": "0.0.7",
     "@synerty/peek-mobile-util": "^0.3.6",
-    "@synerty/vortexjs": "^0.7.7",
+    "@synerty/vortexjs": "^0.7.8",
     "font-awesome": "^4.7.0",
     "jquery": "^3.1.1",
     "json-stable-stringify": "^1.0.1",
@@ -29,7 +29,7 @@
     "rxjs": "^5.4.0",
     "scss": "^0.2.4",
     "tns-core-modules": "^3.0.0",
-    "zone.js": "^0.8.11"
+    "zone.js": "^0.8.12"
   },
   "description": "Peek",
   "devDependencies": {
@@ -40,7 +40,7 @@
     "nativescript-dev-android-snapshot": "^0.*.*",
     "nativescript-dev-sass": "^1.1.1",
     "nativescript-dev-typescript": "^0.4.5",
-    "typescript": "^2.3.3"
+    "typescript": "^2.3.4"
   },
   "license": "MIT",
   "nativescript": {
@@ -49,6 +49,7 @@
       "version": "3.0.1"
     }
   },
+  "private": true,
   "readme": "NativeScript Application",
   "repository": "<fill-your-repository-here>",
   "scripts": {
