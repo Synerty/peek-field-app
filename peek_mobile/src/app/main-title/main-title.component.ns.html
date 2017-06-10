@@ -26,7 +26,7 @@
     </Label>
 
     <WrapLayout row="0" col="2">
-        <Label class="fa" [text]="'fa-check-square-o' | fonticon"></Label>
+        <Label *ngIf="!vortexIsOnline" class="fa" [text]="'fa-unlink' | fonticon"></Label>
         <Button class="title-bar-btn"
                 *ngFor="let link of rightLinks"
 
