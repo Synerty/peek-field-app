@@ -24,7 +24,7 @@
     "@synerty/ng2-balloon-msg": "^0.2.5",
     "@synerty/peek-mobile-theme": "0.0.7",
     "@synerty/peek-mobile-util": "^0.3.6",
-    "@synerty/vortexjs": "^0.7.10",
+    "@synerty/vortexjs": "^0.7.11",
     "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
     "font-awesome": "^4.7.0",
@@ -34,6 +34,7 @@
     "ng2-datetime-picker": "^0.13.2",
     "rxjs": "^5.4.0",
     "scss": "^0.2.4",
+    "webcamjs": "^1.0.22",
     "zone.js": "^0.8.12"
   },
   "devDependencies": {
