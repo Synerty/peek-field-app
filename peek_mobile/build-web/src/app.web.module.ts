@@ -7,11 +7,7 @@ import {HttpModule} from "@angular/http";
 import {RouterModule} from "@angular/router";
 // @synerty
 import {Ng2BalloonMsgModule} from "@synerty/ng2-balloon-msg/index.web";
-import {
-    DeviceInfoService,
-    DeviceInfoWebService,
-    PeekModuleFactory
-} from "@synerty/peek-mobile-util/index.web";
+import {PeekModuleFactory} from "@synerty/peek-util/index.web";
 import {
     TupleDataObservableNameService,
     TupleDataObserverService,
@@ -74,11 +70,6 @@ export function tupleOfflineStorageNameServiceFactory() {
         TupleDataObserverService,
         TupleOfflineStorageService,
         TupleDataOfflineObserverService,
-        // Device Info
-        {
-            provide: DeviceInfoService,
-            useClass: DeviceInfoWebService
-        },
     ]
 })
 export class AppWebModule {

@@ -12,7 +12,3 @@ import {AppWebModule} from "./app.web.module";
 platformBrowserDynamic().bootstrapModule(AppWebModule);
 
 
-// This should be last
-import {VortexService} from "@synerty/vortexjs";
-let host = location.host.split(':')[0];
-VortexService.setVortexUrl(`ws://${host}:8001/vortexws`);

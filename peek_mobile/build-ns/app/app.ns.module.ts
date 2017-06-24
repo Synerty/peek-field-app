@@ -9,10 +9,8 @@ import {
 // @synerty
 import {Ng2BalloonMsgNsModule} from "@synerty/ng2-balloon-msg/index.nativescript";
 import {
-  DeviceInfoNsService,
-  DeviceInfoService,
   PeekModuleFactory
-} from "@synerty/peek-mobile-util/index.nativescript";
+} from "@synerty/peek-util/index.ns";
 import {PeekModuleFactoryLoader} from "./module-loader.ns.factory";
 import {
   TupleDataObservableNameService,
@@ -80,12 +78,7 @@ import {Page} from "ui/page";
     // These have NAME dependencies
     TupleDataObserverService,
     TupleOfflineStorageService,
-    TupleDataOfflineObserverService,
-    // Device Info
-    {
-      provide: DeviceInfoService,
-      useClass: DeviceInfoNsService
-    },
+    TupleDataOfflineObserverService
   ]
 })
 export class AppNsModule {
