@@ -11,6 +11,7 @@
 **/peek_plugin_*
 **/build-ns/app/app/
 **/build-web/src/app/
+**/@peek/
 
 # Ignore the CSS files that we have SCSS files for
 # NativeScript
