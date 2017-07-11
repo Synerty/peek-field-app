@@ -14,7 +14,8 @@ import {
     TupleDataOfflineObserverService,
     TupleOfflineStorageNameService,
     TupleOfflineStorageService,
-    WebSqlFactoryService
+    WebSqlFactoryService,
+    TupleStorageFactoryService
 } from "@synerty/vortexjs";
 import {WebSqlBrowserFactoryService} from "@synerty/vortexjs/index-browser";
 // Routes
@@ -55,8 +56,7 @@ export function tupleOfflineStorageNameServiceFactory() {
     ],
     providers: [
         {provide: WebSqlFactoryService, useClass: WebSqlBrowserFactoryService},
-        ...peekRootServices,
-        ...pluginRootServices,
+        TupleStorageFactoryService,
 
         // Use the TupleDataObserver services, with offline storage
         {
@@ -70,6 +70,9 @@ export function tupleOfflineStorageNameServiceFactory() {
         TupleDataObserverService,
         TupleOfflineStorageService,
         TupleDataOfflineObserverService,
+
+        ...peekRootServices,
+        ...pluginRootServices,
     ]
 })
 export class AppWebModule {

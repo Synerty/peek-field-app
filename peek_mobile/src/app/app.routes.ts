@@ -1,16 +1,29 @@
 import {MainHomeComponent} from "./main-home/main-home.component";
 import {UnknownRouteComponent} from "./unknown-route/unknown-route.component";
+
+import {DeviceEnrolledGuard} from "@peek/peek_core_device";
+
 import {pluginRoutes} from "../plugin-routes";
+
 export const staticRoutes = [
     {
-        path: "",
-        component: MainHomeComponent,
-        data: {title: "Home"}
+        path: 'peek_core_device',
+        loadChildren: "peek_core_device/device.module#DeviceModule"
     },
-    ...pluginRoutes,
+    // All routes require the device to be enrolled
+    {
+        path: '',
+        canActivate: [DeviceEnrolledGuard],
+        children: [
+            {
+                path: '',
+                component: MainHomeComponent
+            },
+            ...pluginRoutes
+        ]
+    },
     {
         path: "**",
-        component: UnknownRouteComponent,
-        data: {title: "Route Error"}
+        component: UnknownRouteComponent
     }
 ];
