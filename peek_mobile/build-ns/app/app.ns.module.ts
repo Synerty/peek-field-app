@@ -10,6 +10,7 @@ import {
 import {Ng2BalloonMsgNsModule} from "@synerty/ng2-balloon-msg/index.nativescript";
 import {PeekModuleFactory} from "@synerty/peek-util/index.ns";
 import {
+    TupleActionPushOfflineSingletonService,
     TupleDataObservableNameService,
     TupleDataObserverService,
     TupleDataOfflineObserverService,
@@ -65,6 +66,7 @@ TNSFontIconService.debug = false;
         {provide: NgModuleFactoryLoader, useClass: NSModuleFactoryLoader},
         {provide: WebSqlFactoryService, useClass: WebSqlNativeScriptFactoryService},
         {provide: TupleStorageFactoryService, useClass: TupleStorageFactoryServiceNs},
+        TupleActionPushOfflineSingletonService,
 
         // Use the TupleDataObserver services, with offline storage
         {
