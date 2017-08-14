@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@angular/animations": "~4.1.0",
+    "@angular/cli": "^1.2.7",
     "@angular/common": "~4.1.0",
     "@angular/compiler": "~4.1.0",
     "@angular/core": "~4.1.0",
@@ -12,7 +13,7 @@
     "@synerty/ng2-balloon-msg": "^0.2.9",
     "@synerty/peek-mobile-theme": "0.0.9",
     "@synerty/peek-util": "^0.4.5",
-    "@synerty/vortexjs": "^0.8.9",
+    "@synerty/vortexjs": "^0.8.10",
     "assert": "^1.4.1",
     "cli-table": "^0.3.1",
     "font-awesome": "^4.7.0",
