@@ -24,6 +24,7 @@
     "nativescript-appversion": "^1.4.1",
     "nativescript-background-task": "git+https://github.com/Synerty/nativescript-background-task.git#a846255",
     "nativescript-camera": "^3.0.0",
+    "nativescript-iqkeyboardmanager": "^1.1.0",
     "nativescript-ngx-fonticon": "^2.1.2",
     "nativescript-peek-update": "^0.1.2",
     "nativescript-sound": "^1.0.4",
