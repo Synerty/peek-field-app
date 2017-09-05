@@ -1,13 +1,7 @@
 #!/bin/bash
 
-MAC_PATH="/media/psf/stash/build-ns"
+rsync -avP build-ns /media/psf/stash --exclude "*.js" --exclude "*.css" --exclude "*.map.js" --exclude platforms --exclude node_modules
 
-PATHS="build-ns/app"
-PATHS="$PATHS build-ns/hooks"
-PATHS="$PATHS build-ns/package.json"
-PATHS="$PATHS build-ns/package-lock.json"
-PATHS="$PATHS build-ns/references.d.ts"
-PATHS="$PATHS build-ns/tsconfig.json"
+rsync -avP build-ns/hooks /media/psf/stash/build-ns/
 
-rsync -rvP  $PATHS $MAC_PATH
 
