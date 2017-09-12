@@ -9,6 +9,8 @@ import {OnInit} from "@angular/core";
 })
 export class AppComponent implements OnInit {
 
+    rowSpan = 1;
+
     constructor(private vortexService: VortexService,
                 private vortexStatusService: VortexStatusService) {
 
