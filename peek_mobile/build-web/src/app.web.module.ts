@@ -31,6 +31,7 @@ import {peekRootServices} from "./app/app.services";
 import {AppComponent} from "./app/app.component";
 import {MainHomeComponent} from "./app/main-home/main-home.component";
 import {MainTitleComponent} from "./app/main-title/main-title.component";
+import {MainFooterComponent} from "./app/main-footer/main-footer.component";
 import {UnknownRouteComponent} from "./app/unknown-route/unknown-route.component";
 import {pluginRootModules} from "./plugin-root-modules";
 import {pluginRootServices} from "./plugin-root-services";
@@ -47,6 +48,7 @@ export function tupleOfflineStorageNameServiceFactory() {
 @NgModule({
     declarations: [AppComponent,
         MainTitleComponent,
+        MainFooterComponent,
         MainHomeComponent,
         UnknownRouteComponent],
     bootstrap: [AppComponent],

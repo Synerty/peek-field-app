@@ -4,8 +4,8 @@
             columns="auto, *, auto, auto">
 
     <WrapLayout *ngIf="isEnabled" row="0" col="0">
-        <Button class="title-bar-btn"
-                text="Home"
+        <Button class="title-bar-btn fa"
+                [text]="'fa-home' | fonticon"
                 [nsRouterLink]="['/']">
         </Button>
 

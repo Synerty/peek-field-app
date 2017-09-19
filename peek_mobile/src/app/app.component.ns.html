@@ -2,12 +2,13 @@
     display over the top -->
 <GridLayout rows="auto, *">
 
-    <StackLayout rowSpan="2">
-        <peek-main-title></peek-main-title>
-        <StackedLayout class="peek-mobile-page-contents">
-            <router-outlet></router-outlet>
-        </StackedLayout>
-    </StackLayout>
+    <!-- The next line is the cell, the line after is for the gridview -->
+    <GridLayout rowSpan="2" row="0" col="0"
+                rows="auto, *, auto" cols="*">
+        <peek-main-title row="0" col="0"></peek-main-title>
+        <router-outlet row="1" col="0" class="peek-mobile-page-contents"></router-outlet>
+        <peek-main-footer row="2" col="0"></peek-main-footer>
+    </GridLayout>
 
     <!-- This must be down the bottom, otherwise the messages don't cover the content -->
     <ng2-balloon-msg-ns [rowSpan]="rowSpan"

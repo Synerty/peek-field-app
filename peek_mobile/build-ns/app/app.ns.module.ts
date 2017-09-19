@@ -38,6 +38,7 @@ import {pluginRootServices} from "./plugin-root-services";
 // Add FontAwesome
 import {TNSFontIconModule, TNSFontIconService} from "nativescript-ngx-fonticon";
 import {Page} from "ui/page";
+import {MainFooterComponent} from "./app/main-footer/main-footer.component";
 // turn debug on
 
 TNSFontIconService.debug = false;
@@ -46,6 +47,7 @@ TNSFontIconService.debug = false;
 @NgModule({
     declarations: [AppComponent,
         MainTitleComponent,
+        MainFooterComponent,
         MainHomeComponent,
         UnknownRouteComponent],
     bootstrap: [AppComponent],
