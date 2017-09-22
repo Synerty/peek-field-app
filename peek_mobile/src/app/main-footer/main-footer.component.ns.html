@@ -13,12 +13,12 @@
            class="footer-bar-footer"
            [text]="statusText"> </Label>
 
-    <Button *ngIf="isEnabled"
-            row="0" col="2"
-            class="footer-bar-btn"
-            *ngFor="let link of configLinks"
-            [text]="'cog' | fonticon">
-
-    </Button>
+    <WrapLayout row="0" col="2" *ngFor="let link of configLinks">
+        <Button *ngIf="isEnabled"
+                class="footer-bar-btn"
+                [text]="'cog' | fonticon">
+        </Button>
+    </WrapLayout>
 
 </GridLayout>
+s
