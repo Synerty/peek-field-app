@@ -8,6 +8,9 @@ import "moment";
 // Import some stuff that we need
 import "@synerty/vortexjs";
 
+import {VortexService} from "@synerty/vortexjs";
+VortexService.setVortexUrl(null);
+
 // import "nativescript-angular";
 // // Potentially enable angular prod mode
 // import {enableProdMode} from "@angular/core";
