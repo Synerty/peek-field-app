@@ -1,18 +1,23 @@
 <!-- Using a grid layout with no columns or rows allows the message layout to
     display over the top -->
-<GridLayout rows="auto, *">
+<GridLayout rows="auto, *" cols="*">
 
     <!-- The next line is the cell, the line after is for the gridview -->
-    <GridLayout rowSpan="2" row="0" col="0"
-                rows="auto, *, auto" cols="*">
-        <peek-main-title row="0" col="0"></peek-main-title>
-        <router-outlet row="1" col="0" class="peek-page-contents"></router-outlet>
-        <peek-main-footer row="2" col="0"></peek-main-footer>
-    </GridLayout>
+    <StackedLayout row="0" col="0" rowSpan="2">
+        <GridLayout rows="auto, *, auto" cols="*">
+            <peek-main-title row="0" col="0"></peek-main-title>
+            <StackedLayout row="1" col="0">
+                <router-outlet></router-outlet>
+            </StackedLayout>
+            <peek-main-footer row="2" col="0"></peek-main-footer>
+        </GridLayout>
+    </StackedLayout>
 
     <!-- This must be down the bottom, otherwise the messages don't cover the content -->
+    <!-- rowSpan changes to 2 to take up the whole screen when needed. -->
     <ng2-balloon-msg-ns [rowSpan]="rowSpan"
                         (rowSpanChangedEvent)="rowSpan = $event">
 
     </ng2-balloon-msg-ns>
+
 </GridLayout>

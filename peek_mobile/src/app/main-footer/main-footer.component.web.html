@@ -1,7 +1,6 @@
-<div class="peek-footer-bar"
+<div *ngIf="isEnabled" class="peek-footer-bar"
      [class.bg-danger]="!vortexIsOnline">
-    <div *ngIf="isEnabled"
-         class="btn-group pull-left"
+    <div class="btn-group pull-left"
          role="group">
         <button class="footer-bar-btn" (click)="navBackService.navBack()">
             <fa name="chevron-left" tooltip="Navigate to the last screen"></fa>
@@ -13,7 +12,7 @@
     </div>
 
     <div  class="pull-right">
-        <button *ngIf="isEnabled" class="footer-bar-btn">
+        <button  class="footer-bar-btn">
             <fa name="cog" tooltip="User Configuration"></fa>
         </button>
     </div>
