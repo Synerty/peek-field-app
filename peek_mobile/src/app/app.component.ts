@@ -20,5 +20,9 @@ export class AppComponent implements OnInit {
         this.vortexService.reconnect();
     }
 
+    setBalloonFullScreen(enabled:boolean):void{
+        this.rowSpan = enabled ? 3 : 1;
+    }
+
 }
 

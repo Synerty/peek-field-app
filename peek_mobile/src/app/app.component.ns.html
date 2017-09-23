@@ -2,22 +2,25 @@
     display over the top -->
 <GridLayout rows="auto, *" cols="*">
 
-    <!-- The next line is the cell, the line after is for the gridview -->
-    <StackedLayout row="0" col="0" rowSpan="2">
-        <GridLayout rows="auto, *, auto" cols="*">
-            <peek-main-title row="0" col="0"></peek-main-title>
-            <StackedLayout row="1" col="0">
-                <router-outlet></router-outlet>
-            </StackedLayout>
-            <peek-main-footer row="2" col="0"></peek-main-footer>
+    <DockLayout row="0" col="0" rowSpan="2">
+
+        <GridLayout rows="auto" verticalAlignment="top" dock="top" backgroundColor="red">
+            <peek-main-title verticalAlignment="top" text="title" backgroundColor="blue"></peek-main-title>
         </GridLayout>
-    </StackedLayout>
+
+        <GridLayout rows="auto" verticalAlignment="bottom" dock="bottom" backgroundColor="orange">
+            <peek-main-footer verticalAlignment="bottom" text="footer" backgroundColor="blue"></peek-main-footer>
+        </GridLayout>
+
+        <GridLayout dock="left" class="peek-mobile-page-contents">
+            <router-outlet></router-outlet>
+        </GridLayout>
+
+    </DockLayout>
 
     <!-- This must be down the bottom, otherwise the messages don't cover the content -->
-    <!-- rowSpan changes to 2 to take up the whole screen when needed. -->
-    <ng2-balloon-msg-ns [rowSpan]="rowSpan"
-                        (rowSpanChangedEvent)="rowSpan = $event">
+    <!--<ng2-balloon-msg-ns [rowSpan]="rowSpan"-->
+    <!--(fullScreenNeededEvent)="setBalloonFullScreen($event)">-->
 
-    </ng2-balloon-msg-ns>
-
+    <!--</ng2-balloon-msg-ns>-->
 </GridLayout>

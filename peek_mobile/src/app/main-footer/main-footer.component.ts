@@ -2,9 +2,12 @@ import {Component} from "@angular/core";
 import {ConfigLink, FooterService, NavBackService, TitleService} from "@synerty/peek-util";
 import {ComponentLifecycleEventEmitter, VortexStatusService} from "@synerty/vortexjs";
 
+import {switchStyleUrls} from "@synerty/peek-util/index.web";
+
 @Component({
     selector: "peek-main-footer",
     templateUrl: "main-footer.component.web.html",
+    styleUrls: ["main-footer.component.web.scss"],
     moduleId: module.id
 })
 export class MainFooterComponent extends ComponentLifecycleEventEmitter {
@@ -39,6 +42,10 @@ export class MainFooterComponent extends ComponentLifecycleEventEmitter {
             .takeUntil(this.onDestroyEvent)
             .subscribe(v => this.vortexIsOnline = v);
 
+    }
+
+    isBackButtonEnabled():boolean {
+        return this.navBackService.navBackLen() != 0;
     }
 
 

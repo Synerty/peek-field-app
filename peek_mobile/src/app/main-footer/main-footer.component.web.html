@@ -1,13 +1,15 @@
-<div *ngIf="isEnabled" class="peek-footer-bar"
+<div *ngIf="isEnabled" class="peek-footer"
      [class.bg-danger]="!vortexIsOnline">
     <div class="btn-group pull-left"
          role="group">
-        <button class="footer-bar-btn" (click)="navBackService.navBack()">
+        <button class="footer-bar-btn"
+                [disabled]="!isBackButtonEnabled()"
+                (click)="navBackService.navBack()">
             <fa name="chevron-left" tooltip="Navigate to the last screen"></fa>
         </button>
     </div>
 
-    <div class="footer-bar-footer">
+    <div class="footer-bar-text">
         {{statusText}}
     </div>
 

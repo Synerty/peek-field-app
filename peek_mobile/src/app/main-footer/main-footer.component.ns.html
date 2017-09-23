@@ -1,16 +1,17 @@
 <GridLayout *ngIf="isEnabled"
-            class="peek-footer-bar"
+            class="peek-footer"
             [class.bg-danger]="!vortexIsOnline"
             rows="auto"
             columns="auto, *, auto">
 
-    <Button class="fa footer-bar-btn"
+    <Button [isEnabled]="isBackButtonEnabled()"
+            class="fa  footer-bar-btn"
             [text]="'chevron-left' | fonticon"
             (tap)="navBackService.navBack()">
     </Button>
 
     <Label row="0" col="1"
-           class="footer-bar-status"
+           class="footer-bar-text"
            [text]="statusText"> </Label>
 
     <WrapLayout row="0" col="2" *ngFor="let link of configLinks">
