@@ -19,8 +19,10 @@
     </DockLayout>
 
     <!-- This must be down the bottom, otherwise the messages don't cover the content -->
-    <ng2-balloon-msg-ns [rowSpan]="rowSpan"
-    (fullScreenNeededEvent)="setBalloonFullScreen($event)">
+    <ng2-balloon-msg-ns
+            [rowSpan]="rowSpan"
+            (fullScreenNeededEvent)="setBalloonFullScreen($event)">
 
     </ng2-balloon-msg-ns>
+
 </GridLayout>
