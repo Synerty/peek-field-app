@@ -4,18 +4,17 @@
 
     <DockLayout row="0" col="0" rowSpan="2">
 
-        <GridLayout rows="auto" verticalAlignment="top" dock="top">
-            <peek-main-title verticalAlignment="top"></peek-main-title>
+        <GridLayout rows="auto"  dock="top">
+            <peek-main-title ></peek-main-title>
         </GridLayout>
 
-        <GridLayout rows="auto" verticalAlignment="bottom" dock="bottom">
-            <peek-main-footer verticalAlignment="bottom"></peek-main-footer>
+        <GridLayout rows="auto"  dock="bottom">
+            <peek-main-footer ></peek-main-footer>
         </GridLayout>
 
-        <GridLayout dock="left" class="peek-mobile-page-contents">
+        <StackLayout dock="left" class="peek-mobile-page-contents">
             <router-outlet></router-outlet>
-        </GridLayout>
-
+        </StackLayout>
     </DockLayout>
 
     <!-- This must be down the bottom, otherwise the messages don't cover the content -->

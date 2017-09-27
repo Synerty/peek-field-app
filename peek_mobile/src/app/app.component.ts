@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
     }
 
     setBalloonFullScreen(enabled:boolean):void{
-        this.rowSpan = enabled ? 3 : 1;
+        this.rowSpan = enabled ? 2 : 1;
     }
 
 }
