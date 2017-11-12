@@ -24,6 +24,7 @@
     "nativescript-appversion": "^1.4.1",
     "nativescript-background-task": "git+https://github.com/Synerty/nativescript-background-task.git#a846255",
     "nativescript-camera": "^3.0.0",
+    "nativescript-dev-webpack": "^0.8.0",
     "nativescript-ngx-fonticon": "^2.1.2",
     "nativescript-peek-update": "^0.1.2",
     "nativescript-pro-ui": "^3.1.2",
@@ -43,14 +44,24 @@
   },
   "description": "Peek - Enterprise Pluggable Platform",
   "devDependencies": {
+    "@angular/compiler-cli": "~4.1.0",
+    "@ngtools/webpack": "~1.6.0",
     "babel-traverse": "6.24.1",
     "babel-types": "6.24.1",
     "babylon": "6.16.1",
+    "copy-webpack-plugin": "~4.0.1",
+    "extract-text-webpack-plugin": "~3.0.0",
     "lazy": "1.0.11",
-    "nativescript-dev-android-snapshot": "^0.*.*",
+    "nativescript-css-loader": "~0.26.0",
     "nativescript-dev-sass": "^1.2.0",
     "nativescript-dev-typescript": "^0.5.0",
-    "typescript": "2.3.4"
+    "nativescript-worker-loader": "~0.8.1",
+    "raw-loader": "~0.5.1",
+    "resolve-url-loader": "~2.1.0",
+    "typescript": "2.3.4",
+    "webpack": "~3.2.0",
+    "webpack-bundle-analyzer": "^2.8.2",
+    "webpack-sources": "~1.0.1"
   },
   "license": "MIT",
   "nativescript": {
@@ -66,7 +77,14 @@
   "readme": "Peek Platform - Native Mobile App",
   "repository": "<fill-your-repository-here>",
   "scripts": {
-    "start": "tns run android --watch"
+    "start": "tns run android --watch",
+    "ns-bundle": "ns-bundle",
+    "start-android-bundle": "npm run ns-bundle --android --run-app",
+    "start-ios-bundle": "npm run ns-bundle --ios --run-app",
+    "build-android-bundle": "npm run ns-bundle --android --build-app",
+    "build-ios-bundle": "npm run ns-bundle --ios --build-app",
+    "publish-ios-bundle": "npm run ns-bundle --ios --publish-app",
+    "generate-android-snapshot": "generate-android-snapshot --targetArchs arm,arm64,ia32 --install"
   },
   "version": "0.0.0",
   "author": "www.synerty.com"
