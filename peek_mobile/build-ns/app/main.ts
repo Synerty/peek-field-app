@@ -11,6 +11,12 @@ import "@synerty/vortexjs";
 import {VortexService} from "@synerty/vortexjs";
 VortexService.setVortexUrl(null);
 
+// Enable the use of workers for the payload
+import {Payload} from "@synerty/vortexjs";
+import {PayloadDelegateNs} from "@synerty/vortexjs/index-nativescript";
+
+Payload.setWorkerDelegate(new PayloadDelegateNs());
+
 // import "nativescript-angular";
 // // Potentially enable angular prod mode
 // import {enableProdMode} from "@angular/core";
