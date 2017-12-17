@@ -22,7 +22,8 @@ import {
 
 import {
     TupleStorageFactoryServiceNs,
-    WebSqlNativeScriptFactoryService
+    WebSqlNativeScriptFactoryService,
+    WebSqlNativeScriptThreadedFactoryService
 } from "@synerty/vortexjs/index-nativescript";
 // Routes
 import {staticRoutes} from "./app/app.routes";
@@ -66,7 +67,8 @@ TNSFontIconService.debug = false;
     schemas: [NO_ERRORS_SCHEMA],
     providers: [
         {provide: NgModuleFactoryLoader, useClass: NSModuleFactoryLoader},
-        {provide: WebSqlFactoryService, useClass: WebSqlNativeScriptFactoryService},
+        // {provide: WebSqlFactoryService, useClass: WebSqlNativeScriptFactoryService},
+        {provide: WebSqlFactoryService, useClass: WebSqlNativeScriptThreadedFactoryService},
         {provide: TupleStorageFactoryService, useClass: TupleStorageFactoryServiceNs},
         TupleActionPushOfflineSingletonService,
 
