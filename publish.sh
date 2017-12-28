@@ -31,6 +31,10 @@ sed -i "s;^package_version.*=.*;package_version = '${VER}';"  setup.py
 # Update the package version
 sed -i "s;.*version.*;__version__ = '${VER}';" ${PACKAGE}/__init__.py
 
+# Update the nativescript version
+sed -i "s/111.111.111/${VER}/g" peek_mobile/build-ns/app/App_Resources/iOS/Info.plist
+sed -i "s/111.111.111/${VER}/g" peek_mobile/build-ns/app/App_Resources/Android/AndroidManifest.xml
+
 # Upload to test pypi
 if [[ ${VER} == *"dev"* ]]; then
     python setup.py  sdist --format=gztar
