@@ -25,16 +25,18 @@ export class MainHomeComponent extends ComponentLifecycleEventEmitter implements
     ngOnInit() {
     }
 
+    appButtonGridColumns = 3;
+
     appButtonGridRows(): string {
         let val = "auto";
-        for (let i = 0; i < this.appDetails.length / 2; i++) {
+        for (let i = 0; i < this.appDetails.length / this.appButtonGridColumns; i++) {
             val += ", auto";
         }
         return val;
     }
 
     appButtonGridRowIndex(index): number {
-        return Math.floor(index / 2);
+        return Math.floor(index / this.appButtonGridColumns);
     }
 
 }
