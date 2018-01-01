@@ -4,12 +4,12 @@
 
     <DockLayout row="0" col="0" rowSpan="2">
 
-        <GridLayout rows="auto"  dock="top">
-            <peek-main-title ></peek-main-title>
+        <GridLayout rows="auto" dock="top">
+            <peek-main-title></peek-main-title>
         </GridLayout>
 
-        <GridLayout rows="auto"  dock="bottom">
-            <peek-main-footer ></peek-main-footer>
+        <GridLayout rows="auto" dock="bottom">
+            <peek-main-footer></peek-main-footer>
         </GridLayout>
 
         <StackLayout dock="left" class="peek-mobile-page-contents">
@@ -19,8 +19,8 @@
 
     <!-- This must be down the bottom, otherwise the messages don't cover the content -->
     <ng2-balloon-msg-ns
-            [rowSpan]="rowSpan"
-            (fullScreenNeededEvent)="setBalloonFullScreen($event)">
+        row="0" col="0" rowSpan="1"
+        (fullScreenNeededEvent)="setBalloonFullScreen($event)">
 
     </ng2-balloon-msg-ns>
 

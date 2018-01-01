@@ -10,7 +10,7 @@ import {OnInit} from "@angular/core";
 })
 export class AppComponent implements OnInit {
 
-    rowSpan = 1;
+    fullScreen = false;
 
     constructor(private vortexService: VortexService,
                 private vortexStatusService: VortexStatusService) {
@@ -21,8 +21,8 @@ export class AppComponent implements OnInit {
         this.vortexService.reconnect();
     }
 
-    setBalloonFullScreen(enabled:boolean):void{
-        this.rowSpan = enabled ? 2 : 1;
+    setBalloonFullScreen(enabled: boolean): void {
+            this.fullScreen = enabled;
     }
 
 }
