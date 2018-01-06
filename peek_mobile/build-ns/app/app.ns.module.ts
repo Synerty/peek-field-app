@@ -32,6 +32,7 @@ import {peekRootServices} from "./app/app.services";
 // Components
 import {AppComponent} from "./app/app.component";
 import {MainHomeComponent} from "./app/main-home/main-home.component";
+import {MainConfigComponent} from "./app/main-config/main-config.component";
 import {MainTitleComponent} from "./app/main-title/main-title.component";
 import {UnknownRouteComponent} from "./app/unknown-route/unknown-route.component";
 import {pluginRootModules} from "./plugin-root-modules";
@@ -50,6 +51,7 @@ TNSFontIconService.debug = false;
         MainTitleComponent,
         MainFooterComponent,
         MainHomeComponent,
+        MainConfigComponent,
         UnknownRouteComponent],
     bootstrap: [AppComponent],
     imports: [

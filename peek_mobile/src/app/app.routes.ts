@@ -1,9 +1,11 @@
 import {MainHomeComponent} from "./main-home/main-home.component";
+import {MainConfigComponent} from "./main-config/main-config.component";
 import {UnknownRouteComponent} from "./unknown-route/unknown-route.component";
 
 import {DeviceEnrolledGuard} from "@peek/peek_core_device";
 
-import {pluginRoutes} from "../plugin-routes";
+import {pluginAppRoutes} from "../plugin-app-routes";
+import {pluginCfgRoutes} from "../plugin-cfg-routes";
 
 export const staticRoutes = [
     {
@@ -19,8 +21,13 @@ export const staticRoutes = [
                 path: '',
                 component: MainHomeComponent
             },
-            ...pluginRoutes
+            ...pluginAppRoutes,
+            ...pluginCfgRoutes
         ]
+    },
+    {
+        path: 'config',
+        component: MainConfigComponent
     },
     {
         path: "**",

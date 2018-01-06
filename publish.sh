@@ -34,6 +34,8 @@ sed -i "s;.*version.*;__version__ = '${VER}';" ${PACKAGE}/__init__.py
 # Update the nativescript version
 sed -i "s/111.111.111/${VER}/g" peek_mobile/build-ns/app/App_Resources/iOS/Info.plist
 sed -i "s/111.111.111/${VER}/g" peek_mobile/build-ns/app/App_Resources/Android/AndroidManifest.xml
+sed -i "s/111.111.111/${VER}/g" peek_mobile/src/app/main-config/main-config.component.ns.html
+sed -i "s/111.111.111/${VER}/g" peek_mobile/src/app/main-config/main-config.component.web.html
 
 # Upload to test pypi
 if [[ ${VER} == *"dev"* ]]; then
