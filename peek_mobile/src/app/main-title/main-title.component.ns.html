@@ -10,7 +10,7 @@
                 [nsRouterLink]="['/']">
         </Button>
 
-        <Button class="title-bar-btn"
+        <Button class="title-bar-btn title-bar-btn-divider"
                 *ngFor="let link of leftLinks"
                 [text]="linkTitle(link)"
                 [nsRouterLink]="[link.resourcePath]">
