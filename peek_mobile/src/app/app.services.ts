@@ -15,6 +15,9 @@ export function footerServiceFactory() {
 
 
 export let peekRootServices = [
+    // Ng2BalloonMsg
+    Ng2BalloonMsgService,
+
     // Peek-Util
     {
         provide: TitleService,
@@ -25,9 +28,6 @@ export let peekRootServices = [
         useFactory: footerServiceFactory
     },
     NavBackService,
-
-    // Ng2BalloonMsg
-    Ng2BalloonMsgService,
 
     // Vortex Services
     VortexStatusService,

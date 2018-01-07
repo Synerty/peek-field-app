@@ -68,6 +68,8 @@ TNSFontIconService.debug = false;
     ],
     schemas: [NO_ERRORS_SCHEMA],
     providers: [
+        ...peekRootServices,
+
         {provide: NgModuleFactoryLoader, useClass: NSModuleFactoryLoader},
         // {provide: WebSqlFactoryService, useClass: WebSqlNativeScriptFactoryService},
         {provide: WebSqlFactoryService, useClass: WebSqlNativeScriptThreadedFactoryService},
@@ -88,7 +90,6 @@ TNSFontIconService.debug = false;
         TupleOfflineStorageService,
         TupleDataOfflineObserverService,
 
-        ...peekRootServices,
         ...pluginRootServices,
     ]
 })
