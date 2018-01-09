@@ -1,5 +1,7 @@
 import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
 
+
+
 // Enable the use of workers for the payload
 import {Payload} from "@synerty/vortexjs";
 import {PayloadDelegateWeb} from "@synerty/vortexjs/index-browser";
