@@ -7,6 +7,7 @@
     <Button row="0" col="0"
             [isEnabled]="isBackButtonEnabled()"
             class="fa footer-bar-btn"
+            [class.footer-bar-btn-disabled]="!isBackButtonEnabled()"
             [text]="'fa-chevron-left' | fonticon"
             (tap)="navBackService.navBack()">
     </Button>

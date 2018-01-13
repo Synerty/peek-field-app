@@ -5,6 +5,7 @@
          role="group">
         <button class="footer-bar-btn"
                 [disabled]="!isBackButtonEnabled()"
+                [class.footer-bar-btn-disabled]="!isBackButtonEnabled()"
                 (click)="navBackService.navBack()">
             <fa name="chevron-left" tooltip="Navigate to the last screen"></fa>
         </button>
