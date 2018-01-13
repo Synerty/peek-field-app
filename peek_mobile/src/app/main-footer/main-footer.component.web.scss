@@ -2,31 +2,63 @@
 @import '~@synerty/peek-theme/scss/_variables.web';
 
 .peek-footer {
-  $section_font_size: $general_font_size_2;
-  background-color: $white;
-  text-align: center;
-  @include box-shadow;
-}
+    /* Style */
+    background-color: $white;
 
-// Footer Bar
-.peek-footer {
-  /* Contains the Title Bar classes */
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: $mobile_footer_bar_height;
-}
+    /* Layout */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: $mobile_footer_bar_height;
+    display: flex;
+    z-index: 1001;
+    overflow: hidden;
 
-.footer-bar-btn {
-  /* Contains the button attributes unique to the Title Bar */
-  padding: $general_padding_2;
-  margin-right: 0;
-}
+    .btn-group {
+        /* Style */
 
-.footer-bar-text {
-  /* Contains the footer attributes unique to the Title Bar */
-  vertical-align: center;
-  padding-left: $general_padding_2;
-  padding-right: $general_padding_2;
+        /* Layout */
+        position: relative;
+        float: left;
+        border-radius: $general_border_radius;
+
+        .footer-bar-btn {
+            /* Style */
+            color: $white;
+            cursor: pointer;
+            border: 0;
+            font-size: $general_font_size_2;
+            border-radius: 0;
+            background-color: $brand;
+            border-right: $general_border solid $brand_dark;
+            border-left: 0;
+
+            /* Layout */
+            height: $mobile_footer_bar_height;
+            margin-right: 0;
+            display: inline-block;
+            position: relative;
+            min-width: $title_bar_button_min_width;
+            float: left;
+        }
+
+        .footer-bar-btn {
+            &:last-child {
+                border-right: 0;
+            }
+        }
+    }
+
+    .footer-bar-text {
+        /* Style */
+        font-size: $general_font_size_2;
+        text-align: center;
+        color: $black;
+
+        /* Layout */
+        line-height: $mobile_footer_bar_height;
+        margin: auto;
+        width: 50%;
+    }
+
 }

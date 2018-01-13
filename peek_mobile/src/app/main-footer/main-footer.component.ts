@@ -45,7 +45,7 @@ export class MainFooterComponent extends ComponentLifecycleEventEmitter {
     }
 
     isBackButtonEnabled():boolean {
-        return this.navBackService.navBackLen() != 0;
+        return false;
     }
 
 

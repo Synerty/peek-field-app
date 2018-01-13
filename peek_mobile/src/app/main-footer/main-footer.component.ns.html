@@ -4,13 +4,12 @@
             rows="auto"
             columns="auto, *, auto">
 
-    <!--
-    <Button [isEnabled]="isBackButtonEnabled()"
-            class="fa  footer-bar-btn"
+    <Button row="0" col="0"
+            [isEnabled]="isBackButtonEnabled()"
+            class="fa footer-bar-btn"
             [text]="'fa-chevron-left' | fonticon"
             (tap)="navBackService.navBack()">
     </Button>
-    -->
 
     <Label row="0" col="1"
            class="footer-bar-text"
@@ -18,8 +17,9 @@
 
     <Button row="0" col="2"
             class="fa footer-bar-btn"
-            [text]="'cog' | fonticon"
+            [text]="'fa-cog' | fonticon"
             [nsRouterLink]="['/config']">
     </Button>
 
 </GridLayout>
+
