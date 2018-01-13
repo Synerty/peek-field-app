@@ -25,17 +25,19 @@ fi
 
 echo "Setting version to $VER"
 
-# Update the setup.py
-sed -i "s;^package_version.*=.*;package_version = '${VER}';"  setup.py
+VER_FILES="setup.py"
+VER_FILES="${VER_FILES} ${PACKAGE}/__init__.py"
+VER_FILES="${VER_FILES} peek_mobile/build-ns/app/App_Resources/iOS/Info.plist"
+VER_FILES="${VER_FILES} peek_mobile/build-ns/app/App_Resources/Android/AndroidManifest.xml"
+VER_FILES="${VER_FILES} peek_mobile/src/app/main-config/main-config.component.ns.html"
+VER_FILES="${VER_FILES} peek_mobile/src/app/main-config/main-config.component.web.html"
 
-# Update the package version
-sed -i "s;.*version.*;__version__ = '${VER}';" ${PACKAGE}/__init__.py
+for file in ${VER_FILES}
+do
+    sed -i "s/###PEEKVER###/${VER}/g" $file
+    sed -i "s/111.111.111/${VER}/g" $file
+done
 
-# Update the nativescript version
-sed -i "s/111.111.111/${VER}/g" peek_mobile/build-ns/app/App_Resources/iOS/Info.plist
-sed -i "s/111.111.111/${VER}/g" peek_mobile/build-ns/app/App_Resources/Android/AndroidManifest.xml
-sed -i "s/111.111.111/${VER}/g" peek_mobile/src/app/main-config/main-config.component.ns.html
-sed -i "s/111.111.111/${VER}/g" peek_mobile/src/app/main-config/main-config.component.web.html
 
 # Upload to test pypi
 if [[ ${VER} == *"dev"* ]]; then
@@ -44,8 +46,7 @@ if [[ ${VER} == *"dev"* ]]; then
 
 else
     python setup.py sdist --format=gztar
-    # Reset the commit, we don't want versions in the commit
-    git commit -a -m "Updated to version ${VER}"
+    git reset --hard
 
     git tag ${VER}
     git push
