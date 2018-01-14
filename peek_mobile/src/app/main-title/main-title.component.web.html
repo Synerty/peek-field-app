@@ -19,9 +19,12 @@
         {{title}}
     </div>
 
-    <div class="pull-right">
-        <fa *ngIf="!vortexIsOnline" name="unlink"
+    <div *ngIf="!vortexIsOnline" class="pull-right">
+        <fa name="unlink"
             tooltip="Connection to server is offline"></fa>
+    </div>
+
+    <div class="pull-right">
         <div class="btn-group"
              role="group">
             <button class="title-bar-btn"
