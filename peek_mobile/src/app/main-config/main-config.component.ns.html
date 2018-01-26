@@ -8,20 +8,20 @@
            text="No Plugin Configs Availible">
 
     </Label>   <ListView class="peek-config-screen" [items]="appDetails">
-        <ng-template let-app="item">
-            <GridLayout class="config-screen-icon"
+        <ng-template let-item="item">
+            <GridLayout class="btn"
                         rows="auto"
                         columns="auto, *"
-                        [nsRouterLink]="[app.resourcePath]">
+                        [nsRouterLink]="[item.resourcePath]">
                 <Image class="config-screen-image"
                        row="0"
                        col="0"
-                       src="~{{app.pluginIconPath}}"></Image>
+                       src="~{{item.pluginIconPath}}"></Image>
                 <Label class="config-screen-title"
                        row="0"
                        col="1"
                        setEllipsize(android.text.TextUtils.TruncateAt.END)
-                       [text]="app.title"></Label>
+                       [text]="item.title"></Label>
             </GridLayout>
         </ng-template>
     </ListView>
