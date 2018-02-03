@@ -24,6 +24,7 @@
     "nativescript-appversion": "^1.4.1",
     "nativescript-background-task": "https://github.com/mobilemindtec/nativescript-background-task.git",
     "nativescript-camera": "^3.0.0",
+    "nativescript-iqkeyboardmanager": "^1.2.0",
     "nativescript-ngx-fonticon": "^2.1.2",
     "nativescript-peek-update": "^0.1.2",
     "nativescript-pro-ui": "^3.1.2",
