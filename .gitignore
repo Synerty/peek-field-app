@@ -16,6 +16,8 @@
 **/build-web/src/app/
 **/@peek/
 
+**/app*zip
+
 # Ignore the CSS files that we have SCSS files for
 # NativeScript
 app.ios.css
