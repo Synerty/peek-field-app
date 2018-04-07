@@ -13,7 +13,10 @@
 **/peek_core_*
 **/peek_plugin_*
 **/build-ns/app/app/
+**/build-ns/app/@synerty
 **/build-web/src/app/
+**/build-web/src/@synerty/ng2-balloon-msg
+**/build-web/src/@synerty/peek-util
 **/@peek/
 
 **/app*zip
