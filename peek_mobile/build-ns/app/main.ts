@@ -6,6 +6,9 @@ import {platformNativeScriptDynamic} from "nativescript-angular/platform";
 import "nativescript-websockets";
 import "moment";
 
+import 'rxjs/add/observable/zip';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/zip';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/takeUntil';
 import 'rxjs/add/operator/first';

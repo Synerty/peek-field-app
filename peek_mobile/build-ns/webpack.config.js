@@ -35,8 +35,9 @@ module.exports = env => {
             extensions: [".ts", ".js", ".scss", ".css"],
             // Resolve {N} system modules from tns-core-modules
             modules: [
+                "app",
                 "node_modules/tns-core-modules",
-                "node_modules",
+                "node_modules"
             ],
             alias: {
                 '~': resolve("./app")
@@ -57,7 +58,7 @@ module.exports = env => {
         },
         module: {
             rules: [
-                { test: /\.html$|\.xml$/, use: "raw-loader" },
+                { test: /\.html$|\.xml$$/, use: "raw-loader" },
 
                 // tns-core-modules reads the app.css and its imports using css-loader
                 { test: /\/app\.css$/, use: "css-loader?url=false" },
@@ -89,6 +90,7 @@ module.exports = env => {
                 { from: "fonts/**" },
                 { from: "**/*.jpg" },
                 { from: "**/*.png" },
+                { from: "**/*.mp3" },
                 { from: "**/*.xml" },
             ]),
             // Generate a bundle starter script and activate it in package.json
@@ -101,7 +103,7 @@ module.exports = env => {
             // AngularCompilerPlugin with augmented NativeScript filesystem to handle platform specific resource resolution.
             new nsWebpack.NativeScriptAngularCompilerPlugin(
                 Object.assign({
-                    entryModule: resolve(__dirname, "app/app.module#AppModule"),
+                    entryModule: resolve(__dirname, "app/app.ns.module#AppNsModule"),
                     skipCodeGeneration: !aot,
                     platformOptions: {
                         platform,
