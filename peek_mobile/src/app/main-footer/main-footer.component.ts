@@ -2,8 +2,6 @@ import {Component} from "@angular/core";
 import {ConfigLink, FooterService, NavBackService, TitleService} from "@synerty/peek-util";
 import {ComponentLifecycleEventEmitter, VortexStatusService} from "@synerty/vortexjs";
 
-import {switchStyleUrls} from "@synerty/peek-util/index.web";
-
 @Component({
     selector: "peek-main-footer",
     templateUrl: "main-footer.component.web.html",
