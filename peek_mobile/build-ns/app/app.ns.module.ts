@@ -7,8 +7,8 @@ import {
     NSModuleFactoryLoader
 } from "nativescript-angular/router";
 // @synerty
-import {Ng2BalloonMsgNsModule} from "~/@synerty/ng2-balloon-msg/index.nativescript";
-import {PeekModuleFactory} from "~/@synerty/peek-util/index.ns";
+import {Ng2BalloonMsgNsModule} from "@synerty/ng2-balloon-msg-ns";
+import {PeekModuleFactory} from "@synerty/peek-util-ns";
 import {
     TupleActionPushOfflineSingletonService,
     TupleDataObservableNameService,
