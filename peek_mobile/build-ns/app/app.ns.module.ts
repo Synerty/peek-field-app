@@ -63,7 +63,8 @@ TNSFontIconService.debug = false;
         Ng2BalloonMsgNsModule,
         ...pluginRootModules,
         TNSFontIconModule.forRoot({
-            'fa': './assets/font-awesome.min.css'
+            // Webpack doesn't import this if it's in assets
+            'fa': './fonts/font-awesome.min.css'
         })
     ],
     schemas: [NO_ERRORS_SCHEMA],

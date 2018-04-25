@@ -17,6 +17,7 @@ import 'rxjs/add/operator/first';
 // -----------------------------
 // Import and set the vortexjs, and the vortex connection
 import "@synerty/vortexjs";
+
 import {VortexService} from "@synerty/vortexjs";
 VortexService.setVortexUrl(null);
 
