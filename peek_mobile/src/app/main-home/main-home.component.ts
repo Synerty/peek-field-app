@@ -16,7 +16,7 @@ export class MainHomeComponent extends ComponentLifecycleEventEmitter implements
 
     appDetails = homeLinks;
 
-    constructor(tupleDataObserver: TupleDataOfflineObserverService, titleService: TitleService) {
+    constructor(titleService: TitleService) {
         super();
         titleService.setTitle("Peek Home");
 

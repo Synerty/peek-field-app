@@ -11,18 +11,12 @@ import {Ng2BalloonMsgNsModule} from "@synerty/ng2-balloon-msg-ns";
 import {PeekModuleFactory} from "@synerty/peek-util-ns";
 import {
     TupleActionPushOfflineSingletonService,
-    TupleDataObservableNameService,
-    TupleDataObserverService,
-    TupleDataOfflineObserverService,
-    TupleOfflineStorageNameService,
-    TupleOfflineStorageService,
     TupleStorageFactoryService,
     WebSqlFactoryService
 } from "@synerty/vortexjs";
 
 import {
     TupleStorageFactoryServiceNs,
-    WebSqlNativeScriptFactoryService,
     WebSqlNativeScriptThreadedFactoryService
 } from "@synerty/vortexjs/index-nativescript";
 // Routes
@@ -77,19 +71,6 @@ TNSFontIconService.debug = false;
         {provide: TupleStorageFactoryService, useClass: TupleStorageFactoryServiceNs},
         TupleActionPushOfflineSingletonService,
 
-        // Use the TupleDataObserver services, with offline storage
-        {
-            provide: TupleDataObservableNameService,
-            useValue: new TupleDataObservableNameService(
-                "peek_client", {"plugin": "peek_client"})
-        }, {
-            provide: TupleOfflineStorageNameService,
-            useValue: new TupleOfflineStorageNameService("peek_client")
-        },
-        // These have NAME dependencies
-        TupleDataObserverService,
-        TupleOfflineStorageService,
-        TupleDataOfflineObserverService,
 
         ...pluginRootServices,
     ]
