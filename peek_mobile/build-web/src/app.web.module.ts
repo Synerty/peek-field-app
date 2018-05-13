@@ -10,20 +10,15 @@ import {Ng2BalloonMsgModule} from "@synerty/ng2-balloon-msg-web";
 import {PeekModuleFactory} from "@synerty/peek-util-web";
 import {
     TupleActionPushOfflineSingletonService,
-    TupleDataObservableNameService,
-    TupleDataObserverService,
-    TupleDataOfflineObserverService,
     TupleOfflineStorageNameService,
-    TupleOfflineStorageService,
+    TupleStorageFactoryService,
     WebSqlFactoryService,
-TupleStorageFactoryService,
 } from "@synerty/vortexjs";
 
 import {
     TupleStorageFactoryServiceWeb,
     WebSqlBrowserFactoryService
 } from "@synerty/vortexjs/index-browser";
-
 // Routes
 import {staticRoutes} from "./app/app.routes";
 import {peekRootServices} from "./app/app.services";
@@ -36,10 +31,6 @@ import {MainFooterComponent} from "./app/main-footer/main-footer.component";
 import {UnknownRouteComponent} from "./app/unknown-route/unknown-route.component";
 import {pluginRootModules} from "./plugin-root-modules";
 import {pluginRootServices} from "./plugin-root-services";
-
-export function tupleDataObservableNameServiceFactory() {
-    return new TupleDataObservableNameService("peek_client", {"plugin": "peek_client"});
-}
 
 export function tupleOfflineStorageNameServiceFactory() {
     return new TupleOfflineStorageNameService("peek_client");
@@ -65,14 +56,12 @@ export function tupleOfflineStorageNameServiceFactory() {
         ...pluginRootModules
     ],
     providers: [
+        ...peekRootServices,
+
         {provide: WebSqlFactoryService, useClass: WebSqlBrowserFactoryService},
         {provide: TupleStorageFactoryService, useClass: TupleStorageFactoryServiceWeb},
         TupleActionPushOfflineSingletonService,
 
-
-
-
-        ...peekRootServices,
         ...pluginRootServices,
     ]
 })

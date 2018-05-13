@@ -6,6 +6,9 @@ import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
 import {Payload} from "@synerty/vortexjs";
 import {PayloadDelegateWeb} from "@synerty/vortexjs/index-browser";
 
+import {VortexService} from "@synerty/vortexjs";
+VortexService.setVortexClientName("peek-mobile");
+
 // Payload.setWorkerDelegate(new PayloadDelegateWeb());
 
 // Potentially enable angular prod mode

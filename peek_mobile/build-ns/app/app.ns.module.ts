@@ -66,8 +66,10 @@ TNSFontIconService.debug = false;
         ...peekRootServices,
 
         {provide: NgModuleFactoryLoader, useClass: NSModuleFactoryLoader},
-        // {provide: WebSqlFactoryService, useClass: WebSqlNativeScriptFactoryService},
-        {provide: WebSqlFactoryService, useClass: WebSqlNativeScriptThreadedFactoryService},
+        {
+            provide: WebSqlFactoryService,
+            useClass: WebSqlNativeScriptThreadedFactoryService
+        },
         {provide: TupleStorageFactoryService, useClass: TupleStorageFactoryServiceNs},
         TupleActionPushOfflineSingletonService,
 

@@ -20,6 +20,7 @@ import "@synerty/vortexjs";
 
 import {VortexService} from "@synerty/vortexjs";
 VortexService.setVortexUrl(null);
+VortexService.setVortexClientName("peek-mobile");
 
 // -----------------------------
 // Enable the use of workers for the payload
