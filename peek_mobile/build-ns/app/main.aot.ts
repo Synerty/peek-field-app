@@ -5,14 +5,15 @@ import { platformNativeScript } from "nativescript-angular/platform-static";
 import "nativescript-websockets";
 import "moment";
 
-
 import 'rxjs/add/observable/zip';
+import 'rxjs/add/observable/interval';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/zip';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/takeUntil';
 import 'rxjs/add/operator/first';
 import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/operator/debounce';
 
 
 // Import some stuff that we need
