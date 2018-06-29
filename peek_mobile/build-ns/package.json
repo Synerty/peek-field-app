@@ -12,7 +12,7 @@
     "@synerty/ng2-balloon-msg": "^0.3.8",
     "@synerty/ng2-balloon-msg-ns": "^0.3.8",
     "@synerty/peek-theme": "^0.2.5",
-    "@synerty/peek-util": "^0.6.1",
+    "@synerty/peek-util": "^0.6.5",
     "@synerty/peek-util-ns": "^0.6.1",
     "@synerty/vortexjs": "^1.0.5",
     "assert": "^1.4.1",
