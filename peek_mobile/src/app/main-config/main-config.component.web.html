@@ -15,8 +15,7 @@
 
         <div class="row" *ngFor="let item of appDetails">
             <div class="col-md-12">
-                <button class="btn information-section-icon" [routerLink]="[item.resourcePath]">
-                    <img  [src]="[item.pluginIconPath]">
+                <button class="btn" [routerLink]="[item.resourcePath]">
                     {{item.title}}
                 </button>
             </div>
