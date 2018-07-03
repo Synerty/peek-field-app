@@ -77,9 +77,9 @@ TNSFontIconService.debug = false;
         ...pluginRootServices,
     ]
 })
-export class AppNsModule {
+export class AppModule {
     constructor(page: Page) {
-        page.actionBarHidden = true;
+        // page.actionBarHidden = true;
     }
 
 }

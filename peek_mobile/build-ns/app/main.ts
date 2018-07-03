@@ -55,6 +55,6 @@ Payload.setWorkerDelegate(new PayloadDelegateNs());
 // -----------------------------
 // Bootstrap the app
 // This should be last
-import {AppNsModule} from "./app.ns.module";
+import {AppModule} from "./app.module";
 
-platformNativeScriptDynamic().bootstrapModule(AppNsModule);
+platformNativeScriptDynamic().bootstrapModule(AppModule);
