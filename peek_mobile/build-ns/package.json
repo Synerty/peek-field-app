@@ -23,7 +23,7 @@
     "moment": "^2.17.1",
     "nativescript-angular": "^6.0.6",
     "nativescript-appversion": "^1.4.1",
-    "nativescript-camera": "^3.0.0",
+    "nativescript-camera": "^4.0.2",
     "nativescript-iqkeyboardmanager": "^1.2.0",
     "nativescript-ngx-fonticon": "^4.1.0",
     "nativescript-sound": "^1.0.4",
@@ -37,7 +37,7 @@
     "rxjs": "~6.0.0 || >=6.1.0",
     "rxjs-compat": "^6.2.1",
     "scss": "^0.2.4",
-    "tns-core-modules": "^4.1.0",
+    "tns-core-modules": "^4.1.1",
     "tns-platform-declarations": "^3.3.0",
     "ts-md5": "^1.2.4",
     "zone.js": "^0.8.26"
@@ -78,10 +78,7 @@
   "nativescript": {
     "id": "com.synerty.peek",
     "tns-ios": {
-      "version": "4.1.1"
-    },
-    "tns-android": {
-      "version": "4.1.3"
+      "version": "4.1.0"
     }
   },
   "private": true,
