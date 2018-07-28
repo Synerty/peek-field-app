@@ -57,4 +57,4 @@ Payload.setWorkerDelegate(new PayloadDelegateNs());
 // This should be last
 import {AppModule} from "./app.module";
 
-platformNativeScriptDynamic().bootstrapModule(AppModule);
+platformNativeScriptDynamic({ createFrameOnBootstrap: true }).bootstrapModule(AppModule);

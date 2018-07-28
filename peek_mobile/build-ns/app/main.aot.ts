@@ -31,4 +31,4 @@ Payload.setWorkerDelegate(new PayloadDelegateNs());
 
 import { AppModuleNgFactory } from "./app.module.ngfactory";
 
-platformNativeScript().bootstrapModuleFactory(AppModuleNgFactory);
+platformNativeScript({ createFrameOnBootstrap: true }).bootstrapModuleFactory(AppModuleNgFactory);

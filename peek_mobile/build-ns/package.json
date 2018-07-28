@@ -38,7 +38,6 @@
     "rxjs-compat": "^6.2.1",
     "scss": "^0.2.4",
     "tns-core-modules": "^4.1.1",
-    "tns-ios": "4.1.0",
     "tns-platform-declarations": "^3.3.0",
     "ts-md5": "^1.2.4",
     "zone.js": "^0.8.26"
