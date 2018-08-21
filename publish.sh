@@ -31,6 +31,7 @@ sed -i "s;^package_version.*=.*;package_version = '${VER}';"  setup.py
 function updateFileVers {
     VER_FILES=""
     VER_FILES="${VER_FILES} ${PACKAGE}/__init__.py"
+    VER_FILES="${VER_FILES} peek_mobile/build-ns/package.json"
     VER_FILES="${VER_FILES} peek_mobile/build-ns/app/App_Resources/iOS/Info.plist"
     VER_FILES="${VER_FILES} peek_mobile/build-ns/app/App_Resources/Android/AndroidManifest.xml"
     VER_FILES="${VER_FILES} peek_mobile/src/app/main-config/main-config.component.ns.html"
