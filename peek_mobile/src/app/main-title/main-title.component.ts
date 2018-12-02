@@ -1,58 +1,51 @@
-import {OnInit, OnDestroy} from "@angular/core";
+import {Component, OnDestroy, OnInit} from "@angular/core";
 import {ActivatedRoute} from "@angular/router";
-import {Component} from "@angular/core";
-import {TitleService, TitleBarLink} from "@synerty/peek-util";
-import {VortexStatusService} from "@synerty/vortexjs";
+import {TitleBarLink, TitleService} from "@synerty/peek-util";
+import {ComponentLifecycleEventEmitter, VortexStatusService} from "@synerty/vortexjs";
 
 @Component({
     selector: "peek-main-title",
     templateUrl: "main-title.component.web.html",
     moduleId: module.id
 })
-export class MainTitleComponent implements OnInit, OnDestroy {
-
-    private subscriptions: any[] = [];
+export class MainTitleComponent extends ComponentLifecycleEventEmitter implements OnInit {
 
     private leftLinks = [];
     private rightLinks = [];
 
     title: string = "Peek";
     isEnabled: boolean = true;
-    vortexIsOnline:boolean= false;
+    vortexIsOnline: boolean = false;
 
-    constructor(vortexStatusService:VortexStatusService, titleService: TitleService) {
+    constructor(vortexStatusService: VortexStatusService, titleService: TitleService) {
+        super();
         this.leftLinks = titleService.leftLinksSnapshot;
         this.rightLinks = titleService.rightLinksSnapshot;
 
-        this.subscriptions.push(
-            titleService.title.subscribe(v => this.title = v));
+        titleService.title.takeUntil(this.onDestroyEvent)
+            .subscribe(v => this.title = v);
 
-        this.subscriptions.push(
-            titleService.isEnabled.subscribe(v => this.isEnabled = v));
+        titleService.isEnabled.takeUntil(this.onDestroyEvent)
+            .subscribe(v => this.isEnabled = v);
 
-        this.subscriptions.push(
-            titleService.leftLinks.subscribe(v => this.leftLinks = v));
+        titleService.leftLinks.takeUntil(this.onDestroyEvent)
+            .subscribe(v => this.leftLinks = v);
 
-        this.subscriptions.push(
-            titleService.rightLinks.subscribe(v => this.rightLinks = v));
+        titleService.rightLinks.takeUntil(this.onDestroyEvent)
+            .subscribe(v => this.rightLinks = v);
 
-        this.subscriptions.push(
-            vortexStatusService.isOnline.subscribe(v => this.vortexIsOnline = v));
+        vortexStatusService.isOnline.takeUntil(this.onDestroyEvent)
+            .subscribe(v => this.vortexIsOnline = v);
 
     }
 
     ngOnInit() {
     }
 
-    ngOnDestroy() {
-        while (this.subscriptions.length > 0)
-            this.subscriptions.pop().unsubscribe();
-    }
-
     // ------------------------------
     // Display methods
 
-    linkTitle(title:TitleBarLink) {
+    linkTitle(title: TitleBarLink) {
         if (title.badgeCount == null) {
             return title.text;
         }
