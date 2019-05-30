@@ -14,7 +14,7 @@
     "@synerty/peek-theme": "^0.2.5",
     "@synerty/peek-util": "^0.7.2",
     "@synerty/peek-util-ns": "^0.7.4",
-    "@synerty/vortexjs": "^1.1.16",
+    "@synerty/vortexjs": "^1.1.18",
     "assert": "^1.4.1",
     "cli-table": "^0.3.1",
     "font-awesome": "^4.7.0",
