@@ -9,6 +9,14 @@
                 text="Home"
                 [nsRouterLink]="['/']">
         </Button>
+        <Button class="title-bar-btn"
+                text="Login"
+                [nsRouterLink]="['/peek_core_user']">
+        </Button>
+        <Button class="title-bar-btn"
+                text="Search"
+                [nsRouterLink]="['/peek_core_search']">
+        </Button>
 
         <Button class="title-bar-btn title-bar-btn-divider"
                 *ngFor="let link of leftLinks"
