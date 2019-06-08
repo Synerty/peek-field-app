@@ -13,6 +13,7 @@
         </GridLayout>
 
         <StackLayout dock="left" class="peek-mobile-page-contents">
+            <peek-main-root-components *ngIf="!showLoading()"></peek-main-root-components>
             <core-device-loading *ngIf="showLoading()"></core-device-loading>
             <router-outlet [hidden]="showLoading()"></router-outlet>
         </StackLayout>

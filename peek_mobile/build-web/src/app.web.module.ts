@@ -31,6 +31,7 @@ import {MainFooterComponent} from "./app/main-footer/main-footer.component";
 import {UnknownRouteComponent} from "./app/unknown-route/unknown-route.component";
 import {pluginRootModules} from "./plugin-root-modules";
 import {pluginRootServices} from "./plugin-root-services";
+import {PluginRootComponent} from "./app/plugin-root.component";
 
 export function tupleOfflineStorageNameServiceFactory() {
     return new TupleOfflineStorageNameService("peek_client");
@@ -43,7 +44,8 @@ export function tupleOfflineStorageNameServiceFactory() {
         MainFooterComponent,
         MainHomeComponent,
         MainConfigComponent,
-        UnknownRouteComponent],
+        UnknownRouteComponent,
+        PluginRootComponent],
     bootstrap: [AppComponent],
     imports: [
         RouterModule,

@@ -35,6 +35,7 @@ import {pluginRootServices} from "./plugin-root-services";
 import {TNSFontIconModule, TNSFontIconService} from "nativescript-ngx-fonticon";
 import {Page} from "ui/page";
 import {MainFooterComponent} from "./app/main-footer/main-footer.component";
+import {PluginRootComponent} from "./app/plugin-root.component";
 // turn debug on
 
 TNSFontIconService.debug = false;
@@ -46,7 +47,8 @@ TNSFontIconService.debug = false;
         MainFooterComponent,
         MainHomeComponent,
         MainConfigComponent,
-        UnknownRouteComponent],
+        UnknownRouteComponent,
+        PluginRootComponent],
     bootstrap: [AppComponent],
     imports: [
         CommonModule,
