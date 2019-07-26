@@ -3,7 +3,6 @@ import {BrowserModule} from "@angular/platform-browser";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 import {NgModule} from "@angular/core";
-import {HttpModule} from "@angular/http";
 import {RouterModule} from "@angular/router";
 // @synerty
 import {Ng2BalloonMsgModule} from "@synerty/ng2-balloon-msg-web";
@@ -32,6 +31,12 @@ import {UnknownRouteComponent} from "./app/unknown-route/unknown-route.component
 import {pluginRootModules} from "./plugin-root-modules";
 import {pluginRootServices} from "./plugin-root-services";
 import {PluginRootComponent} from "./app/plugin-root.component";
+import {en_US, NgZorroAntdModule, NZ_I18N} from 'ng-zorro-antd';
+/** config angular i18n **/
+import {registerLocaleData} from '@angular/common';
+import en from '@angular/common/locales/en';
+
+registerLocaleData(en);
 
 export function tupleOfflineStorageNameServiceFactory() {
     return new TupleOfflineStorageNameService("peek_client");
@@ -53,11 +58,12 @@ export function tupleOfflineStorageNameServiceFactory() {
         BrowserModule,
         BrowserAnimationsModule,
         ...PeekModuleFactory.FormsModules,
-        HttpModule,
         Ng2BalloonMsgModule,
-        ...pluginRootModules
+        ...pluginRootModules,
+        NgZorroAntdModule
     ],
     providers: [
+        {provide: NZ_I18N, useValue: en_US},
         ...peekRootServices,
 
         {provide: WebSqlFactoryService, useClass: WebSqlBrowserFactoryService},
