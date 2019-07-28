@@ -7,6 +7,8 @@ import {Payload} from "@synerty/vortexjs";
 import {PayloadDelegateWeb} from "@synerty/vortexjs/index-browser";
 
 import {VortexService} from "@synerty/vortexjs";
+const protocol = location.protocol.toLowerCase() == 'https:' ? 'wss' : 'ws';
+VortexService.setVortexUrl(`${protocol}://${location.hostname}:${location.port}/vortexws`);
 VortexService.setVortexClientName("peek-mobile");
 
 // Payload.setWorkerDelegate(new PayloadDelegateWeb());

@@ -20,14 +20,13 @@ export class AppComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.vortexService.reconnect();
     }
 
     setBalloonFullScreen(enabled: boolean): void {
-            this.fullScreen = enabled;
+        this.fullScreen = enabled;
     }
 
-    showLoading():boolean {
+    showLoading(): boolean {
         return this.deviceStatusService.isLoading;
     }
 

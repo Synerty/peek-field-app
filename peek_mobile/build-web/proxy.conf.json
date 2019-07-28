@@ -3,5 +3,10 @@
     "target": "http://localhost:8000/vortex",
     "secure": false,
     "logLevel": "debug"
+  },
+  "/vortexws": {
+    "target": "http://localhost:8000/vortexws",
+    "secure": false,
+    "logLevel": "debug"
   }
 }
