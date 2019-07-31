@@ -10,6 +10,7 @@ import {homeLinks} from "../../plugin-home-links";
 @Component({
     selector: "peek-main-home",
     templateUrl: 'main-home.component.web.html',
+    styleUrls: ["main-home.component.web.scss"],
     moduleId: module.id
 })
 export class MainHomeComponent extends ComponentLifecycleEventEmitter implements OnInit {

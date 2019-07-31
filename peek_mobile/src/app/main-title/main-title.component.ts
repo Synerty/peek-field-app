@@ -2,10 +2,12 @@ import {Component, OnDestroy, OnInit} from "@angular/core";
 import {ActivatedRoute} from "@angular/router";
 import {TitleBarLink, TitleService} from "@synerty/peek-util";
 import {ComponentLifecycleEventEmitter, VortexStatusService} from "@synerty/vortexjs";
+import {LoggedInGuard} from "@peek/peek_core_user";
 
 @Component({
     selector: "peek-main-title",
     templateUrl: "main-title.component.web.html",
+    styleUrls: ["main-title.component.web.scss"],
     moduleId: module.id
 })
 export class MainTitleComponent extends ComponentLifecycleEventEmitter implements OnInit {
@@ -17,7 +19,10 @@ export class MainTitleComponent extends ComponentLifecycleEventEmitter implement
     isEnabled: boolean = true;
     vortexIsOnline: boolean = false;
 
-    constructor(vortexStatusService: VortexStatusService, titleService: TitleService) {
+    showSearch = false;
+
+    constructor(vortexStatusService: VortexStatusService, titleService: TitleService,
+                private loggedInGuard: LoggedInGuard) {
         super();
         this.leftLinks = titleService.leftLinksSnapshot;
         this.rightLinks = titleService.rightLinksSnapshot;
@@ -56,6 +61,19 @@ export class MainTitleComponent extends ComponentLifecycleEventEmitter implement
 
         return `(${title.badgeCount}) ${title.text}`;
 
+    }
+
+    showSearchClicked(): void {
+        if (this.showSearch == true) {
+            this.showSearch = false;
+            return;
+        }
+
+        const canActivate: any = this.loggedInGuard.canActivate();
+        if (canActivate === true)
+            this.showSearch = true;
+        else if (canActivate.then != null)
+            canActivate.then((val: boolean) => this.showSearch = val);
     }
 }
 

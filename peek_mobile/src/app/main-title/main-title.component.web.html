@@ -12,9 +12,12 @@
             <fa name="user" tooltip="Login / Logout"></fa>
         </button>
         <button class="title-bar-btn"
-                [routerLink]="['/peek_core_search']">
-            <fa name="search" tooltip="Search"></fa>
+               (click)="showSearchClicked()">
+        <fa name="search" tooltip="Search"></fa>
         </button>
+
+        <plugin-search [(showSearch)]="showSearch"></plugin-search>
+
         <button class="title-bar-btn"
                 *ngFor="let link of leftLinks"
                 [routerLink]="[link.resourcePath]">
