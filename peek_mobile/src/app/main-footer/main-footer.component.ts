@@ -51,6 +51,9 @@ export class MainFooterComponent extends ComponentLifecycleEventEmitter {
         return this.navBackService.navBackLen() != 0;
     }
 
+    hasConfigLinks():boolean {
+        return this.configLinks != null && this.configLinks.length != 0;
+    }
 
 }
 

@@ -16,7 +16,7 @@
            class="footer-bar-text"
            [text]="statusText"> </Label>
 
-    <Button row="0" col="2"
+    <Button *ngIf="hasConfigLinks()" row="0" col="2"
             class="fa footer-bar-btn"
             [text]="'fa-cog' | fonticon"
             [nsRouterLink]="['/config']">
