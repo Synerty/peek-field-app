@@ -37,6 +37,7 @@ export class MainFooterComponent extends ComponentLifecycleEventEmitter {
             .takeUntil(this.onDestroyEvent)
             .subscribe(v => this.isEnabled = v);
 
+        this.configLinks = footerService.configLinksSnapshot;
         footerService.configLinks
             .takeUntil(this.onDestroyEvent)
             .subscribe(v => this.configLinks = v);
