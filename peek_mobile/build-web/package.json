@@ -34,6 +34,7 @@
     "json-stable-stringify": "^1.0.1",
     "moment": "^2.17.1",
     "ng-zorro-antd": "^8.1.0",
+    "ng-zorro-antd-mobile": "^1.0.0-beta.2",
     "ng2-datetime-picker": "^0.13.2",
     "rxjs": "^6.5.2",
     "rxjs-compat": "^6.5.2",

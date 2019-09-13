@@ -33,6 +33,12 @@ import {pluginRootServices} from "./plugin-root-services";
 import {PluginRootComponent} from "./app/plugin-root.component";
 import {en_US, NgZorroAntdModule, NZ_I18N} from 'ng-zorro-antd';
 
+import {
+    en_US as mobile_en_US,
+    LOCAL_PROVIDER_TOKEN,
+    NgZorroAntdMobileModule
+} from 'ng-zorro-antd-mobile';
+
 import {SearchModule} from "peek_core_search/search.module";
 /** config angular i18n **/
 import {registerLocaleData} from '@angular/common';
@@ -63,10 +69,12 @@ export function tupleOfflineStorageNameServiceFactory() {
         Ng2BalloonMsgModule,
         ...pluginRootModules,
         NgZorroAntdModule,
+        NgZorroAntdMobileModule,
         SearchModule
     ],
     providers: [
         {provide: NZ_I18N, useValue: en_US},
+        {provide: LOCAL_PROVIDER_TOKEN, useValue: mobile_en_US},
         ...peekRootServices,
 
         {provide: WebSqlFactoryService, useClass: WebSqlBrowserFactoryService},
