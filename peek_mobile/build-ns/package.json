@@ -94,6 +94,6 @@
     "build-android-bundle": "npm run ns-bundle --android --build-app",
     "build-ios-bundle": "npm run ns-bundle --ios --build-app"
   },
-  "version": "111.111.111",
+  "version": "0.0.0",
   "author": "www.synerty.com"
 }
