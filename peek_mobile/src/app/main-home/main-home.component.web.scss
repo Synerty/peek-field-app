@@ -1,5 +1,5 @@
-@import '~@synerty/peek-theme/scss/variables.web';
-@import '~@synerty/peek-theme/scss/mixins.web';
+@import '~@synerty/peek-plugin-base-js/src/styles/variables';
+@import '~@synerty/peek-plugin-base-js/src/styles/mixins';
 
 .peek-home-screen {
   /*
@@ -16,7 +16,7 @@
         Contains the Button attributes unique to the Home Screen
         Buttons responsively wrap
     */
-    background-image: url('~@synerty/peek-theme/images/button_home_background.png');
+    background-image: url('~@synerty/peek-plugin-base-js/src/assets/images/button_home_background.png');
     margin-left: -$general_margin_1/4;
     margin-right: -$general_margin_1/4;
     margin-top: $general_margin_1;
@@ -59,7 +59,7 @@
       Home Screen background is unique and different to other screens
       Cannot use the body tag
   */
-  background-image: url('~@synerty/peek-theme/images/home_background.png');
+  background-image: url('~@synerty/peek-plugin-base-js/src/assets/images/home_background.png');
   position: fixed;
   left: 0;
   right: 0;

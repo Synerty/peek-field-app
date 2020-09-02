@@ -3,7 +3,7 @@ import {
     ComponentLifecycleEventEmitter,
     TupleDataOfflineObserverService
 } from "@synerty/vortexjs";
-import {TitleService} from "@synerty/peek-util";
+import { TitleService } from "@synerty/peek-plugin-base-js"
 import {homeLinks} from "../../plugin-home-links";
 
 

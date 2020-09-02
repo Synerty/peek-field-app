@@ -1,10 +1,10 @@
 import {Component} from "@angular/core";
 import {
-    ConfigLink,
+    IConfigLink,
     FooterService,
     NavBackService,
     TitleService
-} from "@synerty/peek-util";
+} from "@synerty/peek-plugin-base-js";
 import {ComponentLifecycleEventEmitter, VortexStatusService} from "@synerty/vortexjs";
 
 @Component({
@@ -15,7 +15,7 @@ import {ComponentLifecycleEventEmitter, VortexStatusService} from "@synerty/vort
 })
 export class MainFooterComponent extends ComponentLifecycleEventEmitter {
 
-    configLinks: ConfigLink[] = [];
+    configLinks: IConfigLink[] = [];
 
     vortexIsOnline: boolean = false;
     statusText: string = "";

@@ -4,7 +4,7 @@ import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
 
 // Enable the use of workers for the payload
 import {Payload} from "@synerty/vortexjs";
-import {PayloadDelegateWeb} from "@synerty/vortexjs/index-browser";
+import {PayloadDelegateWeb} from "@synerty/vortexjs";
 
 import {VortexService} from "@synerty/vortexjs";
 const protocol = location.protocol.toLowerCase() == 'https:' ? 'wss' : 'ws';

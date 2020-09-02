@@ -1,6 +1,6 @@
-import {Component, OnDestroy, OnInit} from "@angular/core";
+import {Component, OnInit} from "@angular/core";
 import {ActivatedRoute} from "@angular/router";
-import {TitleBarLink, TitleService} from "@synerty/peek-util";
+import {ITitleBarLink, TitleService} from "@synerty/peek-plugin-base-js";
 import {ComponentLifecycleEventEmitter, VortexStatusService} from "@synerty/vortexjs";
 import {LoggedInGuard} from "@peek/peek_core_user";
 
@@ -50,7 +50,7 @@ export class MainTitleComponent extends ComponentLifecycleEventEmitter implement
     // ------------------------------
     // Display methods
 
-    linkTitle(title: TitleBarLink) {
+    linkTitle(title: ITitleBarLink) {
         if (title.badgeCount == null) {
             return title.text;
         }
