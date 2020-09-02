@@ -28,7 +28,7 @@
                         "styles": [
                             "node_modules/bootstrap/dist/css/bootstrap.min.css",
                             "node_modules/bootstrap/dist/css/bootstrap-theme.min.css",
-                            "node_modules/@synerty/peek-theme/scss/style.web.scss",
+                            "node_modules/@synerty/peek-plugin-base-js/src/styles/style.scss",
                             "node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
                             "node_modules/ng-zorro-antd-mobile/src/ng-zorro-antd-mobile.min.css",
                             "src/styles-layout.scss",
@@ -94,8 +94,8 @@
                         "styles": [
                             "node_modules/bootstrap/dist/css/bootstrap.min.css",
                             "node_modules/bootstrap/dist/css/bootstrap-theme.min.css",
-                            "node_modules/@synerty/peek-theme/scss/layout.web.scss",
-                            "node_modules/@synerty/peek-theme/scss/style.web.scss",
+                            "node_modules/@synerty/peek-plugin-base-js/src/styles/layout.scss",
+                            "node_modules/@synerty/peek-plugin-base-js/src/styles/style.scss",
                             "node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
                             "node_modules/ng-zorro-antd-mobile/src/ng-zorro-antd-mobile.min.css",
                             "src/styles.scss"

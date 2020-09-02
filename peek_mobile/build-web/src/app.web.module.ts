@@ -2,7 +2,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
-import { Ng2BalloonMsgModule } from "@synerty/ng2-balloon-msg-web";
+import { BalloonMsgModule } from "@synerty/peek-plugin-base-js";
 import {
     TupleActionPushOfflineSingletonService,
     TupleOfflineStorageNameService,
@@ -12,7 +12,7 @@ import {
 import {
     TupleStorageFactoryServiceWeb,
     WebSqlBrowserFactoryService,
-} from "@synerty/vortexjs/index-browser";
+} from "@synerty/vortexjs";
 import { staticRoutes } from "./app/app.routes";
 import { peekRootServices } from "./app/app.services";
 import { AppComponent } from "./app/app.component";
@@ -60,7 +60,7 @@ export function tupleOfflineStorageNameServiceFactory() {
         NzIconModule,
         BrowserModule,
         BrowserAnimationsModule,
-        Ng2BalloonMsgModule,
+        BalloonMsgModule,
         ...pluginRootModules,
         NgZorroAntdModule,
         NgZorroAntdMobileModule,

@@ -1,18 +1,18 @@
-@import '~@synerty/peek-theme/scss/variables.web';
-@import '~@synerty/peek-theme/scss/mixins.web';
+@import '~@synerty/peek-plugin-base-js/src/styles/variables';
+@import '~@synerty/peek-plugin-base-js/src/styles/mixins';
 
 //peek screens
 
 //plugin screens
-@import '~@synerty/peek-theme/scss/layout.web/_plugin_inbox.web';
-@import '~@synerty/peek-theme/scss/layout.web/_plugin_chat.web';
+@import '~@synerty/peek-plugin-base-js/src/styles/layout/_plugin_inbox';
+@import '~@synerty/peek-plugin-base-js/src/styles/layout/_plugin_chat';
 
 //generic sections
-@import '~@synerty/peek-theme/scss/layout.web/_navigation_section.web';
-@import '~@synerty/peek-theme/scss/layout.web/_tabs_section.web';
-@import '~@synerty/peek-theme/scss/layout.web/_mobile_dialog_section.web';
+@import '~@synerty/peek-plugin-base-js/src/styles/layout/_navigation_section';
+@import '~@synerty/peek-plugin-base-js/src/styles/layout/_tabs_section';
+@import '~@synerty/peek-plugin-base-js/src/styles/layout/_mobile_dialog_section';
 
-//@import '~@synerty/peek-theme/scss/layout.web/_information_section.web';
+//@import '~@synerty/peek-plugin-base-js/src/styles/layout/_information_section';
 .peek-information-section {
   /*
       Contains the Information Section classes
@@ -31,7 +31,7 @@
     /*
         Contains the icon attributes unique to the peek-information-section class
     */
-    background-image: url('~@synerty/peek-theme/images/home_background.png');
+    background-image: url('@synerty/peek-plugin-base-js/src/assets/images/home_background.png');
     @include inner-shadow(0.35);
     padding: $general_padding_3;
     max-width: $general_width_1;
@@ -46,10 +46,10 @@
 }
 
 
-@import '~@synerty/peek-theme/scss/layout.web/_details_section.web';
-@import '~@synerty/peek-theme/scss/layout.web/_tables_section.web';
+@import '~@synerty/peek-plugin-base-js/src/styles/layout/_details_section';
+@import '~@synerty/peek-plugin-base-js/src/styles/layout/_tables_section';
 
-@import '~@synerty/peek-theme/scss/layout.web/_general.web';
+@import '~@synerty/peek-plugin-base-js/src/styles/layout/_general';
 
 body,
 html{
