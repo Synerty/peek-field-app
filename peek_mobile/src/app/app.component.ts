@@ -1,7 +1,7 @@
-import {Component} from "@angular/core";
-import {VortexService, VortexStatusService} from "@synerty/vortexjs";
-import {OnInit} from "@angular/core";
-import {DeviceStatusService} from "@peek/peek_core_device"
+import { Component } from "@angular/core"
+import { VortexService, VortexStatusService } from "@synerty/vortexjs"
+import { DeviceStatusService } from "@peek/peek_core_device"
+import { BalloonMsgService } from "@synerty/peek-plugin-base-js"
 
 @Component({
     selector: "peek-main-app",
@@ -9,26 +9,23 @@ import {DeviceStatusService} from "@peek/peek_core_device"
     styleUrls: ["app.component.web.scss"],
     moduleId: module.id
 })
-export class AppComponent implements OnInit {
-
-    fullScreen = false;
-
-    constructor(private vortexService: VortexService,
-                private vortexStatusService: VortexStatusService,
-                private deviceStatusService:DeviceStatusService) {
-
+export class AppComponent {
+    fullScreen = false
+    
+    constructor(
+        public balloonMsg: BalloonMsgService,
+        private vortexService: VortexService,
+        private vortexStatusService: VortexStatusService,
+        private deviceStatusService: DeviceStatusService
+    ) {
     }
-
-    ngOnInit() {
-    }
-
+    
     setBalloonFullScreen(enabled: boolean): void {
-        this.fullScreen = enabled;
+        this.fullScreen = enabled
     }
-
+    
     showLoading(): boolean {
-        return this.deviceStatusService.isLoading;
+        return this.deviceStatusService.isLoading
     }
-
 }
 
