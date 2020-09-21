@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "nativescript-background-task": "https://github.com/mobilemindtec/nativescript-background-task.git",
-    "nativescript-peek-update": "^0.1.2",
-    "nativescript-zip": "1.3.5",
-  }
-}

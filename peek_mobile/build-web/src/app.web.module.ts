@@ -31,7 +31,7 @@ import {
     LOCAL_PROVIDER_TOKEN,
     NgZorroAntdMobileModule,
 } from "ng-zorro-antd-mobile";
-import { SearchModule } from "peek_core_search/search.module";
+import { SearchModule } from "@peek/peek_core_search/search.module";
 import { registerLocaleData } from "@angular/common";
 import en from "@angular/common/locales/en";
 import { FormsModule } from "@angular/forms";

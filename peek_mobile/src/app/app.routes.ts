@@ -2,8 +2,8 @@ import {MainHomeComponent} from "./main-home/main-home.component";
 import {MainConfigComponent} from "./main-config/main-config.component";
 import {UnknownRouteComponent} from "./unknown-route/unknown-route.component";
 
-import {DeviceEnrolledGuard} from "@peek/peek_core_device";
-import {LoggedInGuard} from "@peek/peek_core_user";
+import {DeviceEnrolledGuard} from "@_peek/peek_core_device";
+import {LoggedInGuard} from "@_peek/peek_core_user";
 
 import {pluginAppRoutes} from "../plugin-app-routes";
 import {pluginCfgRoutes} from "../plugin-cfg-routes";
