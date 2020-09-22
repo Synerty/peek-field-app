@@ -5,8 +5,8 @@ import { BalloonMsgService } from "@synerty/peek-plugin-base-js"
 
 @Component({
     selector: "peek-main-app",
-    templateUrl: "app.component.web.html",
-    styleUrls: ["app.component.web.scss"],
+    templateUrl: "app.component.html",
+    styleUrls: ["app.component.scss"],
     moduleId: module.id
 })
 export class AppComponent {

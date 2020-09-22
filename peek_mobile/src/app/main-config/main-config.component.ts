@@ -1,22 +1,17 @@
-import {Component} from "@angular/core";
+import { Component } from "@angular/core"
 import { TitleService } from "@synerty/peek-plugin-base-js"
-import {configLinks} from "../../plugin-config-links";
-
+import { configLinks } from "@peek/plugin-config-links"
 
 @Component({
     selector: "peek-main-config",
-    templateUrl: 'main-config.component.web.html',
+    templateUrl: "main-config.component.web.html",
     moduleId: module.id
 })
 export class MainConfigComponent {
-
-    appDetails = configLinks;
-
+    appDetails = configLinks
+    
     constructor(titleService: TitleService) {
-        titleService.setTitle("Peek Config");
-
+        titleService.setTitle("Peek Config")
     }
-
-
 }
 

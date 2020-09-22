@@ -2,8 +2,8 @@ import { Component } from "@angular/core"
 import {
     FooterService,
     IConfigLink,
-    NgLifeCycleEvents,
     NavBackService,
+    NgLifeCycleEvents,
     TitleService
 } from "@synerty/peek-plugin-base-js"
 import { VortexStatusService } from "@synerty/vortexjs"

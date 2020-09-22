@@ -1,5 +1,9 @@
 import { Component, OnInit } from "@angular/core"
-import { ITitleBarLink, NgLifeCycleEvents, TitleService } from "@synerty/peek-plugin-base-js"
+import {
+    ITitleBarLink,
+    NgLifeCycleEvents,
+    TitleService
+} from "@synerty/peek-plugin-base-js"
 import { VortexStatusService } from "@synerty/vortexjs"
 import { LoggedInGuard } from "@_peek/peek_core_user"
 
