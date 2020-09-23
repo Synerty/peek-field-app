@@ -2,9 +2,9 @@
 Peek Platform - Mobile Service
 ==============================
 
-The Peek Mobile service contains the Angular Web and Nativescript build environments.
+The Peek Mobile service contains the Angular Web build environment.
 
-The frontend is for typescript + bootstrap3 + angular2
+The frontend is for typescript + ant design + angular2
 
 Development
 -----------
@@ -30,14 +30,3 @@ It's accessed via http://<ip>:4200
 There is a proxy.conf.json file that is configured to pass through certain resources to
 the backend server. This allows the NODE development server to hand handle all the assets
 and the backend to still handle the file uploads, vortex, etc.
-
-NativeScript
-````````````
-
-When you are developing for NativeScript, you can build and start the app with:
-
-::
-
-        cd <project dir>/peek_mobile/build-ns
-        tns run <platform> --watch
-
