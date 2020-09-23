@@ -2,20 +2,16 @@
 
 #Ignore the automatically generated files
 .lastHash
-**/@_peek/
+@_peek/
+@peek/
 
 **/app*zip
 
 # Ignore the CSS files that we have SCSS files for
-# NativeScript
 app.ios.css
 app.android.css
 app.css
 _app-common.css
-
-# HTML
-**/build-web/src/styles.css
-
 
 # Ignore python compiled files
 *.pyc
@@ -24,13 +20,6 @@ __pycache__
 # Nativescript stuff
 npm-debug.log
 .DS_Store
-
-peek_mobile/build-ns/app/**/*.js
-peek_mobile/build-ns/app/**/*.js.map
-peek_mobile/build-web/src/**/*.js
-peek_mobile/build-web/src/**/*.js.map
-peek_mobile/src/**/*.js
-peek_mobile/src/*.js.map
 hooks
 lib/
 node_modules/
