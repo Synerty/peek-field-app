@@ -56,6 +56,4 @@ export class MainFooterComponent extends NgLifeCycleEvents {
     hasConfigLinks(): boolean {
         return this.configLinks != null && this.configLinks.length != 0
     }
-    
 }
-
