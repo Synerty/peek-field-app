@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core"
 import { NgLifeCycleEvents, TitleService } from "@synerty/peek-plugin-base-js"
-import { homeLinks } from "@peek/plugin-home-links"
+import { homeLinks } from "@_peek/plugin-home-links"
 
 @Component({
     selector: "peek-main-home",

@@ -5,7 +5,7 @@ import {
     TitleService
 } from "@synerty/peek-plugin-base-js"
 import { VortexStatusService } from "@synerty/vortexjs"
-import { LoggedInGuard } from "@_peek/peek_core_user"
+import { LoggedInGuard } from "@peek/peek_core_user"
 
 @Component({
     selector: "peek-main-title",
