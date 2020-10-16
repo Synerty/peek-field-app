@@ -38,7 +38,6 @@ export class MainFooterComponent extends NgLifeCycleEvents {
             .takeUntil(this.onDestroyEvent)
             .subscribe(v => this.isEnabled = v)
         
-        this.configLinks = footerService.configLinksSnapshot
         footerService.configLinks
             .takeUntil(this.onDestroyEvent)
             .subscribe(v => this.configLinks = v)
@@ -51,9 +50,5 @@ export class MainFooterComponent extends NgLifeCycleEvents {
     
     isBackButtonEnabled(): boolean {
         return this.navBackService.navBackLen() != 0
-    }
-    
-    hasConfigLinks(): boolean {
-        return this.configLinks != null && this.configLinks.length != 0
     }
 }
