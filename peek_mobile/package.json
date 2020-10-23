@@ -32,7 +32,7 @@
     "jquery": "^3.3.1",
     "json-stable-stringify": "^1.0.1",
     "moment": "^2.17.1",
-    "ng-zorro-antd": "^9.3.0",
+    "ng-zorro-antd": "^10.0.2",
     "ng-zorro-antd-mobile": "^2.0.1",
     "rxjs": "~6.5.3",
     "rxjs-compat": "^6.5.2",
