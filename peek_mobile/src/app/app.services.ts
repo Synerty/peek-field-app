@@ -2,13 +2,13 @@ import {
     BalloonMsgService,
     FooterService,
     NavBackService,
-    TitleService
+    HeaderService
 } from "@synerty/peek-plugin-base-js"
 import { VortexService, VortexStatusService } from "@synerty/vortexjs"
 import { titleBarLinks } from "@_peek/plugin-title-bar-links"
 
-export function titleServiceFactory() {
-    const service = new TitleService()
+export function headerServiceFactory() {
+    const service = new HeaderService()
     service.setLinks(titleBarLinks)
     return service
 }
@@ -22,8 +22,8 @@ export function footerServiceFactory() {
 export let peekRootServices = [
     BalloonMsgService,
     {
-        provide: TitleService,
-        useFactory: titleServiceFactory
+        provide: HeaderService,
+        useFactory: headerServiceFactory
     },
     {
         provide: FooterService,

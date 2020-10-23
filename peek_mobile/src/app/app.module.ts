@@ -34,6 +34,7 @@ import { registerLocaleData } from "@angular/common"
 import en from "@angular/common/locales/en"
 import { FormsModule } from "@angular/forms"
 import { NzIconModule } from "ng-zorro-antd/icon"
+import { ComponentsModule } from "./core/components"
 
 registerLocaleData(en)
 
@@ -64,6 +65,7 @@ export function tupleOfflineStorageNameServiceFactory() {
         NgZorroAntdMobileModule,
         SearchModule,
         HttpClientModule,
+        ComponentsModule,
     ],
     providers: [
         {provide: NZ_I18N, useValue: en_US},

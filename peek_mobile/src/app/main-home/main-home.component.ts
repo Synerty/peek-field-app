@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core"
-import { NgLifeCycleEvents, TitleService } from "@synerty/peek-plugin-base-js"
+import { NgLifeCycleEvents, HeaderService } from "@synerty/peek-plugin-base-js"
 import { homeLinks } from "@_peek/plugin-home-links"
 
 @Component({
@@ -12,9 +12,9 @@ export class MainHomeComponent extends NgLifeCycleEvents implements OnInit {
     appDetails = homeLinks
     appButtonGridColumns = 3
     
-    constructor(titleService: TitleService) {
+    constructor(headerService: HeaderService) {
         super()
-        titleService.setTitle("Peek Home")
+        headerService.setTitle("Peek Home")
         
     }
     

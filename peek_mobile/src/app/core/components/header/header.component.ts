@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core"
+import { Component } from "@angular/core"
 import {
     IHeaderLink,
     NgLifeCycleEvents,
@@ -8,12 +8,11 @@ import { VortexStatusService } from "@synerty/vortexjs"
 import { LoggedInGuard } from "@peek/peek_core_user"
 
 @Component({
-    selector: "peek-main-title",
-    templateUrl: "main-title.component.web.html",
-    styleUrls: ["main-title.component.web.scss"],
-    moduleId: module.id
+    selector: "header-component",
+    templateUrl: "header.component.html",
+    styleUrls: ["header.component.scss"]
 })
-export class MainTitleComponent extends NgLifeCycleEvents implements OnInit {
+export class HeaderComponent extends NgLifeCycleEvents {
     title: string = "Peek"
     isEnabled: boolean = true
     vortexIsOnline: boolean = false
@@ -45,14 +44,7 @@ export class MainTitleComponent extends NgLifeCycleEvents implements OnInit {
         
         vortexStatusService.isOnline.takeUntil(this.onDestroyEvent)
             .subscribe(v => this.vortexIsOnline = v)
-        
     }
-    
-    ngOnInit() {
-    }
-    
-    // ------------------------------
-    // Display methods
     
     linkTitle(title: IHeaderLink) {
         if (title.badgeCount == null) {

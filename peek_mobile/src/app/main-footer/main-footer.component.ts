@@ -4,7 +4,7 @@ import {
     IConfigLink,
     NavBackService,
     NgLifeCycleEvents,
-    TitleService
+    HeaderService
 } from "@synerty/peek-plugin-base-js"
 import { VortexStatusService } from "@synerty/vortexjs"
 
@@ -24,7 +24,7 @@ export class MainFooterComponent extends NgLifeCycleEvents {
         vortexStatusService: VortexStatusService,
         footerService: FooterService,
         public navBackService: NavBackService,
-        titleService: TitleService
+        headerService: HeaderService
     ) {
         super()
         
@@ -34,7 +34,7 @@ export class MainFooterComponent extends NgLifeCycleEvents {
             .takeUntil(this.onDestroyEvent)
             .subscribe(v => this.statusText = v)
         
-        titleService.isEnabled
+        headerService.isEnabled
             .takeUntil(this.onDestroyEvent)
             .subscribe(v => this.isEnabled = v)
         

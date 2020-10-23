@@ -1,0 +1,40 @@
+@import '~@synerty/peek-plugin-base-js/src/styles/variables';
+@import '~@synerty/peek-plugin-base-js/src/styles/mixins';
+
+.peek-title-bar {
+  width: 100%;
+  height: $title_bar_height;
+  position: fixed;
+  display: flex;
+  z-index: 500;
+  overflow: hidden;
+}
+
+.btn-group {
+  position: relative;
+  float: left;
+  border-radius: $general_border_radius;
+
+  .title-bar-btn {
+    height: $title_bar_height;
+    padding: $general_padding_1;
+    margin-right: 0;
+    display: inline-block;
+    position: relative;
+    min-width: $title_bar_button_min_width;
+    float: left;
+  }
+}
+
+.title-bar-title {
+  line-height: $title_bar_height;
+  padding-left: $general_padding_2;
+  padding-right: $general_padding_2;
+  float: left;
+  margin: auto;
+  width: 50%;
+}
+
+.peek-page-contents {
+
+}
