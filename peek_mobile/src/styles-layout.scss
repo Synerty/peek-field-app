@@ -31,7 +31,7 @@
     /*
         Contains the icon attributes unique to the peek-information-section class
     */
-    background-image: url('@synerty/peek-plugin-base-js/src/assets/images/home_background.png');
+    background-image: url('~@synerty/peek-plugin-base-js/src/assets/images/home_background.png');
     @include inner-shadow(0.35);
     padding: $general_padding_3;
     max-width: $general_width_1;
