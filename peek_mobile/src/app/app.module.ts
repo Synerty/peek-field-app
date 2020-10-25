@@ -22,7 +22,7 @@ import { UnknownRouteComponent } from "./unknown-route/unknown-route.component"
 import { pluginRootModules } from "../@_peek/plugin-root-modules"
 import { pluginRootServices } from "@_peek/plugin-root-services"
 import { PluginRootComponent } from "./plugin-root.component"
-import { en_US, NgZorroAntdModule, NZ_I18N } from "ng-zorro-antd"
+import { en_US, NZ_I18N } from "ng-zorro-antd/i18n"
 import { HttpClientModule } from "@angular/common/http"
 import {
     en_US as mobile_en_US,
@@ -61,7 +61,6 @@ export function tupleOfflineStorageNameServiceFactory() {
         BrowserAnimationsModule,
         BalloonMsgModule,
         ...pluginRootModules,
-        NgZorroAntdModule,
         NgZorroAntdMobileModule,
         SearchModule,
         HttpClientModule,
