@@ -33,7 +33,7 @@
     "json-stable-stringify": "^1.0.1",
     "moment": "^2.17.1",
     "ng-zorro-antd": "^10.0.2",
-    "ng-zorro-antd-mobile": "^2.0.1",
+    "ng-zorro-antd-mobile": "^3.0.3",
     "rxjs": "~6.5.3",
     "rxjs-compat": "^6.5.2",
     "ts-md5": "^1.2.4",
