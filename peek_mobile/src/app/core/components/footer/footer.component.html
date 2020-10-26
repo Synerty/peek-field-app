@@ -3,21 +3,21 @@
     <div class="buttons" role="group">
       <button [routerLink]="['/peek_plugin_pof_field_incidents']" *ngIf="fieldIncidentsEnabled$ | async">
         <nz-badge [nzCount]="notificationService.fieldIncidentsCount$ | async">
-          <span class="text">Incidents</span>
+          <i nz-icon nzType="mail" nzTheme="outline"></i>
         </nz-badge>
       </button>
       <button [routerLink]="['/peek_plugin_pof_field_switching']" *ngIf="fieldSwitchingEnabled$ | async">
         <nz-badge [nzCount]="notificationService.fieldSwitchingCount$ | async">
-          <span class="text">Jobs</span>
+          <i nz-icon nzType="mail" nzTheme="outline"></i>
         </nz-badge>
       </button>
       <button [routerLink]="['/peek_plugin_inbox']" *ngIf="inboxEnabled$ | async">
         <nz-badge [nzCount]="notificationService.inboxCount$ | async">
-          <span class="text">Inbox</span>
+          <i nz-icon nzType="mail" nzTheme="outline"></i>
         </nz-badge>
       </button>
       <button [routerLink]="['/peek_plugin_pof_chat']" *ngIf="sosEnabled$ | async">
-        SOS
+        <i nz-icon nzType="mail" nzTheme="outline"></i>
       </button>
     </div>
   </div>

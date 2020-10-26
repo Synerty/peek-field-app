@@ -1,8 +1,15 @@
 import { ChangeDetectionStrategy, Component } from "@angular/core"
-import { HeaderService, IHeaderLink, NavBackService } from "@synerty/peek-plugin-base-js"
+import {
+    HeaderService,
+    IHeaderLink,
+    NavBackService,
+    NotificationService
+} from "@synerty/peek-plugin-base-js"
 import { VortexStatusService } from "@synerty/vortexjs"
 import { LoggedInGuard } from "@peek/peek_core_user"
 import { BehaviorSubject } from "rxjs"
+import { filter } from "rxjs/operators"
+import { homeLinks } from "@_peek/plugin-home-links"
 
 @Component({
     selector: "header-component",
@@ -11,6 +18,23 @@ import { BehaviorSubject } from "rxjs"
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent {
+    sosEnabled$ = this.headerService.links$.pipe(
+        filter((links: IHeaderLink[]) =>
+            !!links.find(link => link.plugin === "peek_plugin_pof_chat"))
+    )
+    fieldIncidentsEnabled$ = new BehaviorSubject<boolean>(
+        !!homeLinks.find(
+            link => link.name === "peek_plugin_pof_field_incidents")
+    )
+    fieldSwitchingEnabled$ = new BehaviorSubject<boolean>(
+        !!homeLinks.find(
+            link => link.name === "peek_plugin_pof_field_switching")
+    )
+    inboxEnabled$ = this.headerService.links$.pipe(
+        filter((links: IHeaderLink[]) =>
+            !!links.find(link => link.plugin === "peek_plugin_inbox"))
+    )
+    
     showSearch$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false)
     
     get showSearch() {
@@ -26,6 +50,7 @@ export class HeaderComponent {
         private headerService: HeaderService,
         private loggedInGuard: LoggedInGuard,
         public navBackService: NavBackService,
+        public notificationService: NotificationService,
     ) { }
     
     linkTitle(title: IHeaderLink) {
