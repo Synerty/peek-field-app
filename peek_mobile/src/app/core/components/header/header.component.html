@@ -1,47 +1,23 @@
-<div
-    *ngIf="isEnabled"
-    class="peek-title-bar"
-    [class.bg-danger]="!vortexIsOnline"
->
-    <div class="btn-group" role="group">
-        <button class="title-bar-btn" [routerLink]="['/']">
-            <i nz-icon nzType="home" nzTheme="outline"></i>
-        </button>
-        <button class="title-bar-btn" [routerLink]="['/peek_core_user']">
-            <i nz-icon nzType="user" nzTheme="outline"></i>
-        </button>
-        <button class="title-bar-btn" (click)="showSearchClicked()">
-            <i nz-icon nzType="search" nzTheme="outline"></i>
-        </button>
-        
-        <plugin-search [(showSearch)]="showSearch"></plugin-search>
-        
-        <button
-            class="title-bar-btn"
-            *ngFor="let link of leftLinks"
-            [routerLink]="[link.resourcePath]"
-        >
-            {{linkTitle(link)}}
-        </button>
+<ng-container *ngIf="headerService.isEnabled$ | async">
+  <div class="header">
+    <div class="buttons" role="group">
+      <button (click)="navBackService.navBack()">
+        <i nz-icon nzType="arrow-left" nzTheme="outline"></i>
+      </button>
+      <button [routerLink]="['/']">
+        <i nz-icon nzType="home" nzTheme="outline"></i>
+      </button>
+      <button [routerLink]="['/peek_core_user']">
+        <i nz-icon nzType="user" nzTheme="outline"></i>
+      </button>
+      <button (click)="showSearchClicked()">
+        <i nz-icon nzType="search" nzTheme="outline"></i>
+      </button>
+      <button [routerLink]="['/config']">
+        <i nz-icon nzType="setting" nzTheme="outline"></i>
+      </button>
     </div>
-    
-    <div class="title-bar-title">
-        {{title}}
-    </div>
-    
-    <div *ngIf="!vortexIsOnline" class="pull-right">
-        <i nz-icon nzType="disconnect" nzTheme="outline"></i>
-    </div>
-    
-    <div class="pull-right">
-        <div class="btn-group" role="group">
-            <button
-                class="title-bar-btn"
-                *ngFor="let link of rightLinks"
-                [routerLink]="[link.resourcePath]"
-            >
-                {{linkTitle(link)}}
-            </button>
-        </div>
-    </div>
-</div>
+  </div>
+
+  <plugin-search [(showSearch)]="showSearch"></plugin-search>
+</ng-container>

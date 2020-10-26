@@ -1,0 +1,24 @@
+<ng-container *ngIf="headerService.isEnabled$ | async">
+  <div class="footer">
+    <div class="buttons" role="group">
+      <button [routerLink]="['/peek_plugin_pof_field_incidents']" *ngIf="fieldIncidentsEnabled$ | async">
+        <nz-badge [nzCount]="5">
+          <span class="text">Incidents</span>
+        </nz-badge>
+      </button>
+      <button [routerLink]="['/peek_plugin_pof_field_switching']" *ngIf="fieldSwitchingEnabled$ | async">
+        <nz-badge [nzCount]="2">
+          <span class="text">Jobs</span>
+        </nz-badge>
+      </button>
+      <button [routerLink]="['/peek_plugin_inbox']" *ngIf="inboxEnabled$ | async">
+        <nz-badge [nzCount]="3">
+          <span class="text">Inbox</span>
+        </nz-badge>
+      </button>
+      <button [routerLink]="['/peek_plugin_pof_chat']" *ngIf="sosEnabled$ | async">
+        SOS
+      </button>
+    </div>
+  </div>
+</ng-container>

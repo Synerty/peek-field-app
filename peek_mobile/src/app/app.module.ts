@@ -16,7 +16,6 @@ import { peekRootServices } from "./app.services"
 import { AppComponent } from "./app.component"
 import { MainHomeComponent } from "./main-home/main-home.component"
 import { MainConfigComponent } from "./main-config/main-config.component"
-import { MainTitleComponent } from "./main-title/main-title.component"
 import { MainFooterComponent } from "./main-footer/main-footer.component"
 import { UnknownRouteComponent } from "./unknown-route/unknown-route.component"
 import { pluginRootModules } from "../@_peek/plugin-root-modules"
@@ -29,7 +28,6 @@ import {
     LOCAL_PROVIDER_TOKEN,
     NgZorroAntdMobileModule,
 } from "ng-zorro-antd-mobile"
-import { SearchModule } from "@_peek/peek_core_search/search.module"
 import { registerLocaleData } from "@angular/common"
 import en from "@angular/common/locales/en"
 import { FormsModule } from "@angular/forms"
@@ -45,7 +43,6 @@ export function tupleOfflineStorageNameServiceFactory() {
 @NgModule({
     declarations: [
         AppComponent,
-        MainTitleComponent,
         MainFooterComponent,
         MainHomeComponent,
         MainConfigComponent,
@@ -62,7 +59,6 @@ export function tupleOfflineStorageNameServiceFactory() {
         BalloonMsgModule,
         ...pluginRootModules,
         NgZorroAntdMobileModule,
-        SearchModule,
         HttpClientModule,
         ComponentsModule,
     ],

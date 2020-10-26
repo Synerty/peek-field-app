@@ -1,14 +1,14 @@
 @import '~@synerty/peek-plugin-base-js/src/styles/variables';
 
-.header {
+.footer {
   height: 56px;
   display: flex;
   align-items: center;
   background: #fff;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.2);
   z-index: 1;
   position: fixed;
-  top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
 
@@ -29,6 +29,28 @@
       > * {
         font-size: 16px;
       }
+
+      .text {
+        padding: 8px;
+        font-size: 14px;
+      }
     }
   }
+  //
+  //.page-title {
+  //  display: flex;
+  //  align-items: center;
+  //  padding-left: 8px;
+  //  flex: 1;
+  //  height: 100%;
+  //  font-size: 14px;
+  //}
+  //
+  //.status {
+  //  width: 56px;
+  //  height: 100%;
+  //  display: flex;
+  //  align-items: center;
+  //  justify-content: center;
+  //}
 }

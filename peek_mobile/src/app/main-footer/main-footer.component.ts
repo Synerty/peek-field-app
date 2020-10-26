@@ -24,7 +24,7 @@ export class MainFooterComponent extends NgLifeCycleEvents {
         vortexStatusService: VortexStatusService,
         footerService: FooterService,
         public navBackService: NavBackService,
-        headerService: HeaderService
+        public headerService: HeaderService
     ) {
         super()
         
@@ -34,7 +34,7 @@ export class MainFooterComponent extends NgLifeCycleEvents {
             .takeUntil(this.onDestroyEvent)
             .subscribe(v => this.statusText = v)
         
-        headerService.isEnabled
+        headerService.isEnabled$
             .takeUntil(this.onDestroyEvent)
             .subscribe(v => this.isEnabled = v)
         
