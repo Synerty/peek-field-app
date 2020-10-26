@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from "@angular/core"
-import { HeaderService, IHeaderLink } from "@synerty/peek-plugin-base-js"
+import { HeaderService, IHeaderLink, NotificationService } from "@synerty/peek-plugin-base-js"
 import { filter } from "rxjs/operators"
 import { homeLinks } from "@_peek/plugin-home-links"
 import { BehaviorSubject } from "rxjs"
@@ -13,8 +13,7 @@ import { BehaviorSubject } from "rxjs"
 export class FooterComponent {
     sosEnabled$ = this.headerService.links$.pipe(
         filter((links: IHeaderLink[]) =>
-            !!links.find((link: IHeaderLink) =>
-                link.plugin === "peek_plugin_pof_chat"))
+            !!links.find(link => link.plugin === "peek_plugin_pof_chat"))
     )
     fieldIncidentsEnabled$ = new BehaviorSubject<boolean>(
         !!homeLinks.find(
@@ -26,12 +25,12 @@ export class FooterComponent {
     )
     inboxEnabled$ = this.headerService.links$.pipe(
         filter((links: IHeaderLink[]) =>
-            !!links.find((link: IHeaderLink) =>
-                link.plugin === "peek_plugin_inbox"))
+            !!links.find(link => link.plugin === "peek_plugin_inbox"))
     )
     
-    constructor(public headerService: HeaderService) {
-
-    }
+    constructor(
+        public headerService: HeaderService,
+        public notificationService: NotificationService,
+    ) {}
 }
 
