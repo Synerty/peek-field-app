@@ -47,7 +47,7 @@ export class HeaderComponent {
     
     constructor(
         public vortexStatusService: VortexStatusService,
-        private headerService: HeaderService,
+        public headerService: HeaderService,
         private loggedInGuard: LoggedInGuard,
         public navBackService: NavBackService,
         public notificationService: NotificationService,
