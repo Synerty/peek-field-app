@@ -5,8 +5,7 @@ import { homeLinks } from "@_peek/plugin-home-links"
 @Component({
     selector: "peek-main-home",
     templateUrl: "main-home.component.web.html",
-    styleUrls: ["main-home.component.web.scss"],
-    moduleId: module.id
+    styleUrls: ["main-home.component.web.scss"]
 })
 export class MainHomeComponent extends NgLifeCycleEvents implements OnInit {
     appDetails = homeLinks

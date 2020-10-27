@@ -6,8 +6,7 @@ import { BalloonMsgService } from "@synerty/peek-plugin-base-js"
 @Component({
     selector: "peek-main-app",
     templateUrl: "app.component.html",
-    styleUrls: ["app.component.scss"],
-    moduleId: module.id
+    styleUrls: ["app.component.scss"]
 })
 export class AppComponent {
     fullScreen = false

@@ -4,8 +4,7 @@ import { configLinks } from "@_peek/plugin-config-links"
 
 @Component({
     selector: "peek-main-config",
-    templateUrl: "main-config.component.web.html",
-    moduleId: module.id
+    templateUrl: "main-config.component.web.html"
 })
 export class MainConfigComponent {
     appDetails = configLinks
