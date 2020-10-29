@@ -5,8 +5,8 @@ from subprocess import CalledProcessError
 
 from setuptools import setup, find_packages
 
-pip_package_name = "peek-mobile"
-py_package_name = "peek_mobile"
+pip_package_name = "peek-field-app"
+py_package_name = "peek_field_app"
 
 package_version = '0.0.0'
 

@@ -36,7 +36,7 @@ import { ComponentsModule } from "./core/components"
 registerLocaleData(en)
 
 export function tupleOfflineStorageNameServiceFactory() {
-    return new TupleOfflineStorageNameService("peek_client")
+    return new TupleOfflineStorageNameService("peek_office_service")
 }
 
 @NgModule({

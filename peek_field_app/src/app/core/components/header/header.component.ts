@@ -20,15 +20,15 @@ import { homeLinks } from "@_peek/plugin-home-links"
 export class HeaderComponent {
     sosEnabled$ = this.headerService.links$.pipe(
         filter((links: IHeaderLink[]) =>
-            !!links.find(link => link.plugin === "peek_plugin_pof_chat"))
+            !!links.find(link => link.plugin === "peek_plugin_enmac_chat"))
     )
     fieldIncidentsEnabled$ = new BehaviorSubject<boolean>(
         !!homeLinks.find(
-            link => link.name === "peek_plugin_pof_field_incidents")
+            link => link.name === "peek_plugin_enmac_field_incidents")
     )
     fieldSwitchingEnabled$ = new BehaviorSubject<boolean>(
         !!homeLinks.find(
-            link => link.name === "peek_plugin_pof_field_switching")
+            link => link.name === "peek_plugin_enmac_field_switching")
     )
     inboxEnabled$ = this.headerService.links$.pipe(
         filter((links: IHeaderLink[]) =>

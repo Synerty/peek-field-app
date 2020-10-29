@@ -8,12 +8,12 @@
         <button [routerLink]="['/']">
           <i nz-icon nzType="home" nzTheme="outline"></i>
         </button>
-        <button [routerLink]="['/peek_plugin_pof_field_incidents']" *ngIf="fieldIncidentsEnabled$ | async">
+        <button [routerLink]="['/peek_plugin_enmac_field_incidents']" *ngIf="fieldIncidentsEnabled$ | async">
           <nz-badge [nzCount]="notificationService.fieldIncidentsCount$ | async">
             <i class="count" nz-icon nzType="warning" nzTheme="outline"></i>
           </nz-badge>
         </button>
-        <button [routerLink]="['/peek_plugin_pof_field_switching']" *ngIf="fieldSwitchingEnabled$ | async">
+        <button [routerLink]="['/peek_plugin_enmac_field_switching']" *ngIf="fieldSwitchingEnabled$ | async">
           <nz-badge [nzCount]="notificationService.fieldSwitchingCount$ | async">
             <i class="count" nz-icon nzType="thunderbolt" nzTheme="outline"></i>
           </nz-badge>

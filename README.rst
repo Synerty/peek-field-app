@@ -19,7 +19,7 @@ When you are developing with the frontend for Web, you can start development mod
 
 ::
 
-        cd <project dir>/peek_mobile/build-web
+        cd <project dir>/peek_field_app/build-web
         npm start
 
 
