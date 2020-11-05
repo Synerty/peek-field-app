@@ -1,43 +1,39 @@
 <ng-container *ngIf="headerService.isEnabled$ | async">
   <div class="header">
-    <div class="row">
-      <div class="buttons" role="group">
-        <button (click)="navBackService.navBack()">
-          <i nz-icon nzType="arrow-left" nzTheme="outline"></i>
-        </button>
-        <button [routerLink]="['/']">
-          <i nz-icon nzType="home" nzTheme="outline"></i>
-        </button>
-        <button [routerLink]="['/peek_plugin_enmac_field_incidents']" *ngIf="fieldIncidentsEnabled$ | async">
-          <nz-badge [nzCount]="notificationService.fieldIncidentsCount$ | async">
-            <i class="count" nz-icon nzType="warning" nzTheme="outline"></i>
-          </nz-badge>
-        </button>
-        <button [routerLink]="['/peek_plugin_enmac_field_switching']" *ngIf="fieldSwitchingEnabled$ | async">
-          <nz-badge [nzCount]="notificationService.fieldSwitchingCount$ | async">
-            <i class="count" nz-icon nzType="thunderbolt" nzTheme="outline"></i>
-          </nz-badge>
-        </button>
-        <button [routerLink]="['/peek_plugin_inbox']" *ngIf="inboxEnabled$ | async">
-          <nz-badge [nzCount]="notificationService.inboxCount$ | async">
-            <i class="count" nz-icon nzType="mail" nzTheme="outline"></i>
-          </nz-badge>
-        </button>
-        <button (click)="showSearchClicked()">
-          <i nz-icon nzType="search" nzTheme="outline"></i>
-        </button>
-<!--        <button [routerLink]="['/peek_core_user']">-->
-<!--          <i nz-icon nzType="user" nzTheme="outline"></i>-->
-<!--        </button>-->
-  <!--      <button [routerLink]="['/config']">-->
-  <!--        <i nz-icon nzType="setting" nzTheme="outline"></i>-->
-  <!--      </button>-->
-      </div>
+    <button class="back-button" (click)="navBackService.navBack()">
+      <i nz-icon nzType="arrow-left" nzTheme="outline"></i>
+    </button>
+    <div class="header-title">
+      {{headerService.title$ | async}}
     </div>
-    <div class="row">
-      <div class="header-title">
-        {{headerService.title$ | async}}
-      </div>
+    <div class="buttons" role="group">
+      <button [routerLink]="['/']">
+        <i nz-icon nzType="home" nzTheme="outline"></i>
+      </button>
+      <button [routerLink]="['/peek_plugin_enmac_field_incidents']" *ngIf="fieldIncidentsEnabled$ | async">
+        <nz-badge [nzCount]="notificationService.fieldIncidentsCount$ | async">
+          <i class="count" nz-icon nzType="warning" nzTheme="outline"></i>
+        </nz-badge>
+      </button>
+      <button [routerLink]="['/peek_plugin_enmac_field_switching']" *ngIf="fieldSwitchingEnabled$ | async">
+        <nz-badge [nzCount]="notificationService.fieldSwitchingCount$ | async">
+          <i class="count" nz-icon nzType="thunderbolt" nzTheme="outline"></i>
+        </nz-badge>
+      </button>
+      <button [routerLink]="['/peek_plugin_inbox']" *ngIf="inboxEnabled$ | async">
+        <nz-badge [nzCount]="notificationService.inboxCount$ | async">
+          <i class="count" nz-icon nzType="mail" nzTheme="outline"></i>
+        </nz-badge>
+      </button>
+      <button [routerLink]="['/peek_core_user']">
+        <i nz-icon nzType="user" nzTheme="outline"></i>
+      </button>
+      <button (click)="showSearchClicked()">
+        <i nz-icon nzType="search" nzTheme="outline"></i>
+      </button>
+      <button [routerLink]="['/config']">
+        <i nz-icon nzType="setting" nzTheme="outline"></i>
+      </button>
     </div>
   </div>
 

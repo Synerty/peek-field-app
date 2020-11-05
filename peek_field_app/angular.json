@@ -33,7 +33,8 @@
                             "node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
                             "node_modules/ng-zorro-antd-mobile/src/ng-zorro-antd-mobile.min.css",
                             "src/styles-layout.scss",
-                            "src/styles.scss"
+                            "src/styles.scss",
+                            "src/_variables.scss"
                         ],
                         "scripts": [
                             "node_modules/jquery/dist/jquery.slim.js",
