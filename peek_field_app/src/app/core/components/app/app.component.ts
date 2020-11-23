@@ -4,7 +4,7 @@ import { DeviceStatusService } from "@peek/peek_core_device"
 import { BalloonMsgService } from "@synerty/peek-plugin-base-js"
 
 @Component({
-    selector: "peek-main-app",
+    selector: "app-component",
     templateUrl: "app.component.html",
     styleUrls: ["app.component.scss"]
 })

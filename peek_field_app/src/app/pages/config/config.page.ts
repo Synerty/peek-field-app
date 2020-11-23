@@ -1,12 +1,14 @@
-import { Component } from "@angular/core"
+import { ChangeDetectionStrategy, Component } from "@angular/core"
 import { HeaderService } from "@synerty/peek-plugin-base-js"
 import { configLinks } from "@_peek/plugin-config-links"
 
 @Component({
-    selector: "peek-main-config",
-    templateUrl: "main-config.component.web.html"
+    selector: "config-page",
+    templateUrl: "config.page.html",
+    styleUrls: ["config.page.scss"],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MainConfigComponent {
+export class ConfigPage {
     appDetails = configLinks
     
     constructor(headerService: HeaderService) {
