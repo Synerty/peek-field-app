@@ -1,6 +1,4 @@
-import { MainHomeComponent } from "./main-home/main-home.component"
-import { MainConfigComponent } from "./main-config/main-config.component"
-import { UnknownRouteComponent } from "./unknown-route/unknown-route.component"
+import { HomePage, ConfigPage, UnknownRoutePage } from "./pages"
 import { DeviceEnrolledGuard } from "@peek/peek_core_device"
 import { LoggedInGuard } from "@peek/peek_core_user"
 import { pluginAppRoutes } from "@_peek/plugin-app-routes"
@@ -23,7 +21,7 @@ export const staticRoutes = [
         children: [
             {
                 path: "",
-                component: MainHomeComponent
+                component: HomePage
             },
             ...pluginAppRoutes,
             ...pluginCfgRoutes
@@ -31,10 +29,10 @@ export const staticRoutes = [
     },
     {
         path: "config",
-        component: MainConfigComponent
+        component: ConfigPage
     },
     {
         path: "**",
-        component: UnknownRouteComponent
+        component: UnknownRoutePage
     }
 ]

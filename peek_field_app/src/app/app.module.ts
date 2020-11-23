@@ -13,10 +13,7 @@ import {
 } from "@synerty/vortexjs"
 import { staticRoutes } from "./app.routes"
 import { peekRootServices } from "./app.services"
-import { AppComponent } from "./app.component"
-import { MainHomeComponent } from "./main-home/main-home.component"
-import { MainConfigComponent } from "./main-config/main-config.component"
-import { UnknownRouteComponent } from "./unknown-route/unknown-route.component"
+import { AppComponent } from "./core/components/app/app.component"
 import { pluginRootModules } from "../@_peek/plugin-root-modules"
 import { pluginRootServices } from "@_peek/plugin-root-services"
 import { PluginRootComponent } from "./plugin-root.component"
@@ -32,6 +29,7 @@ import en from "@angular/common/locales/en"
 import { FormsModule } from "@angular/forms"
 import { NzIconModule } from "ng-zorro-antd/icon"
 import { ComponentsModule } from "./core/components"
+import { PagesModule } from "./pages/pages.module"
 
 registerLocaleData(en)
 
@@ -42,9 +40,6 @@ export function tupleOfflineStorageNameServiceFactory() {
 @NgModule({
     declarations: [
         AppComponent,
-        MainHomeComponent,
-        MainConfigComponent,
-        UnknownRouteComponent,
         PluginRootComponent,
     ],
     bootstrap: [AppComponent],
@@ -59,6 +54,7 @@ export function tupleOfflineStorageNameServiceFactory() {
         NgZorroAntdMobileModule,
         HttpClientModule,
         ComponentsModule,
+        PagesModule,
     ],
     providers: [
         {provide: NZ_I18N, useValue: en_US},

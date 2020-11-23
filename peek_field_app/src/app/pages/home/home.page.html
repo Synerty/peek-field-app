@@ -1,0 +1,24 @@
+<div class="home-page">
+  <div class="page-row">
+    <div
+      class="page-message"
+      *ngIf="!homeLinks.length"
+    >
+      No Plugins Installed
+    </div>
+    <a
+      class="row-button"
+      [routerLink]="[link.resourcePath]"
+      *ngFor="let link of homeLinks"
+    >
+      <div class="button-image">
+        <img
+          [src]="[link.pluginIconPath]"
+        >
+      </div>
+      <div class="button-title">
+        {{link.title}}
+      </div>
+    </a>
+  </div>
+</div>
