@@ -37,35 +37,17 @@
         align-items: center;
         border-top: 1px solid $border-color;
         height: 56px;
+        color: $font-color-primary;
 
         .value {
           flex: 1;
         }
-      }
 
-      > .column-links {
-        display: flex;
-        flex-direction: column;
-        padding: 20px 0;
-        border-top: 1px solid $border-color;
-
-        > .column-link {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
-          flex: 1;
-          height: 100%;
-          color: $primary-color;
-          background: $primary-color-translucent;
-          border-radius: 200px;
-          min-height: 48px;
-          height: 48px;
-          font-weight: $semi-bold;
-        }
-
-        > .column-link:not(:first-of-type) {
-          margin-top: 20px;
+        .end-value {
+          > i {
+            color: $primary-color;
+            font-size: 20px;
+          }
         }
       }
     }

@@ -16,10 +16,13 @@
     <div class="card-header">
       <div class="header-title">Config Options</div>
     </div>
-    <div class="column-links">
-      <a class="column-link" [routerLink]="[link.resourcePath]" *ngFor="let link of configLinks">
-        {{link.title}}
-      </a>
-    </div>
+    <a class="card-row" [routerLink]="[link.resourcePath]" *ngFor="let link of configLinks">
+      <div class="value">
+        {{link.title}} Plugin
+      </div>
+      <div class="end-value">
+        <i nz-icon nzType="right" nzTheme="outline"></i>
+      </div>
+    </a>
   </div>
 </div>

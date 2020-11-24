@@ -9,7 +9,7 @@ import { HeaderService } from "@synerty/peek-plugin-base-js"
 })
 export class UnknownRoutePage {
     constructor(public headerService: HeaderService) {
-        headerService.setTitle("Peek Config")
+        headerService.setTitle("Unknown Route")
         this.headerService.isEnabled = true
     }
 }
