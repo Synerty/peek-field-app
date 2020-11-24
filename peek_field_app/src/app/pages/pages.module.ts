@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core"
 import { BrowserModule } from "@angular/platform-browser"
 import { RouterModule } from "@angular/router"
 import { FormsModule } from "@angular/forms"
+import { NzIconModule } from "ng-zorro-antd/icon"
 import { HomePage, ConfigPage, UnknownRoutePage } from "./"
 
 const PAGES = [
@@ -16,6 +17,7 @@ const PAGES = [
         RouterModule,
         FormsModule,
         BrowserModule,
+        NzIconModule,
     ],
     exports: PAGES,
 })

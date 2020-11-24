@@ -11,8 +11,9 @@ import { configLinks } from "@_peek/plugin-config-links"
 export class ConfigPage {
     configLinks = configLinks
     
-    constructor(headerService: HeaderService) {
-        headerService.setTitle("Peek Config")
+    constructor(public headerService: HeaderService) {
+        this.headerService.setTitle("Peek Config")
+        this.headerService.isEnabled = true
     }
 }
 
