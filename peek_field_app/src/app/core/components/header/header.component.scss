@@ -1,55 +1,57 @@
 @import "src/variables.scss";
 
-.header {
-  background: $primary-color;
-  color: #fff;
-  box-shadow: $box-shadow;
-  z-index: 1;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  height: $header-height;
-
-  .back-button {
+:host {
+  .header {
+    background: $primary-color;
+    color: #fff;
+    box-shadow: $box-shadow;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: 100%;
-    font-size: 20px;
-    min-width: 64px;
-  }
+    height: $header-height;
 
-  .header-title {
-    display: flex;
-    align-items: center;
-    padding-left: 8px;
-    height: 100%;
-    font-weight: 500;
-    text-align: center;
-    flex: 1;
-    font-size: 16px;
-  }
-
-  .buttons {
-    display: flex;
-    height: 100%;
-
-    > button {
+    .back-button {
       display: flex;
       align-items: center;
       justify-content: center;
       height: 100%;
+      font-size: 20px;
       min-width: 64px;
+    }
 
-      > * {
-        font-size: 20px;
-      }
+    .header-title {
+      display: flex;
+      align-items: center;
+      padding-left: 8px;
+      height: 100%;
+      font-weight: $semi-bold;
+      text-align: center;
+      flex: 1;
+      font-size: 15px;
+    }
 
-      .count {
-        padding: 4px 8px;
+    .buttons {
+      display: flex;
+      height: 100%;
+
+      > button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        min-width: 64px;
+
+        > * {
+          font-size: 20px;
+        }
+
+        .count {
+          padding: 4px 8px;
+        }
       }
     }
   }

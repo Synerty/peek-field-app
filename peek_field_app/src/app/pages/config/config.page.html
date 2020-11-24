@@ -1,24 +1,25 @@
-<div class="peek-config-screen-background"></div>
-<div class="peek-config-screen">
-  <div class="container">
-    <div class="row">
-      <div class="config-screen-message h1">
-        Peek Web Mobile App v0.0.0
-      </div>
+<div class="config-page">
+  <div class="page-card">
+    <div class="card-header">
+      <div class="header-title">App Info</div>
     </div>
-    <div class="row" *ngIf="!appDetails.length">
-      <div class="config-screen-message col-md-12">
-        No Plugin Configs Available
-      </div>
+    <div class="card-row">
+      <div class="value">Name</div>
+      <div class="end-value">Peek Field App</div>
     </div>
-    <div class="row" *ngFor="let item of appDetails">
-      <div class="col-md-12">
-        <p>
-          <button class="btn btn-block" [routerLink]="[item.resourcePath]">
-            {{item.title}}
-          </button>
-        </p>
-      </div>
+    <div class="card-row">
+      <div class="value">Version</div>
+      <div class="end-value">v0.0.0</div>
+    </div>
+  </div>
+  <div class="page-card">
+    <div class="card-header">
+      <div class="header-title">Config Options</div>
+    </div>
+    <div class="column-links">
+      <a class="column-link" [routerLink]="[link.resourcePath]" *ngFor="let link of configLinks">
+        {{link.title}}
+      </a>
     </div>
   </div>
 </div>

@@ -9,7 +9,7 @@ import { configLinks } from "@_peek/plugin-config-links"
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ConfigPage {
-    appDetails = configLinks
+    configLinks = configLinks
     
     constructor(headerService: HeaderService) {
         headerService.setTitle("Peek Config")

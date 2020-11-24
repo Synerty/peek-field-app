@@ -1,1 +1,73 @@
 @import 'src/variables';
+
+:host {
+  .config-page {
+    padding: 0 20px;
+
+    .page-title {
+      font-size: 20px;
+      margin: 20px 0 0 0;
+      font-weight: $bold;
+    }
+
+    .page-card {
+      margin: 20px 0 0 0;
+      background: $container-background-color;
+      border-radius: 12px;
+      padding: 0 20px;
+      box-shadow: $box-shadow;
+
+      > .card-header {
+        display: flex;
+        align-items: center;
+        height: 56px;
+        width: 100%;
+
+        > .header-title {
+          font-weight: $bold;
+          text-transform: capitalize;
+          text-align: left;
+          flex: 1;
+          font-size: 15px;
+        }
+      }
+
+      > .card-row {
+        display: flex;
+        align-items: center;
+        border-top: 1px solid $border-color;
+        height: 56px;
+
+        .value {
+          flex: 1;
+        }
+      }
+
+      > .column-links {
+        display: flex;
+        flex-direction: column;
+        padding: 20px 0;
+        border-top: 1px solid $border-color;
+
+        > .column-link {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          flex: 1;
+          height: 100%;
+          color: $primary-color;
+          background: $primary-color-translucent;
+          border-radius: 200px;
+          min-height: 48px;
+          height: 48px;
+          font-weight: $semi-bold;
+        }
+
+        > .column-link:not(:first-of-type) {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}

@@ -3,9 +3,8 @@ import {
     HeaderService,
     IHeaderLink,
     NavBackService,
-    NotificationService
+    NotificationService,
 } from "@synerty/peek-plugin-base-js"
-import { VortexStatusService } from "@synerty/vortexjs"
 import { LoggedInGuard } from "@peek/peek_core_user"
 import { BehaviorSubject } from "rxjs"
 import { filter } from "rxjs/operators"
@@ -18,10 +17,6 @@ import { homeLinks } from "@_peek/plugin-home-links"
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent {
-    sosEnabled$ = this.headerService.links$.pipe(
-        filter((links: IHeaderLink[]) =>
-            !!links.find(link => link.plugin === "peek_plugin_enmac_chat"))
-    )
     fieldIncidentsEnabled$ = new BehaviorSubject<boolean>(
         !!homeLinks.find(
             link => link.name === "peek_plugin_enmac_field_incidents")
@@ -34,8 +29,19 @@ export class HeaderComponent {
         filter((links: IHeaderLink[]) =>
             !!links.find(link => link.plugin === "peek_plugin_inbox"))
     )
-    
+    sosEnabled$ = this.headerService.links$.pipe(
+        filter((links: IHeaderLink[]) =>
+            !!links.find(link => link.plugin === "peek_plugin_enmac_chat"))
+    )
     showSearch$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false)
+    
+    constructor(
+        public headerService: HeaderService,
+        private loggedInGuard: LoggedInGuard,
+        public navBackService: NavBackService,
+        public notificationService: NotificationService,
+    ) {
+    }
     
     get showSearch() {
         return this.showSearch$.getValue()
@@ -43,24 +49,6 @@ export class HeaderComponent {
     
     set showSearch(value) {
         this.showSearch$.next(value)
-    }
-    
-    constructor(
-        public vortexStatusService: VortexStatusService,
-        public headerService: HeaderService,
-        private loggedInGuard: LoggedInGuard,
-        public navBackService: NavBackService,
-        public notificationService: NotificationService,
-    ) { }
-    
-    linkTitle(title: IHeaderLink) {
-        if (!title.badgeCount) {
-            return title.text
-        }
-        if (title.left) {
-            return `${title.text} (${title.badgeCount})`
-        }
-        return `(${title.badgeCount}) ${title.text}`
     }
     
     showSearchClicked(): void {
