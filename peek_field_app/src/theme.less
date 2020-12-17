@@ -46,8 +46,8 @@
 @popover-customize-border-color: @border-color-split;
 @font-family: "Poppins", sans-serif;
 @code-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
-@text-color: fade(@black, 85%);
-@text-color-secondary: fade(@black, 45%);
+@text-color: #000;
+@text-color-secondary: #aaa;
 @text-color-inverse: @white;
 @icon-color: inherit;
 @icon-color-hover: fade(@black, 75%);
@@ -57,7 +57,7 @@
 @text-selection-bg: @primary-color;
 @font-variant-base: tabular-nums;
 @font-feature-settings-base: 'tnum';
-@font-size-base: 14px;
+@font-size-base: 15px;
 @font-size-lg: @font-size-base + 2px;
 @font-size-sm: 12px;
 @heading-1-size: ceil(@font-size-base * 2.71);
@@ -66,7 +66,7 @@
 @heading-4-size: ceil(@font-size-base * 1.42);
 @heading-5-size: ceil(@font-size-base * 1.14);
 // https://github.com/ant-design/ant-design/issues/20210
-@line-height-base: 1.5715;
+@line-height-base: 1.5;
 @border-radius-base: 4px;
 @border-radius-sm: @border-radius-base;
 
@@ -127,8 +127,8 @@
 @ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
 
 // Border color
-@border-color-base: rgba(0,0,0,.06); // base border outline a component
-@border-color-split: rgba(0,0,0,.06); // split border inside a component
+@border-color-base: rgba(0,0,0,.15); // base border outline a component
+@border-color-split: rgba(0,0,0,.15); // split border inside a component
 @border-color-inverse: rgba(255,255,255,.2);
 @border-width-base: 1px; // width of the border for a component
 @border-style-base: solid; // style of a components border

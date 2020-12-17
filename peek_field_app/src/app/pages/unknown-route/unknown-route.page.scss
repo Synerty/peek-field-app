@@ -1,4 +1,5 @@
 @import 'src/variables';
+@import 'src/components';
 
 :host {
   .unknown-page {
@@ -29,21 +30,11 @@
     }
 
     .button-link {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      flex: 1;
-      height: 100%;
-      color: $primary-color;
-      background: $primary-color-translucent;
-      border-radius: 200px;
-      min-height: 48px;
-      height: 48px;
-      font-weight: $semi-bold;
+      @extend %primary-button;
+      background: $primary-color;
+      color: #fff;
       max-width: 160px;
       margin-top: 40px;
-      padding: 0 20px;
     }
   }
 }

@@ -1,0 +1,6 @@
+// Date Picker List
+html:not([data-scale]) .am-list-body::before,
+html:not([data-scale]) .am-list-body::after {
+  border: none;
+  content: none;
+}
