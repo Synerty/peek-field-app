@@ -17,7 +17,7 @@
         width: calc(33% - 40px);
         max-width: 206px;
         margin: 40px 40px 0 0;
-        border-radius: 12px;
+        border-radius: $border-radius;
         background: $primary-color;
         box-shadow: $box-shadow;
         overflow: hidden;
