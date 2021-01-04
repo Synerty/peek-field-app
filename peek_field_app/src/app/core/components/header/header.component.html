@@ -1,41 +1,61 @@
 <ng-container *ngIf="headerService.isEnabled$ | async">
-  <div class="header">
-    <button class="back-button" (click)="navBackService.navBack()">
-      <i nz-icon nzType="arrow-left" nzTheme="outline"></i>
-    </button>
-    <div class="header-title">
-      {{headerService.title$ | async}}
+    <div class="header">
+        <button (click)="navBackService.navBack()" class="back-button">
+            <i nz-icon nzTheme="outline" nzType="arrow-left"></i>
+        </button>
+        <div class="header-title">
+            {{headerService.title$ | async}}
+        </div>
+        <div class="buttons" role="group">
+            <button [routerLink]="['/']">
+                <i nz-icon nzTheme="outline" nzType="home"></i>
+            </button>
+            <button
+                *ngIf="fieldIncidentsEnabled$ | async"
+                [routerLink]="['/peek_plugin_enmac_field_incidents']"
+            >
+                <nz-badge
+                    [nzCount]="notificationService.fieldIncidentsCount$ | async"
+                >
+                    <i
+                        class="count" nz-icon nzTheme="outline" nzType="warning"
+                    ></i>
+                </nz-badge>
+            </button>
+            <button
+                *ngIf="fieldSwitchingEnabled$ | async"
+                [routerLink]="['/peek_plugin_enmac_field_switching']"
+            >
+                <nz-badge
+                    [nzCount]="notificationService.fieldSwitchingCount$ | async"
+                >
+                    <i
+                        class="count" nz-icon nzTheme="outline"
+                        nzType="thunderbolt"
+                    ></i>
+                </nz-badge>
+            </button>
+            <button
+                *ngIf="inboxEnabled$ | async"
+                [routerLink]="['/peek_plugin_inbox']"
+            >
+                <nz-badge [nzCount]="notificationService.inboxCount$ | async">
+                    <i
+                        class="count" nz-icon nzTheme="outline" nzType="mail"
+                    ></i>
+                </nz-badge>
+            </button>
+            <button [routerLink]="['/peek_core_user']">
+                <i nz-icon nzTheme="outline" nzType="user"></i>
+            </button>
+            <button (click)="showSearchClicked()">
+                <i nz-icon nzTheme="outline" nzType="search"></i>
+            </button>
+            <button [routerLink]="['/config']">
+                <i nz-icon nzTheme="outline" nzType="setting"></i>
+            </button>
+        </div>
     </div>
-    <div class="buttons" role="group">
-      <button [routerLink]="['/']">
-        <i nz-icon nzType="home" nzTheme="outline"></i>
-      </button>
-      <button [routerLink]="['/peek_plugin_enmac_field_incidents']" *ngIf="fieldIncidentsEnabled$ | async">
-        <nz-badge [nzCount]="notificationService.fieldIncidentsCount$ | async">
-          <i class="count" nz-icon nzType="warning" nzTheme="outline"></i>
-        </nz-badge>
-      </button>
-      <button [routerLink]="['/peek_plugin_enmac_field_switching']" *ngIf="fieldSwitchingEnabled$ | async">
-        <nz-badge [nzCount]="notificationService.fieldSwitchingCount$ | async">
-          <i class="count" nz-icon nzType="thunderbolt" nzTheme="outline"></i>
-        </nz-badge>
-      </button>
-      <button [routerLink]="['/peek_plugin_inbox']" *ngIf="inboxEnabled$ | async">
-        <nz-badge [nzCount]="notificationService.inboxCount$ | async">
-          <i class="count" nz-icon nzType="mail" nzTheme="outline"></i>
-        </nz-badge>
-      </button>
-      <button [routerLink]="['/peek_core_user']">
-        <i nz-icon nzType="user" nzTheme="outline"></i>
-      </button>
-      <button (click)="showSearchClicked()">
-        <i nz-icon nzType="search" nzTheme="outline"></i>
-      </button>
-      <button [routerLink]="['/config']">
-        <i nz-icon nzType="setting" nzTheme="outline"></i>
-      </button>
-    </div>
-  </div>
-
-  <plugin-search [(showSearch)]="showSearch"></plugin-search>
+    
+    <plugin-search [(showSearch)]="showSearch"></plugin-search>
 </ng-container>

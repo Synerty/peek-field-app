@@ -14,35 +14,35 @@
 
 //@import '~@synerty/peek-plugin-base-js/src/styles/layout/_information_section';
 .peek-information-section {
-  /*
-      Contains the Information Section classes
-  */
-
-  padding: $general_padding_2;
-
-  .information-section-title {
     /*
-        Contains the title attributes unique to the peek-information-section class
+        Contains the Information Section classes
     */
-    padding-bottom: $general_padding_2;
-  }
 
-  .information-section-icon {
-    /*
-        Contains the icon attributes unique to the peek-information-section class
-    */
-    background-image: url('~@synerty/peek-plugin-base-js/src/assets/images/home_background.png');
-    @include inner-shadow(0.35);
-    padding: $general_padding_3;
-    max-width: $general_width_1;
-    height: auto;
-    border-radius: $general_border_radius;
-    margin-top: $general_padding_4;
-    margin-bottom: $general_padding_4;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-  }
+    padding: $general_padding_2;
+
+    .information-section-title {
+        /*
+            Contains the title attributes unique to the peek-information-section class
+        */
+        padding-bottom: $general_padding_2;
+    }
+
+    .information-section-icon {
+        /*
+            Contains the icon attributes unique to the peek-information-section class
+        */
+        background-image: url('~@synerty/peek-plugin-base-js/src/assets/images/home_background.png');
+        @include inner-shadow(0.35);
+        padding: $general_padding_3;
+        max-width: $general_width_1;
+        height: auto;
+        border-radius: $general_border_radius;
+        margin-top: $general_padding_4;
+        margin-bottom: $general_padding_4;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
 }
 
 
@@ -53,36 +53,36 @@
 
 body,
 html {
-  height: 100%;
+    height: 100%;
 }
 
 .image {
-  max-width: 100%;
+    max-width: 100%;
 }
 
 .hr {
-  margin-top: 0;
-  margin-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 *:focus {
-  outline: none !important;
+    outline: none !important;
 }
 
 .navigation-information {
-  //border-bottom: 1px solid darken($grey,20%);
-  margin-bottom: $general_padding_2;
+    //border-bottom: 1px solid darken($grey,20%);
+    margin-bottom: $general_padding_2;
 
-  .form-group {
-    padding-top: 0;
-    margin-bottom: 0;
-  }
+    .form-group {
+        padding-top: 0;
+        margin-bottom: 0;
+    }
 
 }
 
 .form-group {
-  margin-bottom: 0;
-  padding-bottom: $general_padding_2;
-  padding-top: $general_padding_2;
-  //color: $black;
+    margin-bottom: 0;
+    padding-bottom: $general_padding_2;
+    padding-top: $general_padding_2;
+    //color: $black;
 }
