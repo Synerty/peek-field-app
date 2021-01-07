@@ -8,7 +8,7 @@
     height: 100%;
     color: $primary-color;
     background: $primary-color-translucent;
-    border-radius: $border-radius;
+    border-radius: 200px;
     min-height: $button-height;
     height: $button-height;
     font-weight: $semi-bold;
@@ -24,6 +24,7 @@
 
 %primary-tag {
     @extend %primary-button;
+    border-radius: 4px;
     background: $primary-color;
     color: #fff;
     min-height: 28px;
