@@ -26,6 +26,7 @@
         "@capacitor/cli": "^2.4.2",
         "@capacitor/core": "^2.4.2",
         "@capacitor/ios": "^2.4.2",
+        "@ionic/pwa-elements": "^3.0.2",
         "@synerty/peek-plugin-base-js": "^10.1.2",
         "@synerty/vortexjs": "^2.3.0",
         "bootstrap": "^3.3.7",
@@ -38,7 +39,6 @@
         "rxjs": "~6.5.3",
         "rxjs-compat": "^6.6.3",
         "ts-md5": "^1.2.4",
-        "webcamjs": "^1.0.22",
         "zone.js": "~0.10.3"
     },
     "devDependencies": {
