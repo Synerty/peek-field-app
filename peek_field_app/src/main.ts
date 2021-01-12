@@ -5,6 +5,7 @@ import { VortexService } from "@synerty/vortexjs"
 import { enableProdMode } from "@angular/core"
 import { environment } from "./environments/environment"
 import { AppModule } from "./app/app.module"
+import { defineCustomElements } from '@ionic/pwa-elements/loader'
 
 const protocol = location.protocol.toLowerCase() === "https:" ? "wss" : "ws"
 
@@ -19,3 +20,5 @@ if (environment.production) {
 
 platformBrowserDynamic()
     .bootstrapModule(AppModule)
+
+defineCustomElements(window)

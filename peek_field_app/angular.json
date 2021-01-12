@@ -40,8 +40,7 @@
                         "scripts": [
                             "node_modules/jquery/dist/jquery.slim.js",
                             "node_modules/bootstrap/dist/js/bootstrap.js",
-                            "node_modules/moment/moment.js",
-                            "node_modules/webcamjs/webcam.min.js"
+                            "node_modules/moment/moment.js"
                         ]
                     },
                     "configurations": {
@@ -91,8 +90,7 @@
                         "scripts": [
                             "node_modules/jquery/dist/jquery.slim.js",
                             "node_modules/bootstrap/dist/js/bootstrap.js",
-                            "node_modules/moment/moment.js",
-                            "node_modules/webcamjs/webcam.min.js"
+                            "node_modules/moment/moment.js"
                         ],
                         "styles": [
                             "node_modules/bootstrap/dist/css/bootstrap.min.css",
