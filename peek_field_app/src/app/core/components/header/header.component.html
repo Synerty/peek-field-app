@@ -11,37 +11,17 @@
                 <i nz-icon nzTheme="outline" nzType="home"></i>
             </button>
             <button
-                *ngIf="fieldIncidentsEnabled$ | async"
-                [routerLink]="['/peek_plugin_enmac_field_incidents']"
+                *ngFor="let link of headerService.links$ | async"
+                [routerLink]="[link.resourcePath]"
             >
                 <nz-badge
-                    [nzCount]="notificationService.fieldIncidentsCount$ | async"
+                    [nzCount]="link.badgeCount"
                 >
                     <i
-                        class="count" nz-icon nzTheme="outline" nzType="warning"
-                    ></i>
-                </nz-badge>
-            </button>
-            <button
-                *ngIf="fieldSwitchingEnabled$ | async"
-                [routerLink]="['/peek_plugin_enmac_field_switching']"
-            >
-                <nz-badge
-                    [nzCount]="notificationService.fieldSwitchingCount$ | async"
-                >
-                    <i
-                        class="count" nz-icon nzTheme="outline"
-                        nzType="thunderbolt"
-                    ></i>
-                </nz-badge>
-            </button>
-            <button
-                *ngIf="inboxEnabled$ | async"
-                [routerLink]="['/peek_plugin_inbox']"
-            >
-                <nz-badge [nzCount]="notificationService.inboxCount$ | async">
-                    <i
-                        class="count" nz-icon nzTheme="outline" nzType="mail"
+                        class="count"
+                        nz-icon
+                        nzTheme="outline"
+                        nzType="{{link.antIcon || 'question-circle'}}"
                     ></i>
                 </nz-badge>
             </button>
