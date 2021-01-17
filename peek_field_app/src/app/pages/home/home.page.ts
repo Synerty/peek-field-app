@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from "@angular/core"
-import { HeaderService, NgLifeCycleEvents } from "@synerty/peek-plugin-base-js"
+import { HeaderService } from "@synerty/peek-plugin-base-js"
+import { NgLifeCycleEvents } from "@synerty/vortexjs"
 import { homeLinks } from "@_peek/plugin-home-links"
 
 @Component({
