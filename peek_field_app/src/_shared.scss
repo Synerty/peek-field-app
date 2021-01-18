@@ -178,7 +178,9 @@
         border-radius: $border-radius;
         box-shadow: $box-shadow;
         z-index: 10;
-        min-width: 70vw;
+        width: 70vw;
+        min-width: 0px;
+        max-width: 600px;
 
         .page-modal-header {
             display: flex;
@@ -189,6 +191,19 @@
             .header-title {
                 flex: 1;
                 font-weight: $semi-bold;
+            }
+
+            > .close-button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                right: 8px;
+                height: 40px;
+                width: 40px;
+                background: #fff;
+                border: none;
+                font-size: 18px;
             }
         }
 
