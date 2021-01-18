@@ -34,21 +34,28 @@ i {
 
 @font-face {
     font-family: "Poppins";
-    src: url('/peek_field_app/src/assets/Poppins-Regular.ttf') format('truetype');
+    src: url('/assets/Poppins-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Poppins";
-    src: url('/peek_field_app/src/assets/Poppins-Medium.ttf') format('truetype');
+    src: url('/assets/Poppins-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Poppins";
-    src: url('/peek_field_app/src/assets/Poppins-SemiBold.ttf') format('truetype');
+    src: url('/assets/Poppins-Medium.ttf') format('truetype');
     font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url('/assets/Poppins-Medium.ttf') format('truetype');
+    font-weight: 700;
     font-style: normal;
 }
