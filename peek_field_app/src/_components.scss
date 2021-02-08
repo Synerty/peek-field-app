@@ -36,19 +36,18 @@
     letter-spacing: 0.5px;
 }
 
-%primary-select {
-    @extend %primary-button;
-    background: $grey-color-translucent;
-    color: $font-color-primary;
-    fill: $font-color-primary;
-    font-weight: $normal;
-    border-radius: $border-radius;
-    padding: 0 12px;
+%select {
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    padding-right: 12px;
+    line-height: 44px;
+    height: 44px;
 
     > select {
-        height: 100%;
         width: 100%;
-        background: none;
+        height: 100%;
+        background: transparent;
         border: none;
+        padding-left: 12px;
     }
 }
