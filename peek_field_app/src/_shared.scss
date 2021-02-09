@@ -76,6 +76,16 @@
             font: inherit;
         }
     }
+
+    .card-input {
+        input {
+            border: 1px solid $border-color;
+            border-radius: $border-radius;
+            width: 100%;
+            padding: 12px;
+            font: inherit;
+        }
+    }
 }
 
 .card-actions {
