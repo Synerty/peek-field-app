@@ -4,7 +4,7 @@
 .lastHash
 @peek/
 @_peek/
-
+/peek_field_app/src/assets/
 **/app*zip
 
 # Ignore the CSS files that we have SCSS files for
