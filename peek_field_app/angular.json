@@ -27,15 +27,15 @@
                             }
                         ],
                         "styles": [
-                            "src/theme.less",
                             "node_modules/bootstrap/dist/css/bootstrap.min.css",
                             "node_modules/bootstrap/dist/css/bootstrap-theme.min.css",
                             "node_modules/@synerty/peek-plugin-base-js/src/styles/style.scss",
                             "node_modules/ng-zorro-antd-mobile/src/ng-zorro-antd-mobile.min.css",
-                            "src/styles-layout.scss",
                             "src/styles.scss",
-                            "src/_shared.scss",
-                            "src/_ant-design.scss"
+                            "src/styles/theme.less",
+                            "src/styles/styles-layout.scss",
+                            "src/styles/shared.scss",
+                            "src/styles/ant-design.scss"
                         ],
                         "scripts": [
                             "node_modules/jquery/dist/jquery.slim.js",
@@ -95,11 +95,13 @@
                         "styles": [
                             "node_modules/bootstrap/dist/css/bootstrap.min.css",
                             "node_modules/bootstrap/dist/css/bootstrap-theme.min.css",
-                            "node_modules/@synerty/peek-plugin-base-js/src/styles/layout.scss",
                             "node_modules/@synerty/peek-plugin-base-js/src/styles/style.scss",
-                            "node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
                             "node_modules/ng-zorro-antd-mobile/src/ng-zorro-antd-mobile.min.css",
-                            "src/styles.scss"
+                            "src/styles.scss",
+                            "src/styles/theme.less",
+                            "src/styles/styles-layout.scss",
+                            "src/styles/shared.scss",
+                            "src/styles/ant-design.scss"
                         ],
                         "assets": [
                             "src/assets",

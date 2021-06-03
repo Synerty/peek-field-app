@@ -4,13 +4,13 @@
 //peek screens
 
 //plugin screens
-@import '~@synerty/peek-plugin-base-js/src/styles/layout/_plugin_inbox';
-@import '~@synerty/peek-plugin-base-js/src/styles/layout/_plugin_chat';
+@import '~@synerty/peek-plugin-base-js/src/styles/layout/plugin_inbox';
+@import '~@synerty/peek-plugin-base-js/src/styles/layout/plugin_chat';
 
 //generic sections
-@import '~@synerty/peek-plugin-base-js/src/styles/layout/_navigation_section';
-@import '~@synerty/peek-plugin-base-js/src/styles/layout/_tabs_section';
-@import '~@synerty/peek-plugin-base-js/src/styles/layout/_mobile_dialog_section';
+@import '~@synerty/peek-plugin-base-js/src/styles/layout/navigation_section';
+@import '~@synerty/peek-plugin-base-js/src/styles/layout/tabs_section';
+@import '~@synerty/peek-plugin-base-js/src/styles/layout/mobile_dialog_section';
 
 //@import '~@synerty/peek-plugin-base-js/src/styles/layout/_information_section';
 .peek-information-section {
@@ -46,10 +46,10 @@
 }
 
 
-@import '~@synerty/peek-plugin-base-js/src/styles/layout/_details_section';
-@import '~@synerty/peek-plugin-base-js/src/styles/layout/_tables_section';
+@import '~@synerty/peek-plugin-base-js/src/styles/layout/details_section';
+@import '~@synerty/peek-plugin-base-js/src/styles/layout/tables_section';
 
-@import '~@synerty/peek-plugin-base-js/src/styles/layout/_general';
+@import '~@synerty/peek-plugin-base-js/src/styles/layout/general';
 
 body,
 html {
