@@ -27,12 +27,12 @@
                             }
                         ],
                         "styles": [
+                            "src/styles/theme.less",
                             "node_modules/bootstrap/dist/css/bootstrap.min.css",
                             "node_modules/bootstrap/dist/css/bootstrap-theme.min.css",
                             "node_modules/@synerty/peek-plugin-base-js/src/styles/style.scss",
                             "node_modules/ng-zorro-antd-mobile/src/ng-zorro-antd-mobile.min.css",
                             "src/styles.scss",
-                            "src/styles/theme.less",
                             "src/styles/styles-layout.scss",
                             "src/styles/shared.scss",
                             "src/styles/ant-design.scss"
@@ -93,12 +93,12 @@
                             "node_modules/moment/moment.js"
                         ],
                         "styles": [
+                            "src/styles/theme.less",
                             "node_modules/bootstrap/dist/css/bootstrap.min.css",
                             "node_modules/bootstrap/dist/css/bootstrap-theme.min.css",
                             "node_modules/@synerty/peek-plugin-base-js/src/styles/style.scss",
                             "node_modules/ng-zorro-antd-mobile/src/ng-zorro-antd-mobile.min.css",
                             "src/styles.scss",
-                            "src/styles/theme.less",
                             "src/styles/styles-layout.scss",
                             "src/styles/shared.scss",
                             "src/styles/ant-design.scss"
