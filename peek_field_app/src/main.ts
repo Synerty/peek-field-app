@@ -1,24 +1,25 @@
-import { platformBrowserDynamic } from "@angular/platform-browser-dynamic"
+import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
 // Enable the use of workers for the payload
-import { VortexService } from "@synerty/vortexjs"
+import { VortexService } from "@synerty/vortexjs";
 // Potentially enable angular prod mode
-import { enableProdMode } from "@angular/core"
-import { environment } from "./environments/environment"
-import { AppModule } from "./app/app.module"
-import { defineCustomElements } from '@ionic/pwa-elements/loader'
+import { enableProdMode } from "@angular/core";
+import { environment } from "./environments/environment";
+import { AppModule } from "./app/app.module";
+import { defineCustomElements } from "@ionic/pwa-elements/loader";
 
-const protocol = location.protocol.toLowerCase() === "https:" ? "wss" : "ws"
+const protocol = location.protocol.toLowerCase() === "https:" ? "wss" : "ws";
 
-VortexService.setVortexUrl(`${protocol}://${location.hostname}:${location.port}/vortexws`)
-VortexService.setVortexClientName("peek-field-app")
+VortexService.setVortexUrl(
+    `${protocol}://${location.hostname}:${location.port}/vortexws`
+);
+VortexService.setVortexClientName("peek-field-app");
 
 // Payload.setWorkerDelegate(new PayloadDelegateWeb());
 
 if (environment.production) {
-    enableProdMode()
+    enableProdMode();
 }
 
-platformBrowserDynamic()
-    .bootstrapModule(AppModule)
+platformBrowserDynamic().bootstrapModule(AppModule);
 
-defineCustomElements(window)
+defineCustomElements(window);

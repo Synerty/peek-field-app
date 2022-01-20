@@ -4,7 +4,7 @@
             <i nz-icon nzTheme="outline" nzType="arrow-left"></i>
         </button>
         <div class="header-title">
-            {{headerService.title$ | async}}
+            {{ headerService.title$ | async }}
         </div>
         <div class="buttons" role="group">
             <button [routerLink]="['/']">
@@ -14,14 +14,12 @@
                 *ngFor="let link of headerService.links$ | async"
                 [routerLink]="[link.resourcePath]"
             >
-                <nz-badge
-                    [nzCount]="link.badgeCount"
-                >
+                <nz-badge [nzCount]="link.badgeCount">
                     <i
                         class="count"
                         nz-icon
                         nzTheme="outline"
-                        nzType="{{link.antIcon || 'question-circle'}}"
+                        nzType="{{ link.antIcon || 'question-circle' }}"
                     ></i>
                 </nz-badge>
             </button>
@@ -30,6 +28,6 @@
             </button>
         </div>
     </div>
-    
+
     <core-search-component [(showSearch)]="showSearch"></core-search-component>
 </ng-container>

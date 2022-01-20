@@ -1,4 +1,4 @@
-@import 'src/variables';
+@import "src/variables";
 
 :host {
     .home-page {
@@ -38,7 +38,7 @@
                     height: 150%;
                     padding-bottom: 32px;
 
-                    img{
+                    img {
                         width: 100px;
                         height: 100px;
                     }
