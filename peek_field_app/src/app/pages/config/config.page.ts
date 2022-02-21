@@ -10,6 +10,7 @@ import { configLinks } from "@_peek/plugin-config-links";
 })
 export class ConfigPage {
     configLinks = configLinks;
+    readonly appVersion: string = "0.0.0";
 
     constructor(public headerService: HeaderService) {
         this.headerService.setTitle("Peek Config");
