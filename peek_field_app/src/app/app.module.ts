@@ -30,6 +30,7 @@ import { FormsModule } from "@angular/forms";
 import { NzIconModule } from "ng-zorro-antd/icon";
 import { ComponentsModule } from "./core/components";
 import { PagesModule } from "./pages/pages.module";
+import { AngularSvgIconModule } from "angular-svg-icon";
 
 registerLocaleData(en);
 
@@ -52,6 +53,7 @@ export function tupleOfflineStorageNameServiceFactory() {
         HttpClientModule,
         ComponentsModule,
         PagesModule,
+        AngularSvgIconModule.forRoot(),
     ],
     providers: [
         { provide: NZ_I18N, useValue: en_US },
