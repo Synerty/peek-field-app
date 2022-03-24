@@ -7,6 +7,7 @@ import { SearchModule } from "@_peek/peek_core_search/search.module";
 import { NzBadgeModule } from "ng-zorro-antd/badge";
 import { HeaderComponent } from "./header";
 import { StatusComponent } from "./status";
+import { AngularSvgIconModule } from "angular-svg-icon";
 
 const COMPONENTS = [HeaderComponent, StatusComponent];
 
@@ -19,6 +20,7 @@ const COMPONENTS = [HeaderComponent, StatusComponent];
         SearchModule,
         NzIconModule,
         NzBadgeModule,
+        AngularSvgIconModule,
     ],
     exports: COMPONENTS,
 })
