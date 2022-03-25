@@ -17,11 +17,11 @@
                 <nz-badge
                     [nzCount]="link.badgeCount"
                 >
-                    <i *ngIf="link.customAntIcon; else antDefaultFontface"
+                    <i *ngIf="link.svgIcon; else antDefaultFontface"
                        class="count"
                        nz-icon>
                         <svg-icon style="line-height: inherit"
-                                  [src]="link.customAntIcon"
+                                  [src]="link.svgIcon"
                                   [svgStyle]="{'width.px':24}">
                         </svg-icon>
                     </i>
