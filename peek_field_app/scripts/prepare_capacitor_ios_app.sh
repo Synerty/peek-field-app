@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
-SCRIPT_PATH=$(dirname $(realpath "$0"))
+set -o nounset
+set -o errexit
+
+SCRIPT_PATH="$(cd "$(dirname $0)"; pwd -P)"
 
 # defaults
 # 0 = false; 1 = true
@@ -20,11 +23,13 @@ function parseArguments() {
     # echo "${ARG_BUILD}" -> 1 (true)
     # echo "${ARG_ARCHIVE}" -> 1 (true)
   PREVIOUS_ITEM=''
-  COUNT=0
-  for CURRENT_ITEM in "${@}"
+  ((COUNT=0)) || true
+  for CURRENT_ITEM in "$@"
   do
     if [[ ${CURRENT_ITEM} == "--"* ]]; then
-      printf -v "ARG_$(formatArgument "${CURRENT_ITEM}")" "%s" "1" # could set this to empty string and check with [ -z "${ARG_ITEM-x}" ] if it's set, but empty.
+      # could set this to empty string and check with [ -z "${ARG_ITEM-x}" ]
+      # if it's set, but empty.
+      printf -v "ARG_$(formatArgument "${CURRENT_ITEM}")" "%s" "1"
     else
       if [[ $PREVIOUS_ITEM == "--"* ]]; then
         printf -v "ARG_$(formatArgument "${PREVIOUS_ITEM}")" "%s" "${CURRENT_ITEM}"
@@ -40,14 +45,15 @@ function parseArguments() {
 
 # Format argument.
 function formatArgument() {
-  ARGUMENT="${1^^}" # Capitalize.
-  ARGUMENT="${ARGUMENT/--/}" # Remove "--".
-  ARGUMENT="${ARGUMENT//-/_}" # Replace "-" with "_".
-  echo "${ARGUMENT}"
+    # Capitalize.
+    ARGUMENT="$(tr '[:lower:]' '[:upper:]' <<< "${1}")"
+    ARGUMENT="${ARGUMENT/--/}" # Remove "--".
+    ARGUMENT="${ARGUMENT//-/_}" # Replace "-" with "_".
+    echo "${ARGUMENT}"
 }
 
 
-parseArguments "${@}"
+parseArguments "$@"
 
 echo 'parameter configured: 0 - not set, 1 - set'
 echo 'ARG_SKIP_BUILD: '$ARG_SKIP_BUILD

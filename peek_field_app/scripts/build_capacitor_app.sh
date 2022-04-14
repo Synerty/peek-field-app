@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+set -o nounset
+set -o errexit
+set -x
 # TODO
 # inspect app version, build version
 
@@ -23,6 +26,10 @@ VERIFY_SIGN=1
 # DO NOT CHANGE ANYTHING AFTER THIS LINE UNLESS YOU KNOW WHAT YOU ARE DOING
 # #########################################################################
 
+XCODE_PROFILE_DIR="${HOME}/Library/MobileDevice/Provisioning Profiles"
+SCRIPT_PATH="$(cd "$(dirname $0)"; pwd -P)"
+NOW=$(date -u +%Y-%m-%d_%H%M%SUTC)
+
 function parseArguments() {
     # https://stackoverflow.com/a/61055114
 
@@ -33,73 +40,104 @@ function parseArguments() {
     # echo "${ARG_PACKAGE}" -> "name with space"
     # echo "${ARG_BUILD}" -> 1 (true)
     # echo "${ARG_ARCHIVE}" -> 1 (true)
-  PREVIOUS_ITEM=''
-  COUNT=0
-  for CURRENT_ITEM in "${@}"
-  do
-    if [[ ${CURRENT_ITEM} == "--"* ]]; then
-      printf -v "ARG_$(formatArgument "${CURRENT_ITEM}")" "%s" "1" # could set this to empty string and check with [ -z "${ARG_ITEM-x}" ] if it's set, but empty.
+    PREVIOUS_ITEM=''
+    COUNT=0
+    for CURRENT_ITEM in "$@"
+    do
+    if [[ ${CURRENT_ITEM} == "--"* ]]
+    then
+        # could
+        # set this to empty string and check with [ -z "${ARG_ITEM-x}" ]
+        # if it's set, but empty.
+        printf -v "ARG_$(formatArgument "${CURRENT_ITEM}")" "%s" "1"
     else
-      if [[ $PREVIOUS_ITEM == "--"* ]]; then
-        printf -v "ARG_$(formatArgument "${PREVIOUS_ITEM}")" "%s" "${CURRENT_ITEM}"
-      else
-        printf -v "ARG_${COUNT}" "%s" "${CURRENT_ITEM}"
-      fi
+        if [[ $PREVIOUS_ITEM == "--"* ]]
+        then
+            printf -v "ARG_$(formatArgument "${PREVIOUS_ITEM}")" "%s" \
+               "${CURRENT_ITEM}"
+        else
+            printf -v "ARG_${COUNT}" "%s" "${CURRENT_ITEM}"
+        fi
     fi
 
     PREVIOUS_ITEM="${CURRENT_ITEM}"
     (( COUNT++ ))
-  done
+    done
 }
 
 # Format argument.
 function formatArgument() {
-  ARGUMENT="${1^^}" # Capitalize.
-  ARGUMENT="${ARGUMENT/--/}" # Remove "--".
-  ARGUMENT="${ARGUMENT//-/_}" # Replace "-" with "_".
-  echo "${ARGUMENT}"
+    # Capitalize.
+    ARGUMENT="$(tr '[:lower:]' '[:upper:]' <<< "${1}")"
+    ARGUMENT="${ARGUMENT/--/}" # Remove "--".
+    ARGUMENT="${ARGUMENT//-/_}" # Replace "-" with "_".
+    echo "${ARGUMENT}"
 }
 
-parseArguments "${@}"
+parseArguments "$@"
 
 function printUsage {
-    echo invalid arugments
-    echo "
-usage:
-${0} --version 1.2.3 \
---build-version 12345 \
---team-id Q55F59LQD3 \
---bundle-id com.synerty.peek \
---provision-profile-name 'Synerty iOS Development'
-"
-exit 1
+    echo "invalid arugments"
+    echo "usage:"
+    echo "${0} --version 1.2.3 \\"
+    echo "    --build-version 12345 \\"
+    echo "    --team-id Q55F59LQD3 \\"
+    echo "    --bundle-id com.synerty.peek \\"
+    echo "    --provision-profile-name 'Synerty iOS Development'"
+    echo
+    echo "OR"
+    echo
+    echo "usage:"
+    echo "${0} --version 1.2.3 \\"
+    echo "    --build-version 12345 \\"
+    echo "    --team-id Q55F59LQD3 \\"
+    echo "    --bundle-id com.synerty.peek \\"
+    echo "    --provision-profile-uuid '12341234-1234-1234-abcd-abce12345678'"
+    echo
+
+    exit 1
 }
 
 # exit if any of mandatory parameters is missing
-if [[ -z "${ARG_VERSION+set}" ]]; then
-    printUsage
-fi
-echo "ARG_VERSION "$ARG_VERSION
+[[ -n "${ARG_VERSION+set}" ]] || printUsage
+echo "ARG_VERSION $ARG_VERSION"
 
-if [[ -z "${ARG_BUILD_VERSION+set}" ]]; then
-    printUsage
-fi
-echo "ARG_BUILD_VERSION "$ARG_BUILD_VERSION
+[[ -n "${ARG_BUILD_VERSION+set}" ]] || printUsage
+echo "ARG_BUILD_VERSION $ARG_BUILD_VERSION"
 
-if [[ -z "${ARG_TEAM_ID+set}" ]]; then
-    printUsage
-fi
-echo "ARG_TEAM_ID "$ARG_TEAM_ID
+[[ -n "${ARG_TEAM_ID+set}" ]] || printUsage
+echo "ARG_TEAM_ID $ARG_TEAM_ID"
 
-if [[ -z "${ARG_BUNDLE_ID+set}" ]]; then
-    printUsage
-fi
-echo "ARG_BUNDLE_ID "$ARG_BUNDLE_ID
+[[ -n "${ARG_BUNDLE_ID+set}" ]] || printUsage
+echo "ARG_BUNDLE_ID $ARG_BUNDLE_ID"
 
-if [[ -z "${ARG_PROVISION_PROFILE_NAME+set}" ]]; then
-    printUsage
+[[ -n "${ARG_PROVISIONING_PROFILE_NAME+set}" ]] \
+    || [[ -n "${ARG_PROVISIONING_PROFILE_UUID+set}" ]] \
+    || printUsage
+
+# If the UUID is not set, then the name must be, work out the UUID
+if [[ -z "${ARG_PROVISIONING_PROFILE_UUID+set}" ]]
+then
+    echo "$ARG_PROVISIONING_PROFILE_NAME $ARG_PROVISIONING_PROFILE_NAME"
+    VAL="<string>${ARG_PROVISIONING_PROFILE_NAME}</string>"
+    count=$(cd "${XCODE_PROFILE_DIR}" && \
+                cat "${XCODE_PROFILE_DIR}"/*.mobileprovision \
+                | grep -c "${VAL}" )
+
+    if [[ "${count}" -ne 1 ]]
+    then
+        echo "Exactly one provisioning profile expected, we found ${count}"
+        echo "Please choose one and use the --provision-profile-uuid argument"
+        grep -n "${VAL}" "${XCODE_PROFILE_DIR}"*.mobileprovision
+        false
+    fi
+
+    ARG_PROVISIONING_PROFILE_UUID=$(cd "${XCODE_PROFILE_DIR}" \
+            && grep -l "${VAL}" *.mobileprovision | cut -f1 -d.)
 fi
-echo "ARG_PROVISION_PROFILE_NAME '"$ARG_PROVISION_PROFILE_NAME"'"
+
+echo "ARG_PROVISIONING_PROFILE_UUID $ARG_PROVISIONING_PROFILE_UUID"
+
 echo
 
 # override defaults by arguments
@@ -107,26 +145,27 @@ XCODE_APP_VERSION="${ARG_VERSION}" # e.g. 3.1.2
 XCODE_BUILD_VERSION='b'"${ARG_BUILD_VERSION}" # e.g. b12345 - gitlab CI job ID
 XCODE_DEVELOPEMENT_TEAM_ID="${ARG_TEAM_ID}"
 XCODE_APP_BUNDLE_IDENTIFIER="${ARG_BUNDLE_ID}"
-XCODE_PROVISION_PROFILE_NAME="${ARG_PROVISION_PROFILE_NAME}"
+XCODE_PROVISIONING_PROFILE_UUID="${ARG_PROVISIONING_PROFILE_UUID}"
 
 # automatic populated parameters for xcode
-SCRIPT_PATH=$(dirname "$(realpath "$0")")
-NOW=$(date -u +%Y-%m-%d_%H%M%SUTC)
-XCODE_SOURCE_FOLDER="${SCRIPT_PATH}"'/../ios/'$XCODE_APP_NAME
+export XCODE_SOURCE_FOLDER="${SCRIPT_PATH}"'/../ios/'$XCODE_APP_NAME
 # relative to source folder above
 XCODE_WORKSPACE=$XCODE_APP_NAME'.xcworkspace'
 XCODE_BUILD_CONFIGURATION='Release'
 XCODE_SCHEME=$XCODE_APP_NAME
 XCODE_ARCHIVE_PATH='../../build/peek_'$XCODE_BUILD_VERSION'_'$XCODE_APP_VERSION'_'$NOW
 XCODE_IPA_EXPORT_PATH='../../build/ipa_peek_'$XCODE_BUILD_VERSION'_'$XCODE_APP_VERSION'_'$NOW
-XCODE_CACHED_PROVISIONING_PROFILE_PATH="${HOME}"'/Library/MobileDevice/Provisioning Profiles/'"${XCODE_PROVISIONING_PROFILE_UUID}"'.mobileprovision'
+XCODE_CACHED_PROVISIONING_PROFILE_PATH="${XCODE_PROFILE_DIR}/${XCODE_PROVISIONING_PROFILE_UUID}.mobileprovision"
 
 # based on https://medium.com/xcblog/xcodebuild-deploy-ios-app-from-command-line-c6defff0d8b8
 #  and https://www.jianshu.com/p/3f43370437d2
 
 function buildAngularProject {
-    echo "running prepare_capacitor_ios_app.sh --headerless --version ${XCODE_APP_VERSION}"
-    bash prepare_capacitor_ios_app.sh --headerless --version "${XCODE_APP_VERSION}"
+    CMD="${SCRIPT_PATH}/prepare_capacitor_ios_app.sh"
+    CMD="${CMD} --headerless --version ${XCODE_APP_VERSION}"
+    echo "running ${CMD}"
+    # shellcheck disable=SC2086
+    bash ${CMD}
 }
 
 function printProjectBuildOptions {
@@ -167,7 +206,8 @@ function setTargetVersions {
         -c 'Delete CFBundleShortVersionString' Info.plist
 
     /usr/libexec/Plistbuddy \
-        -c 'Add CFBundleShortVersionString string '"${XCODE_APP_VERSION}"  \
+        -c 'Add CFBundleShortVersionString string '"$
+        }{XCODE_APP_VERSION}"  \
         Info.plist
 
     # build version
@@ -193,7 +233,7 @@ function archive {
         -archivePath $XCODE_ARCHIVE_PATH \
         -allowProvisioningUpdates \
         CODE_SIGN_STYLE="Manual" \
-        PROVISIONING_PROFILE_SPECIFIER="${XCODE_PROVISION_PROFILE_NAME}" \
+        PROVISIONING_PROFILE_SPECIFIER="${XCODE_PROVISIONING_PROFILE_UUID}" \
         PRODUCT_BUNDLE_IDENTIFIER_APP="${XCODE_APP_BUNDLE_IDENTIFIER}" \
         DEVELOPEMENT_TEAM="${XCODE_DEVELOPEMENT_TEAM_ID}" \
         CFBundleShortVersionString="${XCODE_APP_VERSION}" \
@@ -216,7 +256,7 @@ function exportIpa {
         -archivePath $XCODE_ARCHIVE_PATH".xcarchive" \
         -exportPath $XCODE_IPA_EXPORT_PATH \
         -exportOptionsPlist "${exportOptionsPlistPath}" \
-        PROVISIONING_PROFILE_SPECIFIER="${XCODE_PROVISION_PROFILE_NAME}" \
+        PROVISIONING_PROFILE_SPECIFIER="${XCODE_PROVISIONING_PROFILE_UUID}" \
         PRODUCT_BUNDLE_IDENTIFIER_APP="${XCODE_APP_BUNDLE_IDENTIFIER}" \
         DEVELOPEMENT_TEAM="${XCODE_DEVELOPEMENT_TEAM_ID}" \
         CFBundleShortVersionString="${XCODE_APP_VERSION}" \
@@ -279,9 +319,9 @@ function _populateExportOptionsPlist {
 
     # update bundle id
     echo "new ipa bundle id: ""${XCODE_APP_BUNDLE_IDENTIFIER}"
-    echo "new ipa provisioning profile name: ""${XCODE_PROVISION_PROFILE_NAME}"
+    echo "new ipa provisioning profile name: ""${XCODE_PROVISIONING_PROFILE_UUID}"
     /usr/libexec/PlistBuddy -c \
-    'Add :provisioningProfiles:'"${XCODE_APP_BUNDLE_IDENTIFIER}"' string '"${XCODE_PROVISION_PROFILE_NAME}" \
+    'Add :provisioningProfiles:'"${XCODE_APP_BUNDLE_IDENTIFIER}"' string '"${XCODE_PROVISIONING_PROFILE_UUID}" \
         "${__exportOptionsPlistPath}"
 
     # replace team id
@@ -302,11 +342,13 @@ function _inspectInfoPlist {
             output=$(/usr/libexec/PlistBuddy -c 'Print :'"${key}" "$file")
             echo $key": "$output
 
-            if [[ $VERIFY_SIGN -eq 1 ]]; then
+            if [[ $VERIFY_SIGN -eq 1 ]]
+            then
                 case $key in
                 "CFBundleShortVersionString")
                     # app version on app store - public
-                    if [[ -z "${output##*$XCODE_APP_VERSION*}" ]]; then
+                    if [[ -z "${output##*$XCODE_APP_VERSION*}" ]]
+                    then
                         echo "APP Version - pass"
                     else
                         echo "APP Version - fail"
@@ -315,7 +357,8 @@ function _inspectInfoPlist {
                     ;;
                 "CFBundleVersion")
                     # build version - technical
-                    if [[ -z "${output##*$XCODE_BUILD_VERSION*}" ]]; then
+                    if [[ -z "${output##*$XCODE_BUILD_VERSION*}" ]]
+                    then
                         echo "Build Version - pass"
                     else
                         echo "Build Version - fail"
@@ -336,13 +379,17 @@ function _inspectProvisioningProfile {
     echo
     for key in TeamName TeamIdentifier ExpirationDate Name
         do
-            output=$(/usr/libexec/PlistBuddy -c 'Print '"${key}" /dev/stdin <<< $(security cms -D -i $file))
+            output=$(/usr/libexec/PlistBuddy \
+               -c 'Print '"${key}" /dev/stdin <<< $(security cms -D -i $file))
+
             echo $key": "$output
-            if [[ $VERIFY_SIGN -eq 1 ]]; then
+            if [[ $VERIFY_SIGN -eq 1 ]]
+            then
                 case $key in
                 "TeamIdentifier")
                     # substring match
-                    if [[ -z "${output##*$XCODE_DEVELOPEMENT_TEAM_ID*}" ]]; then
+                    if [[ -z "${output##*$XCODE_DEVELOPEMENT_TEAM_ID*}" ]]
+                    then
                         echo "Team ID verify - pass"
                     else
                         echo "Team ID verify - fail"
@@ -352,7 +399,8 @@ function _inspectProvisioningProfile {
                 "ExpirationDate")
                     _expire=$(date -jf '%a %b %e %H:%M:%S %Z %Y' "${output}" '+%s')
                     _now=$(date '+%s')
-                    if [[ $_expire -ge $_now ]]; then
+                    if [[ $_expire -ge $_now ]]
+                    then
                         echo "Expiration date - pass"
                     else
                         echo "Expiration date - fail"
@@ -360,7 +408,7 @@ function _inspectProvisioningProfile {
                     fi
                     ;;
                 "Name")
-                    if [[ -z "${output##*$XCODE_PROVISION_PROFILE_NAME*}" ]];
+                    if [[ -z "${output##*$XCODE_PROVISIONING_PROFILE_UUID*}" ]]
                      then
                         echo "Mobileprovision Name - pass"
                     else
