@@ -76,7 +76,7 @@ function prepare {
             ng build
         else
             echo Building Angular - Peek field app for production
-            ng build --prod
+            ng build --prod --optimization  --common-chunk --vendor-chunk
         fi
     else
         echo Skipped building Angular Peek field app
