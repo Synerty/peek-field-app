@@ -62,13 +62,6 @@ echo 'ARG_HEADERLESS: '$ARG_HEADERLESS
 echo 'ARG_VERSION: "'"$ARG_VERSION"'"'
 echo
 
-function tagVersion {
-    ARG_VERSION=$1
-    git checkout HEAD -- src/app/pages/config/config.page.ts
-    sed -i 's/readonly appVersion: string = "0.0.0";/readonly appVersion: string = "'"${ARG_VERSION}"'";/' \
-        src/app/pages/config/config.page.ts
-}
-
 function prepare {
     if [[ $ARG_SKIP_BUILD -eq 0 ]]; then
         if [[ $ARG_BUILD_DEV -eq 1 ]]; then
@@ -104,7 +97,6 @@ function prepare {
 
 function main {
     pushd "${SCRIPT_PATH}""/../"
-        tagVersion $ARG_VERSION
         prepare
     popd
 

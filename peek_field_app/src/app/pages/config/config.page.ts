@@ -1,6 +1,8 @@
 import { ChangeDetectionStrategy, Component } from "@angular/core";
 import { HeaderService } from "@synerty/peek-plugin-base-js";
 import { configLinks } from "@_peek/plugin-config-links";
+import { environment } from "../../../environments/environment";
+import { peekAppEnvironment } from "../../../environments/peek-app-environment";
 
 @Component({
     selector: "config-page",
@@ -10,7 +12,7 @@ import { configLinks } from "@_peek/plugin-config-links";
 })
 export class ConfigPage {
     configLinks = configLinks;
-    readonly appVersion: string = "0.0.0";
+    readonly appVersion: string = peekAppEnvironment.version;
 
     constructor(public headerService: HeaderService) {
         this.headerService.setTitle("Peek Config");
