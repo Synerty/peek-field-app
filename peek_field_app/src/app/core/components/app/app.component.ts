@@ -23,13 +23,25 @@ export class AppComponent extends NgLifeCycleEvents {
         private deviceStatusService: DeviceStatusService
     ) {
         super();
-        vortexStatusService.errors
-            .pipe(takeUntil(this.onDestroyEvent))
-            .subscribe((msg: string) => balloonMsg.showError(msg));
-
+            .subscribe((msg:string) =>  {
+                if ((msg || '').length === 0) {
+                    console.log("An VortexStatusService" +
+                        " error occured that had no text")
+                } else {
+                    balloonMsg.showError(msg)
+                }
+            })
+    
         vortexStatusService.warning
             .pipe(takeUntil(this.onDestroyEvent))
-            .subscribe((msg: string) => balloonMsg.showWarning(msg));
+            .subscribe((msg:string) => {
+                if ((msg || '').length === 0) {
+                    console.log("An VortexStatusService" +
+                        " warning occured that had no text")
+                } else {
+                    balloonMsg.showWarning(msg)
+                }
+            })
     }
 
     setBalloonFullScreen(enabled: boolean): void {
