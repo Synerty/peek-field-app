@@ -4,12 +4,11 @@ import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { BalloonMsgModule } from "@synerty/peek-plugin-base-js";
 import {
+    SqlFactoryService,
     TupleActionPushOfflineSingletonService,
     TupleOfflineStorageNameService,
     TupleStorageFactoryService,
     TupleStorageFactoryServiceWeb,
-    WebSqlBrowserFactoryService,
-    WebSqlFactoryService,
 } from "@synerty/vortexjs";
 import { staticRoutes } from "./app.routes";
 import { peekRootServices } from "./app.services";
@@ -59,10 +58,7 @@ export function tupleOfflineStorageNameServiceFactory() {
         { provide: NZ_I18N, useValue: en_US },
         { provide: LOCAL_PROVIDER_TOKEN, useValue: mobile_en_US },
         ...peekRootServices,
-        {
-            provide: WebSqlFactoryService,
-            useClass: WebSqlBrowserFactoryService,
-        },
+        SqlFactoryService,
         {
             provide: TupleStorageFactoryService,
             useClass: TupleStorageFactoryServiceWeb,
