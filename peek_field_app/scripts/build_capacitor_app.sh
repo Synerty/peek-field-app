@@ -2,7 +2,6 @@
 
 set -o nounset
 set -o errexit
-set -x
 # TODO
 # inspect app version, build version
 
@@ -206,8 +205,7 @@ function setTargetVersions {
         -c 'Delete CFBundleShortVersionString' Info.plist
 
     /usr/libexec/Plistbuddy \
-        -c 'Add CFBundleShortVersionString string '"$
-        }{XCODE_APP_VERSION}"  \
+        -c "Add CFBundleShortVersionString string ${XCODE_APP_VERSION}"  \
         Info.plist
 
     # build version
@@ -216,7 +214,7 @@ function setTargetVersions {
 
 
     /usr/libexec/PlistBuddy \
-        -c 'Add CFBundleVersion string '"$XCODE_BUILD_VERSION" Info.Plist
+        -c "Add CFBundleVersion string $XCODE_BUILD_VERSION" Info.Plist
     popd
 }
 
@@ -269,11 +267,11 @@ function inspectArchive() {
     echo "====== inspect archive ======"
     _archiveFolder=$XCODE_ARCHIVE_PATH".xcarchive"
     pushd $_archiveFolder
-        infoPlist="Products/Applications/"$XCODE_APP_NAME".app/Info.plist"
+        infoPlist="Products/Applications/${XCODE_APP_NAME}.app/Info.plist"
         echo "== inspect archive: marked versions in $infoPlist =="
         _inspectInfoPlist $infoPlist
 
-        profileInArchive="Products/Applications/"$XCODE_APP_NAME".app/embedded.mobileprovision"
+        profileInArchive="Products/Applications/${XCODE_APP_NAME}.app/embedded.mobileprovision"
         echo "== inspect archive: mobileprovision file in $profileInArchive =="
         _inspectProvisioningProfile $profileInArchive
 

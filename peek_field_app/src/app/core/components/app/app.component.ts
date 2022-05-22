@@ -23,6 +23,8 @@ export class AppComponent extends NgLifeCycleEvents {
         private deviceStatusService: DeviceStatusService
     ) {
         super();
+        vortexStatusService.errors
+            .pipe(takeUntil(this.onDestroyEvent))
             .subscribe((msg:string) =>  {
                 if ((msg || '').length === 0) {
                     console.log("An VortexStatusService" +
