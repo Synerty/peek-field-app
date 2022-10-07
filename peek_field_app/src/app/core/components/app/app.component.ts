@@ -5,8 +5,12 @@ import {
     VortexStatusService,
 } from "@synerty/vortexjs";
 import { DeviceStatusService } from "@peek/peek_core_device";
-import { BalloonMsgService } from "@synerty/peek-plugin-base-js";
-import { takeUntil } from "rxjs/operators";
+import {
+    BalloonMsgService,
+    PageBodyService,
+} from "@synerty/peek-plugin-base-js";
+import { delay, takeUntil } from "rxjs/operators";
+import { Subject } from "rxjs";
 
 @Component({
     selector: "app-component",
@@ -15,35 +19,49 @@ import { takeUntil } from "rxjs/operators";
 })
 export class AppComponent extends NgLifeCycleEvents {
     fullScreen = false;
+    scrollEnabled$ = new Subject<boolean>();
 
     constructor(
         public balloonMsg: BalloonMsgService,
         private vortexService: VortexService,
         private vortexStatusService: VortexStatusService,
-        private deviceStatusService: DeviceStatusService
+        private deviceStatusService: DeviceStatusService,
+        private bodyService: PageBodyService
     ) {
         super();
         vortexStatusService.errors
             .pipe(takeUntil(this.onDestroyEvent))
-            .subscribe((msg:string) =>  {
-                if ((msg || '').length === 0) {
-                    console.log("An VortexStatusService" +
-                        " error occured that had no text")
+            .subscribe((msg: string) => {
+                if ((msg || "").length === 0) {
+                    console.log(
+                        "An VortexStatusService" +
+                            " error occured that had no text"
+                    );
                 } else {
-                    balloonMsg.showError(msg)
+                    balloonMsg.showError(msg);
                 }
-            })
-    
+            });
+
         vortexStatusService.warning
             .pipe(takeUntil(this.onDestroyEvent))
-            .subscribe((msg:string) => {
-                if ((msg || '').length === 0) {
-                    console.log("An VortexStatusService" +
-                        " warning occured that had no text")
+            .subscribe((msg: string) => {
+                if ((msg || "").length === 0) {
+                    console.log(
+                        "An VortexStatusService" +
+                            " warning occured that had no text"
+                    );
                 } else {
-                    balloonMsg.showWarning(msg)
+                    balloonMsg.showWarning(msg);
                 }
-            })
+            });
+    }
+
+    ngOnInit() {
+        this.bodyService.scrollEnabled$
+            .pipe(delay(0), takeUntil(this.onDestroyEvent))
+            .subscribe((value: boolean) => {
+                this.scrollEnabled$.next(value);
+            });
     }
 
     setBalloonFullScreen(enabled: boolean): void {
