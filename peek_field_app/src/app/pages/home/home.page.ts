@@ -32,7 +32,7 @@ export class HomePage extends NgLifeCycleEvents {
                     leading: false,
                     trailing: true,
                 }),
-                takeUntil(this.doCheckEvent)
+                takeUntil(this.onDestroyEvent)
             )
             .subscribe((queuedActionCount: number) => {
                 this.processQueuedActionCount(queuedActionCount);
@@ -48,4 +48,3 @@ export class HomePage extends NgLifeCycleEvents {
         }
     }
 }
-
