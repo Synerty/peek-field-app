@@ -1,7 +1,10 @@
 import { ChangeDetectionStrategy, Component } from "@angular/core";
 import { HeaderService, NavBackService } from "@synerty/peek-plugin-base-js";
 import { LoggedInGuard } from "@peek/peek_core_user";
-import { BehaviorSubject } from "rxjs";
+import { BehaviorSubject, interval } from "rxjs";
+import { VortexStatusService } from "@synerty/vortexjs";
+import { throttle } from "rxjs/operators";
+import { ThrottleConfig } from "rxjs/internal-compatibility";
 
 @Component({
     selector: "header-component",
@@ -11,12 +14,27 @@ import { BehaviorSubject } from "rxjs";
 })
 export class HeaderComponent {
     showSearch$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-
+    queuedActionCount$ = new BehaviorSubject<number>(0);
     constructor(
         public headerService: HeaderService,
         private loggedInGuard: LoggedInGuard,
-        public navBackService: NavBackService
-    ) {}
+        public navBackService: NavBackService,
+        private vortexStatusService: VortexStatusService
+    ) {
+        vortexStatusService.queuedActionCount
+            .pipe(
+                throttle(() => interval(800), {
+                    leading: false,
+                    trailing: true,
+                } as ThrottleConfig)
+            )
+            .subscribe((queuedActionCount: number) => {
+                console.error(
+                    `HeaderComponent updates queuedActionCount: ${queuedActionCount}`
+                );
+                this.queuedActionCount$.next(queuedActionCount);
+            });
+    }
 
     get showSearch() {
         return this.showSearch$.getValue();
