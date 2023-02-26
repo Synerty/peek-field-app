@@ -5,6 +5,7 @@ import { BehaviorSubject, interval } from "rxjs";
 import { VortexStatusService } from "@synerty/vortexjs";
 import { throttle } from "rxjs/operators";
 import { ThrottleConfig } from "rxjs/internal-compatibility";
+import { DeviceStatusService } from "@peek/peek_core_device";
 
 @Component({
     selector: "header-component",
@@ -19,7 +20,8 @@ export class HeaderComponent {
         public headerService: HeaderService,
         private loggedInGuard: LoggedInGuard,
         public navBackService: NavBackService,
-        private vortexStatusService: VortexStatusService
+        private vortexStatusService: VortexStatusService,
+        public deviceStatusService: DeviceStatusService
     ) {
         vortexStatusService.queuedActionCount
             .pipe(

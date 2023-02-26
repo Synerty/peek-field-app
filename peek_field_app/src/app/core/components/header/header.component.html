@@ -17,6 +17,9 @@
                         nzTheme="outline"
                         nzType="home"
                         style="line-height: inherit; padding: 2px"
+                        [class.slow-network]="
+                            deviceStatusService.isNetworkSlow$ | async
+                        "
                     ></i>
                 </nz-badge>
             </button>

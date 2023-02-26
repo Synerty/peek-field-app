@@ -4,6 +4,7 @@ import { NgLifeCycleEvents, VortexStatusService } from "@synerty/vortexjs";
 import { homeLinks } from "@_peek/plugin-home-links";
 import { BehaviorSubject, interval } from "rxjs";
 import { takeUntil, throttle } from "rxjs/operators";
+import { DeviceStatusService } from "@peek/peek_core_device";
 
 @Component({
     selector: "home-page",
@@ -18,7 +19,8 @@ export class HomePage extends NgLifeCycleEvents {
 
     constructor(
         private headerService: HeaderService,
-        private vortexStatusService: VortexStatusService
+        private vortexStatusService: VortexStatusService,
+        public deviceStatusService: DeviceStatusService
     ) {
         super();
         headerService.setTitle("Peek Home");

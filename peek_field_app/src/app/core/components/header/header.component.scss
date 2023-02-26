@@ -1,5 +1,8 @@
 @import "src/variables";
 
+.slow-network {
+    color: orange;
+}
 :host {
     .peek-header-component {
         background: $primary-color;
