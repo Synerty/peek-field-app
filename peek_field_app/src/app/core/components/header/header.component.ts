@@ -31,9 +31,6 @@ export class HeaderComponent {
                 } as ThrottleConfig)
             )
             .subscribe((queuedActionCount: number) => {
-                console.error(
-                    `HeaderComponent updates queuedActionCount: ${queuedActionCount}`
-                );
                 this.queuedActionCount$.next(queuedActionCount);
             });
     }
