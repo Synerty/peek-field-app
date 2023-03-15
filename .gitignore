@@ -113,3 +113,5 @@ doc_dist_latex
 
 # for the Peek Doc projects
 **/doc_link
+/peek_field_app/resources/ios/icon/
+/peek_field_app/yalc.lock
