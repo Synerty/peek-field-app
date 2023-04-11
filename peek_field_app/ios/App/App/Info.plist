@@ -33,6 +33,8 @@
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>LSSupportsOpeningDocumentsInPlace</key>
+	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
@@ -44,8 +46,6 @@
 	<string>Location required when app is in use</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Location required when app is in use</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Location required in background</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>To Record Audio With Video</string>
 	<key>NSMotionUsageDescription</key>
@@ -60,6 +60,8 @@
 		<string>location</string>
 		<string>processing</string>
 	</array>
+	<key>UIFileSharingEnabled</key>
+	<true/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
